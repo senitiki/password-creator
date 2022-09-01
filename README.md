@@ -6,6 +6,7 @@
 
 - HTML5
 - CSS3
+- Bootstrap
 - JavaScript
 - Webpack
 - Git
