@@ -17,7 +17,7 @@
 
 ## Live Demo
 
-[Live Demo Link from ./dist/index.html](https://raw.githack.com/chelmerrox/pasitaka/development/dist/index.html)
+[Live Demo Link from ./dist/index.html](https://raw.githack.com/chelmerrox/pasitaka/page-structure/dist/index.html)
 
 ## Getting Started
 
