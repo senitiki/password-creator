@@ -173,6 +173,11 @@ body {
     background: rgba(59,173,227,1);
     background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
   }
+
+  footer {
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  }
 }
 
 /* Devices equal to & above 576px */
@@ -323,5 +328,10 @@ body {
   .copy-password-btn {
     background: rgba(59,173,227,1);
     background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  }
+
+  footer {
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 5px -3px 14px 0 rgba(0, 0, 0, 0.1);
   }
 }
