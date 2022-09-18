@@ -171,7 +171,8 @@ body {
 
   .copy-password-btn {
     background: rgba(59,173,227,1);
-    background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+    /* background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%); */
+    background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%);
   }
 
   footer {
@@ -324,10 +325,12 @@ body {
   label {
     font-family: 'Roboto', sans-serif;
   }
-
+  
   .copy-password-btn {
     background: rgba(59,173,227,1);
     background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+    /* background: linear-gradient(90deg, #99b83c 0%, #a6ff00 100%); */
+    /* background: linear-gradient(90deg, #9ebd13 0%, #008552 100%); */
   }
 
   footer {
