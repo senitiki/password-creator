@@ -87,7 +87,3 @@ Give a ⭐️ if you like this project!
 
 - My God & family
 - Microverse
-
-## 📝 License
-
-This project is [MIT](./MIT.md) licensed.
