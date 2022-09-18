@@ -1,4 +1,4 @@
-# Pasitaka
+# Access
 
 > A password generator that generates random &amp; unique passwords for those trying to find one.
 
@@ -17,7 +17,7 @@
 
 ## Live Demo
 
-[Live Demo Link from ./dist/index.html](https://raw.githack.com/chelmerrox/pasitaka/page-structure/dist/index.html)
+[Live Demo Link from ./dist/index.html](https://raw.githack.com/chelmerrox/access/page-structure/dist/index.html)
 
 ## Getting Started
 
@@ -41,13 +41,13 @@ From the command line, do the following steps below:
 
 ```bash
 # Clone this repository
-$ git clone git@github.com:chelmerrox/pasitaka.git
+$ git clone git@github.com:chelmerrox/access.git
 
 ```
 2. Change directory/Go into the repository with the command below.
 
 ```bash
-$ cd pasitaka
+$ cd access
 
 ```
 
@@ -77,7 +77,7 @@ $ npm start
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/chelmerrox/pasitaka/issues).
+Feel free to check the [issues page](https://github.com/chelmerrox/access/issues).
 
 ## Show your support
 
