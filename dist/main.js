@@ -125,7 +125,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n//# sourceURL=webpack://access/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\r\n\r\n// Define character set\r\nconst lowerCase = 'abcdefghijklmnopqrstuvxyz';\r\nconst uppperCase = 'ABCDEFGHIJKLMNOPQRSTUVXYZ';\r\nconst integers = '0123456789';\r\nconst specialCharacters = '£$&()*+[]@#^-_!?';\r\nconst charCategories = 4;\r\n\r\nlet password = \"\";\r\n\r\nlet password_length_ctrl = document.getElementById('password-length-slider');\r\nlet easy_to_say_ctrl = document.getElementById('easy-to-say');\r\nlet easy_to_read_ctrl = document.getElementById('easy-to-read');\r\nlet all_characters_ctrl = document.getElementById('all-characters');\r\nlet uppercase_ctrl = document.getElementById('uppercase');\r\nlet plowercase_ctrl = document.getElementById('lowercase');\r\nlet numbers_ctrl = document.getElementById('numbers');\r\nlet symbols_ctrl = document.getElementById('symbols');\r\n\r\nlet loop_ctrl = document.getElementById('loop');\r\nlet password_ctrl = document.getElementById('password');\r\n\r\nfunction generate() {\r\n    console.log(password_length_ctrl.value);\r\n    alert(password_length_ctrl.value);\r\n}\n\n//# sourceURL=webpack://access/./src/index.js?");
 
 /***/ }),
 
