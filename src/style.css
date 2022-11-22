@@ -41,8 +41,29 @@ body {
 
 /* Extra small devices (phones, 575px and down) */
 @media only screen and (max-width: 575px) {
+  .header {
+    width: 110%;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .nav-item-1:first-child {
+    display: flex;
+    align-items: baseline;
+    margin-top: 10px;
+  }
+
   .nav-heading {
     font-family: 'DM Serif Display', serif;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   h1 {
