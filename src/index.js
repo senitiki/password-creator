@@ -3,33 +3,37 @@ import './style.css';
 // Define character set
 const lowerCase = 'abcdefghijklmnopqrstuvxyz';
 const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVXYZ';
-const integers = '0123456789';
-const specialCharacters = '£$&()*+[]@#^-_!?';
+const numbers = '0123456789';
+const symbols = '£$&()*+[]@#^-_!?';
 const charCategories = 4;
 
 let password = '';
 
 let password_length_ctrl = document.getElementById('password-length-slider');
-let easy_to_say_ctrl = document.getElementById('easy-to-say');
-let easy_to_read_ctrl = document.getElementById('easy-to-read');
-let all_characters_ctrl = document.getElementById('all-characters');
 let uppercase_ctrl = document.getElementById('uppercase');
-let plowercase_ctrl = document.getElementById('lowercase');
+let lowercase_ctrl = document.getElementById('lowercase');
 let numbers_ctrl = document.getElementById('numbers');
 let symbols_ctrl = document.getElementById('symbols');
+
+let uppercase_selected = true;
+let lowercase_selected = true;
+let numbers_selected = true;
+let symbols_selected = true;
 
 let loop_ctrl = document.getElementById('loop');
 let password_ctrl = document.getElementById('password');
 
 loop_ctrl.addEventListener('click', generate);
 
-function generate() {
-    password = '';
+uppercase_ctrl.addEventListener('change', (e) => { uppercase_selected = (e.target.checked) ? true : false; console.log('upper: ' + uppercase_selected); });
+lowercase_ctrl.addEventListener('change', (e) => { lowercase_selected = (e.target.checked) ? true : false; console.log('lower: ' + lowercase_selected); });
+numbers_ctrl.addEventListener('change', (e) => { numbers_selected = (e.target.checked) ? true : false; console.log('numbers: ' + numbers_selected); });
+symbols_ctrl.addEventListener('change', (e) => { symbols_selected = (e.target.checked) ? true : false; console.log('symbols: ' + symbols_selected); });
 
-    const passwordLength = password_length_ctrl.value;
+function all(password, passwordLength, categories) {
 
     for (let i=0; i < passwordLength; i++) {
-        let charType = Math.round(Math.abs((Math.random()*charCategories-1)));
+        let charType = Math.round(Math.abs((Math.random()*categories-1)));
 
         let index = 0;
 
@@ -43,32 +47,285 @@ function generate() {
                 password += upperCase[index];
                 break;
             case 2:
-                index = Math.round(Math.abs((Math.random()*integers.length-1)));
-                password += integers[index];
+                index = Math.round(Math.abs((Math.random()*numbers.length-1)));
+                password += numbers[index];
                 break;
             default:
-                index = Math.round(Math.abs((Math.random()*specialCharacters.length-1)));
-                password += specialCharacters[index];
+                index = Math.round(Math.abs((Math.random()*symbols.length-1)));
+                password += symbols[index];
                 break;
         }
     }
 
-    password_ctrl.value = password;
+    return password;
+}
 
-    /*console.log(password);
-    alert(password);*/
+function upper_lower_numbers(password, passwordLength, categories) {
+
+    for (let i=0; i < passwordLength; i++) {
+        let charType = Math.round(Math.abs((Math.random()*categories-1)));
+
+        let index = 0;
+
+        switch (charType) {
+            case 0:
+                index = Math.round(Math.abs((Math.random()*lowerCase.length-1)));
+                password += lowerCase[index];
+                break;
+            case 1:
+                index = Math.round(Math.abs((Math.random()*upperCase.length-1)));
+                password += upperCase[index];
+                break;
+            default:
+                index = Math.round(Math.abs((Math.random()*numbers.length-1)));
+                password += numbers[index];
+                break;
+        }
+    }
+
+    return password;
+}
+
+function upper_lower_symbols(password, passwordLength, categories) {
+
+    for (let i=0; i < passwordLength; i++) {
+        let charType = Math.round(Math.abs((Math.random()*categories-1)));
+
+        let index = 0;
+
+        switch (charType) {
+            case 0:
+                index = Math.round(Math.abs((Math.random()*lowerCase.length-1)));
+                password += lowerCase[index];
+                break;
+            case 1:
+                index = Math.round(Math.abs((Math.random()*upperCase.length-1)));
+                password += upperCase[index];
+                break;
+            default:
+                index = Math.round(Math.abs((Math.random()*symbols.length-1)));
+                password += symbols[index];
+                break;
+        }
+    }
+
+    return password;
+}
+
+function lower_numbers_symbols(password, passwordLength, categories) {
+
+    for (let i=0; i < passwordLength; i++) {
+        let charType = Math.round(Math.abs((Math.random()*categories-1)));
+
+        let index = 0;
+
+        switch (charType) {
+            case 0:
+                index = Math.round(Math.abs((Math.random()*lowerCase.length-1)));
+                password += lowerCase[index];
+                break;
+            case 1:
+                index = Math.round(Math.abs((Math.random()*numbers.length-1)));
+                password += numbers[index];
+                break;
+            default:
+                index = Math.round(Math.abs((Math.random()*symbols.length-1)));
+                password += symbols[index];
+                break;
+        }
+    }
+
+    return password;
+}
+
+function upper_numbers_symbols(password, passwordLength, categories) {
+
+    for (let i=0; i < passwordLength; i++) {
+        let charType = Math.round(Math.abs((Math.random()*categories-1)));
+
+        let index = 0;
+
+        switch (charType) {
+            case 0:
+                index = Math.round(Math.abs((Math.random()*upperCase.length-1)));
+                password += upperCase[index];
+                break;
+            case 1:
+                index = Math.round(Math.abs((Math.random()*numbers.length-1)));
+                password += numbers[index];
+                break;
+            default:
+                index = Math.round(Math.abs((Math.random()*symbols.length-1)));
+                password += symbols[index];
+                break;
+        }
+    }
+
+    return password;
+}
+
+function upper_lower(password, passwordLength, categories) {
+
+    for (let i=0; i < passwordLength; i++) {
+        let charType = Math.round(Math.abs((Math.random()*categories-1)));
+
+        let index = 0;
+
+        switch (charType) {
+            case 0:
+                index = Math.round(Math.abs((Math.random()*lowerCase.length-1)));
+                password += lowerCase[index];
+                break;
+            default:
+                index = Math.round(Math.abs((Math.random()*upperCase.length-1)));
+                password += upperCase[index];
+                break;
+        }
+    }
+
+    return password;
+}
+
+function upper_numbers(password, passwordLength, categories) {
+
+    for (let i=0; i < passwordLength; i++) {
+        let charType = Math.round(Math.abs((Math.random()*categories-1)));
+
+        let index = 0;
+
+        switch (charType) {
+            case 0:
+                index = Math.round(Math.abs((Math.random()*numbers.length-1)));
+                password += numbers[index];
+                break;
+            default:
+                index = Math.round(Math.abs((Math.random()*upperCase.length-1)));
+                password += upperCase[index];
+                break;
+        }
+    }
+
+    return password;
+}
+
+function upper_symbols(password, passwordLength, categories) {
+
+    for (let i=0; i < passwordLength; i++) {
+        let charType = Math.round(Math.abs((Math.random()*categories-1)));
+
+        let index = 0;
+
+        switch (charType) {
+            case 0:
+                index = Math.round(Math.abs((Math.random()*symbols.length-1)));
+                password += symbols[index];
+                break;
+            default:
+                index = Math.round(Math.abs((Math.random()*upperCase.length-1)));
+                password += upperCase[index];
+                break;
+        }
+    }
+
+    return password;
+}
+
+function lower_numbers(password, passwordLength, categories) {
+
+    for (let i=0; i < passwordLength; i++) {
+        let charType = Math.round(Math.abs((Math.random()*categories-1)));
+
+        let index = 0;
+
+        switch (charType) {
+            case 0:
+                index = Math.round(Math.abs((Math.random()*lowerCase.length-1)));
+                password += lowerCase[index];
+                break;
+            default:
+                index = Math.round(Math.abs((Math.random()*numbers.length-1)));
+                password += numbers[index];
+                break;
+        }
+    }
+
+    return password;
+}
+
+function lower_symbols(password, passwordLength, categories) {
+
+    for (let i=0; i < passwordLength; i++) {
+        let charType = Math.round(Math.abs((Math.random()*categories-1)));
+
+        let index = 0;
+
+        switch (charType) {
+            case 0:
+                index = Math.round(Math.abs((Math.random()*lowerCase.length-1)));
+                password += lowerCase[index];
+                break;
+            default:
+                index = Math.round(Math.abs((Math.random()*symbols.length-1)));
+                password += symbols[index];
+                break;
+        }
+    }
+
+    return password;
+}
+
+function numbers_symbols(password, passwordLength, categories) {
+
+    for (let i=0; i < passwordLength; i++) {
+        let charType = Math.round(Math.abs((Math.random()*categories-1)));
+
+        let index = 0;
+
+        switch (charType) {
+            case 0:
+                index = Math.round(Math.abs((Math.random()*numbers.length-1)));
+                password += numbers[index];
+                break;
+            default:
+                index = Math.round(Math.abs((Math.random()*symbols.length-1)));
+                password += symbols[index];
+                break;
+        }
+    }
+
+    return password;
+}
+
+function generate() {
+    password = '';
+
+    const passwordLength = password_length_ctrl.value;
+
+    if (uppercase_selected && lowercase_selected && symbols_selected && numbers_selected) {
+        password = all('', passwordLength, 4);
+    } else if (uppercase_selected && lowercase_selected && numbers_selected) {
+        password = upper_lower_numbers('', passwordLength, 3);
+    } else if (uppercase_selected && lowercase_selected && symbols_selected) {
+        password = upper_lower_symbols('', passwordLength, 3);
+    } else if (lowercase_selected && numbers_selected && symbols_selected) {
+        password = lower_numbers_symbols('', passwordLength, 3);
+    } else if (uppercase_selected && numbers_selected && symbols_selected) {
+        password = upper_numbers_symbols('', passwordLength, 3);
+    } else if (uppercase_selected && lowercase_selected) {
+        password = upper_lower('', passwordLength, 2);
+    } else if (uppercase_selected && numbers_selected) {
+        password = upper_numbers('', passwordLength, 2);
+    } else if (uppercase_selected && symbols_selected) {
+        password = upper_symbols('', passwordLength, 2);
+    } else if (lowercase_selected && numbers_selected) {
+        password = lower_numbers('', passwordLength, 2);
+    } else if (lowercase_selected && symbols_selected) {
+        password = lower_symbols('', passwordLength, 2);
+    } else if (numbers_selected && symbols_selected) {
+        password = numbers_symbols('', passwordLength, 2);
+    }
+
+    password_ctrl.value = password;
 }
 
 generate();
-
-/*function easyToSay(cb) {
-    display("Clicked, new value = " + cb.checked);
-}
-
-function easyToRead(cb) {
-    display("Clicked, new value = " + cb.checked);
-}
-
-function all(cb) {
-    display("Clicked, new value = " + cb.checked);
-}*/

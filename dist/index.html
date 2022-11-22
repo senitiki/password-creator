@@ -37,7 +37,7 @@
 
           <div class="form-container-2 d-sm-flex flex-sm-row d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-between justify-content-md-between justify-content-lg-between">
             <button type="button" class="copy-btn-1 border-0 bg-white"><i class="material-icons copy-icon text-secondary">content_copy</i></button>
-            <button type="button" class="refresh border-0 bg-white" id="loop" onclick="generate()"><i class="material-icons refresh text-secondary">loop</i></button>
+            <button type="button" class="refresh border-0 bg-white" id="loop"><i class="material-icons refresh text-secondary">loop</i></button>
           </div>
         </div>
 
@@ -58,19 +58,19 @@
             <!--Choices container-->
             <div class="d-sm-flex d-md-flex d-lg-flex flex-sm-column flex-md-column flex-lg-column align-items-sm-center align-items-md-center align-items-lg-center mx-3 mt-3">
               <div class="d-sm-inline d-md-inline d-lg-inline">
-                <input type="radio" name="choices" value="Easy to say" id="easy-to-say"/>
+                <input type="radio" name="choices" value="Easy to say" id="easy-to-say" onclick="easyToSay(this);"/>
                 <label for="easy-to-say">Easy to say</label>
                 <i class="material-icons mt-1 text-secondary">info</i>
               </div>
 
               <div class="d-sm-inline d-md-inline d-lg-inline ms-1">
-                <input type="radio" name="choices" value="Easy to read" id="easy-to-read"/>
+                <input type="radio" name="choices" value="Easy to read" id="easy-to-read" onclick="easyToRead(this);"/>
                 <label for="easy-to-read">Easy to read</label>
                 <i class="material-icons mt-1 text-secondary">info</i>
               </div>
 
               <div class="d-sm-inline d-md-inline d-lg-inline ms-2">
-                <input type="radio" name="choices" value="All characters" id="all-characters"/>
+                <input type="radio" name="choices" value="All characters" id="all-characters" onclick="all(this);"/>
                 <label for="all-characters">All characters</label>
                 <i class="material-icons mt-1 text-secondary">info</i>
               </div>
