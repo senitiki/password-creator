@@ -209,13 +209,17 @@ body {
   }
 
   .form-control {
-    width: 500px;
-    padding: 15px 0.75rem;
+    width: 544px;
+    padding: 21px 0.75rem;
+    font-size: 20px;
+    font-weight: 700;
+    position: relative;
+    left: 31px;
   }
 
   .form-container-2 {
     position: relative;
-    top: 14px;
+    top: 25px;
     left: -74px;
     height: 100%;
   }
