@@ -74,22 +74,24 @@ body {
     font-family: 'Roboto', sans-serif;
   }
 
-  .form-control {
-    width: 500px;
-    padding: 15px 0.75rem;
-  }
-
-  .form-container-2 {
-    position: relative;
-    top: -34px;
-    left: 126px;
-  }
-
   .heading-3 {
     font-family: 'DM Serif Display', serif;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     width: 100%;
     font-weight: 600;
+  }
+
+  .password-length-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .password-slider-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
   }
 
   /* Password slider */
@@ -202,6 +204,16 @@ body {
     font-family: 'Roboto', sans-serif;
   }
 
+  .password-slider-container i {
+    margin-bottom: 16px;
+  }
+
+  .characters-symbols-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .copy-password-btn {
     background: rgba(59, 173, 227, 1);
     background: linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
@@ -209,6 +221,17 @@ body {
     /* background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%); */
   }
 
+  .form-control {
+    width: 500px;
+    padding: 15px 0.75rem;
+  }
+
+  .form-container-2 {
+    position: relative;
+    top: -34px;
+    left: 126px;
+  }
+  
   footer {
     font-family: 'Roboto', sans-serif;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
