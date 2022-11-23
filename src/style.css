@@ -282,14 +282,14 @@ body {
 
   .form-control {
     padding: 17px 0.75rem;
-    font-size: 15px;
+    font-size: 10px;
     font-weight: 700;
   }
 
   .form-container-2 {
     position: relative;
-    top: -44px;
-    left: 250px;
+    top: -40px;
+    left: 325px;
   }
 
   footer {
@@ -474,7 +474,7 @@ body {
   .form-control {
     width: 544px;
     padding: 21px 0.75rem;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 700;
     position: relative;
     left: 31px;
@@ -482,8 +482,8 @@ body {
 
   .form-container-2 {
     position: relative;
-    top: 25px;
-    left: -74px;
+    top: 23px;
+    left: -47px;
     height: 100%;
   }
 
