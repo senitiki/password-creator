@@ -95,8 +95,10 @@ body {
     font-family: 'DM Serif Display', serif;
     font-size: 20px;
     font-weight: 600;
+    text-align: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     width: 100%;
+    padding-bottom: 3px;
   }
 
   .form {
@@ -249,7 +251,7 @@ body {
 
   .characters-symbols-container {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
   }
 
@@ -257,6 +259,7 @@ body {
     display: flex;
     align-items: center;
     column-gap: 5px;
+    width: 100px;
   }
 
   .characters-symbols-container label {
@@ -457,6 +460,10 @@ body {
 
   #passwordLength {
     margin-left: 40px;
+  }
+
+  .characters-symbols-container > div {
+    width: 100%;
   }
 
   .generate-btn {
