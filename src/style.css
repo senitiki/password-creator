@@ -42,7 +42,7 @@ body {
 /* Extra small devices (phones, 575px and down) */
 @media only screen and (max-width: 575px) {
   .header {
-    width: 110%;
+    width: 100%;
   }
 
   .nav {
@@ -58,6 +58,11 @@ body {
 
   .nav-heading {
     font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+  }
+
+  .nav-logo {
+    padding: 11px;
   }
 
   .nav-links {
@@ -66,25 +71,54 @@ body {
     align-items: center;
   }
 
+  .nav-links li a {
+    font-size: 15px;
+  }
+
+  .main-container {
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 100%;
+  }
+
   h1 {
     font-family: 'DM Serif Display', serif;
+    font-size: 26px;
   }
 
   .slogan {
     font-family: 'Roboto', sans-serif;
+    font-size: 13px;
   }
 
   .heading-3 {
     font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    font-weight: 600;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     width: 100%;
-    font-weight: 600;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .make-a-password-container {
+    width: 85%;
+    padding-left: 17px;
+    padding-right: 17px;
   }
 
   .password-length-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .password-length-container label {
+    font-size: 16px;
   }
 
   .password-slider-container {
@@ -204,37 +238,78 @@ body {
     font-family: 'Roboto', sans-serif;
   }
 
+  #passwordLength {
+    margin-left: 70px;
+    font-size: 16px;
+  }
+
   .password-slider-container i {
     margin-bottom: 16px;
   }
 
   .characters-symbols-container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
   }
 
-  .copy-password-btn {
+  .characters-symbols-container > div {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+  }
+
+  .characters-symbols-container label {
+    font-size: 12.3px;
+  }
+
+  .characters-symbols-container i {
+    font-size: 17px;
+  }
+
+  .generate-btn {
     background: rgba(59, 173, 227, 1);
     background: linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+    font-size: 15px;
+  }
 
-    /* background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%); */
+  .input-field-container {
+    width: 80%;
   }
 
   .form-control {
-    width: 500px;
-    padding: 15px 0.75rem;
+    padding: 17px 0.75rem;
+    font-size: 15px;
+    font-weight: 700;
   }
 
   .form-container-2 {
     position: relative;
-    top: -34px;
-    left: 126px;
+    top: -44px;
+    left: 250px;
   }
-  
+
   footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+    background: rgba(59, 173, 227, 1);
+    background: linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+    box-shadow: 5px -3px 14px 0 rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+
+  footer .text-1,
+  footer .text-2,
+  footer ul li a {
     font-family: 'Roboto', sans-serif;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+  }
+
+  footer ul {
+    display: flex;
+    margin-left: 30px;
   }
 }
 
@@ -242,6 +317,12 @@ body {
 @media only screen and (min-width: 576px) {
   .nav-heading {
     font-family: 'DM Serif Display', serif;
+    font-size: 27px;
+  }
+
+  .main-container {
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 
   h1 {
@@ -252,20 +333,9 @@ body {
     font-family: 'Roboto', sans-serif;
   }
 
-  .form-control {
-    width: 544px;
-    padding: 21px 0.75rem;
-    font-size: 20px;
-    font-weight: 700;
-    position: relative;
-    left: 31px;
-  }
-
-  .form-container-2 {
-    position: relative;
-    top: 25px;
-    left: -74px;
-    height: 100%;
+  .make-a-password-container {
+    padding-left: 70px;
+    padding-right: 70px;
   }
 
   .heading-3 {
@@ -385,13 +455,29 @@ body {
     font-family: 'Roboto', sans-serif;
   }
 
-  .copy-password-btn {
+  #passwordLength {
+    margin-left: 40px;
+  }
+
+  .generate-btn {
     background: rgba(59, 173, 227, 1);
     background: linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+  }
 
-    /* background: linear-gradient(90deg, #99b83c 0%, #a6ff00 100%); */
+  .form-control {
+    width: 544px;
+    padding: 21px 0.75rem;
+    font-size: 20px;
+    font-weight: 700;
+    position: relative;
+    left: 31px;
+  }
 
-    /* background: linear-gradient(90deg, #9ebd13 0%, #008552 100%); */
+  .form-container-2 {
+    position: relative;
+    top: 25px;
+    left: -74px;
+    height: 100%;
   }
 
   footer {

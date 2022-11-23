@@ -19,7 +19,7 @@
     <header class="header">
       <nav class="nav d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-around justify-content-md-around justify-content-lg-around align-items-sm-baseline align-items-md-baseline align-items-lg-baseline p-3 bg-white shadow-sm" id="nav">
         <div class="d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row align-items-sm-baseline align-items-md-baseline align-items-lg-baseline nav-item-1">
-          <p class="fw-bolder fs-3 me-3 nav-heading">Access</p>
+          <p class="fw-bolder me-3 nav-heading">Access</p>
           <div class="nav-logo mt-1"></div>
         </div>
         
@@ -31,14 +31,14 @@
       </nav>
     </header>
 
-    <main class="h-100 p-5">
+    <main class="h-100 main-container">
       <h1 class="text-center fw-bold mt-4">A Password generator tool.</h1>
       
       <p class="text-center fw-bold mt-4 slogan">Generate a unique & secure password with our password generator.</p>
 
       <form class="form d-sm-flex d-md-flex d-lg-flex flex-sm-column flex-md-column flex-lg-column align-items-sm-center align-items-md-center align-items-lg-center">
         <!--Make a custom password container-->
-        <div class="d-sm-flex d-md-flex d-lg-flex flex-sm-column flex-md-column flex-lg-column align-items-sm-center align-items-md-center align-items-lg-center shadow-sm mx-3 my-1 p-5">
+        <div class="d-sm-flex d-md-flex d-lg-flex flex-sm-column flex-md-column flex-lg-column align-items-sm-center align-items-md-center align-items-lg-center shadow-sm my-1 py-5 make-a-password-container">
           <h2 class="heading-3">Make a custom password</h2>
 
           <div class="d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-between justify-content-md-between justify-content-lg-between mx-3">
@@ -48,32 +48,32 @@
 
               <div class="d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-between justify-content-md-between justify-content-lg-between mx-3 password-slider-container">
                 <input type="range" name="password-length" min="0" max="50" value="25" oninput="passwordLength.innerText = this.value" class="range green me-3" id="password-length-slider"/>
-                <p id="passwordLength" class="ms-4 mt-4 fw-bolder">25</p>
+                <p id="passwordLength" class="mt-4 fw-bolder">25</p>
                 <i class="material-icons mt-4 ms-1 text-secondary" title="Changes the password length.">info</i>
               </div>
             </div>
 
             <!--Characters & Symbols container-->
-            <div class="d-sm-flex d-md-flex d-lg-flex flex-sm-column flex-md-column flex-lg-column align-items-sm-center align-items-md-center align-items-lg-center mx-3 mt-4 characters-symbols-container">
-              <div class="d-sm-inline d-md-inline d-lg-inline ms-3">
+            <div class="d-sm-flex d-md-flex d-lg-flex flex-sm-column flex-md-column flex-lg-column align-items-sm-center align-items-md-center align-items-lg-center mt-4 characters-symbols-container">
+              <div class="d-sm-inline d-md-inline d-lg-inline ms-1">
                 <input type="checkbox" name="choices2" value="Uppercase" id="uppercase"/>
                 <label for="uppercase">Uppercase</label>
                 <i class="material-icons mt-1 text-secondary" title="Passwords with alphabet letters from A-Z.">info</i>
               </div>
 
-              <div class="d-sm-inline d-md-inline d-lg-inline ms-3">
+              <div class="d-sm-inline d-md-inline d-lg-inline ms-1">
                 <input type="checkbox" name="choices2" value="Lowercase" id="lowercase"/>
                 <label for="lowercase">Lowercase</label>
                 <i class="material-icons mt-1 text-secondary" title="Passwords with alphabet letters from a-z.">info</i>
               </div>
 
-              <div class="d-sm-inline d-md-inline d-lg-inline">
+              <div class="d-sm-inline d-md-inline d-lg-inline ms-1">
                 <input type="checkbox" name="choices2" value="Numbers" id="numbers"/>
                 <label for="numbers">Numbers</label>
                 <i class="material-icons mt-1 text-secondary" title="Passwords with numbers from 0-9.">info</i>
               </div>
 
-              <div class="d-sm-inline d-md-inline d-lg-inline">
+              <div class="d-sm-inline d-md-inline d-lg-inline ms-1">
                 <input type="checkbox" name="choices2" value="symbols" id="symbols"/>
                 <label for="symbols">Symbols</label>
                 <i class="material-icons mt-1 text-secondary" title="Passwords with symbols such as $*_!?">info</i>
@@ -83,10 +83,10 @@
         </div>
 
         <!--Generate password button-->
-        <button type="button" value="Generate" class="border-0 rounded-pill my-5 px-4 py-3 text-white fw-bolder copy-password-btn">Generate</button>
+        <button type="button" value="Generate" class="border-0 rounded-pill my-5 px-4 py-3 text-white fw-bolder generate-btn">Generate</button>
 
         <!--Input field container for randomly generated password text-->
-        <div class="d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-between justify-content-md-between justify-content-lg-between mx-3">
+        <div class="d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-between justify-content-md-between justify-content-lg-between mx-3 input-field-container">
           <input type="text" class="password-text form-control shadow-sm" id="password" name="password" placeholder=""/>
 
           <div class="form-container-2 d-sm-flex flex-sm-row d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-between justify-content-md-between justify-content-lg-between">
@@ -98,8 +98,8 @@
     </main>
     
     <footer class="d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-around justify-content-md-around justify-content-lg-around align-items-sm-baseline align-items-md-baseline align-items-lg-baseline p-3">
-      <p class="fw-bold px-4 py-5 text-white">&copy; <span class="text-white" id="date"><script>document.getElementById('date').innerHTML = new Date().getFullYear();</script></span> Aver Labs. All rights reserved.</p>
-      <p class="fw-bold text-white">Made with 🤍 in Fiji.</p>
+      <p class="fw-bold py-5 text-white text-1">&copy; <span class="text-white" id="date"><script>document.getElementById('date').innerHTML = new Date().getFullYear();</script></span> Aver Labs. All rights reserved.</p>
+      <p class="fw-bold text-white text-2">Made with 🤍 in Fiji.</p>
       <ul class="list-unstyled d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-between justify-content-md-between justify-content-lg-between">
         <li><a href="#about" class="text-decoration-none text-white fw-bolder me-4">About us</a></li>
         <li><a href="#contact" class="text-decoration-none text-white fw-bolder me-4">Contact us</a></li>
