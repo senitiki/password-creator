@@ -20,15 +20,86 @@ let lowercase_selected = true;
 let numbers_selected = true;
 let symbols_selected = true;
 
+let checkBoxChecked = 4;
+const minimumChecked = 2;
+
 let loop_ctrl = document.getElementById('loop');
 let password_ctrl = document.getElementById('password');
 
 loop_ctrl.addEventListener('click', generate);
 
-uppercase_ctrl.addEventListener('change', (e) => { uppercase_selected = (e.target.checked) ? true : false; console.log('upper: ' + uppercase_selected); });
+uppercase_ctrl.addEventListener('change', (e) => {
+    if (e.target.checked) {
+        checkBoxChecked++;
+        uppercase_selected = true;
+    } else {
+        if (checkBoxChecked === minimumChecked) {
+            uppercase_ctrl.checked = true;
+        } else {
+            checkBoxChecked--;
+            uppercase_selected = false;
+        }
+    }
+
+    generate();
+});
+
+lowercase_ctrl.addEventListener('change', (e) => {
+    if (e.target.checked) {
+        checkBoxChecked++;
+        lowercase_selected = true;
+    } else {
+        if (checkBoxChecked === minimumChecked) {
+            lowercase_ctrl.checked = true;
+        } else {
+            checkBoxChecked--;
+            lowercase_selected = false;
+        }
+    }
+
+    generate();
+});
+
+numbers_ctrl.addEventListener('change', (e) => {
+    if (e.target.checked) {
+        checkBoxChecked++;
+        numbers_selected = true;
+    } else {
+        if (checkBoxChecked === minimumChecked) {
+            numbers_ctrl.checked = true;
+        } else {
+            checkBoxChecked--;
+            numbers_selected = false;
+        }
+    }
+
+    generate();
+});
+
+symbols_ctrl.addEventListener('change', (e) => {
+    if (e.target.checked) {
+        checkBoxChecked++;
+        symbols_selected = true;
+    } else {
+        if (checkBoxChecked === minimumChecked) {
+            symbols_ctrl.checked = true;
+        } else {
+            checkBoxChecked--;
+            symbols_selected = false;
+        }
+    }
+
+    generate();
+});
+
+
+/*uppercase_ctrl.addEventListener('change', (e) => { uppercase_selected = (e.target.checked) ? true : false; console.log('lower: ' + uppercase_selected); });
+
 lowercase_ctrl.addEventListener('change', (e) => { lowercase_selected = (e.target.checked) ? true : false; console.log('lower: ' + lowercase_selected); });
+
 numbers_ctrl.addEventListener('change', (e) => { numbers_selected = (e.target.checked) ? true : false; console.log('numbers: ' + numbers_selected); });
-symbols_ctrl.addEventListener('change', (e) => { symbols_selected = (e.target.checked) ? true : false; console.log('symbols: ' + symbols_selected); });
+
+symbols_ctrl.addEventListener('change', (e) => { symbols_selected = (e.target.checked) ? true : false; console.log('symbols: ' + symbols_selected); });*/
 
 function all(password, passwordLength, categories) {
 
