@@ -26,7 +26,18 @@ const minimumChecked = 2;
 let loop_ctrl = document.getElementById('loop');
 let password_ctrl = document.getElementById('password');
 
+let generate_btn = document.querySelector('.generate-btn');
+console.log(generate_btn);
+
+// For mobile & tablet screens
+loop_ctrl.addEventListener('touchstart', generate);
+loop_ctrl.addEventListener('touchend', generate);
+generate_btn.addEventListener('touchstart', generate);
+generate_btn.addEventListener('touchend', generate);
+
+// For laptop & desktop screens
 loop_ctrl.addEventListener('click', generate);
+generate_btn.addEventListener('click', generate);
 
 uppercase_ctrl.addEventListener('change', (e) => {
     if (e.target.checked) {
