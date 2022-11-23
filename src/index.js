@@ -23,19 +23,24 @@ let symbols_selected = true;
 let checkBoxChecked = 4;
 const minimumChecked = 2;
 
+let copy_ctrl = document.querySelector('.copy-btn');
 let loop_ctrl = document.getElementById('loop');
 let password_ctrl = document.getElementById('password');
 
 let generate_btn = document.querySelector('.generate-btn');
-console.log(generate_btn);
+
+let copied_password_message = document.querySelector('.copied-password-message');
 
 // For mobile & tablet screens
+copy_ctrl.addEventListener('touchstart', copyPassword);
+copy_ctrl.addEventListener('touchend', copyPassword);
 loop_ctrl.addEventListener('touchstart', generate);
 loop_ctrl.addEventListener('touchend', generate);
 generate_btn.addEventListener('touchstart', generate);
 generate_btn.addEventListener('touchend', generate);
 
 // For laptop & desktop screens
+copy_ctrl.addEventListener('click', copyPassword);
 loop_ctrl.addEventListener('click', generate);
 generate_btn.addEventListener('click', generate);
 
@@ -408,6 +413,19 @@ function generate() {
     }
 
     password_ctrl.value = password;
+}
+
+function copyPassword(){
+  // Select the text field
+  password_ctrl.select();
+  password_ctrl.setSelectionRange(0, 99999); // For mobile devices
+
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(password_ctrl.value);
+
+  copied_password_message.textContent = "\"Copied to clipboard!\""
+  copied_password_message.style.color = "green";
+  copied_password_message.style.marginTop = "10px";
 }
 
 generate();
