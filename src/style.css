@@ -152,6 +152,12 @@ body {
   .nav-links li a {
     font-size: 12px;
   }
+
+  /* Main container */
+  .hero-text {
+    font-family: 'DM Serif Display', serif;
+    padding-top: 60px;
+  }
 }
 
 /* Small devices */
@@ -253,6 +259,12 @@ body {
 
   .nav-links li a {
     font-size: 12px;
+  }
+
+  /* Main container */
+  .hero-text {
+    font-family: 'DM Serif Display', serif;
+    padding-top: 60px;
   }
 }
 
@@ -356,6 +368,12 @@ body {
   .nav-links li a {
     font-size: 12px;
   }
+
+  /* Main container */
+  .hero-text {
+    font-family: 'DM Serif Display', serif;
+    padding-top: 60px;
+  }
 }
 
 /* Small devices */
@@ -457,6 +475,12 @@ body {
 
   .nav-links li a {
     font-size: 12px;
+  }
+
+  /* Main container */
+  .hero-text {
+    font-family: 'DM Serif Display', serif;
+    padding-top: 60px;
   }
 }
 
@@ -560,6 +584,12 @@ body {
   .nav-links li a {
     font-size: 12px;
   }
+
+  /* Main container */
+  .hero-text {
+    font-family: 'DM Serif Display', serif;
+    padding-top: 60px;
+  }
 }
 
 /* Small devices */
@@ -661,6 +691,12 @@ body {
 
   .nav-links li a {
     font-size: 12px;
+  }
+
+  /* Main container */
+  .hero-text {
+    font-family: 'DM Serif Display', serif;
+    padding-top: 60px;
   }
 }
 
@@ -764,6 +800,12 @@ body {
   .nav-links li a {
     font-size: 12px;
   }
+
+  /* Main container */
+  .hero-text {
+    font-family: 'DM Serif Display', serif;
+    padding-top: 60px;
+  }
 }
 
 /* Medium devices */
@@ -866,6 +908,12 @@ body {
   .nav-links li a {
     font-size: 12px;
   }
+
+  /* Main container */
+  .hero-text {
+    font-family: 'DM Serif Display', serif;
+    padding-top: 60px;
+  }
 }
 
 /* Large devices */
@@ -899,6 +947,12 @@ body {
 
   .nav-menu-desktop li a {
     font-size: 20px;
+  }
+
+  /* Main container */
+  .hero-text {
+    font-family: 'DM Serif Display', serif;
+    padding-top: 100px;
   }
 }
 
@@ -934,6 +988,12 @@ body {
   .nav-menu-desktop li a {
     font-size: 20px;
   }
+
+  /* Main container */
+  .hero-text {
+    font-family: 'DM Serif Display', serif;
+    padding-top: 100px;
+  }
 }
 
 /* Large devices */
@@ -968,6 +1028,12 @@ body {
   .nav-menu-desktop li a {
     font-size: 20px;
   }
+
+  /* Main container */
+  .hero-text {
+    font-family: 'DM Serif Display', serif;
+    padding-top: 100px;
+  }
 }
 
 /* Large devices */
@@ -1001,5 +1067,11 @@ body {
 
   .nav-menu-desktop li a {
     font-size: 20px;
+  }
+
+  /* Main container */
+  .hero-text {
+    font-family: 'DM Serif Display', serif;
+    padding-top: 100px;
   }
 }
