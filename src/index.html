@@ -17,96 +17,33 @@
 
   <body>
     <header class="header">
-      <nav class="nav d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-around justify-content-md-around justify-content-lg-around align-items-sm-baseline align-items-md-baseline align-items-lg-baseline p-3 bg-white shadow-sm" id="nav">
+      <nav class="nav d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-around justify-content-md-around justify-content-lg-around align-items-sm-baseline align-items-md-baseline align-items-lg-baseline bg-white shadow-sm" id="nav">
         <div class="d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row align-items-sm-baseline align-items-md-baseline align-items-lg-baseline nav-item-1">
           <p class="fw-bolder me-3 nav-heading" id="nav-heading">Access</p>
-          <div class="nav-logo mt-1" id="nav-logo"></div>
+          <div class="nav-logo" id="nav-logo"></div>
+        </div>
+
+         <!--To show only when hamburger icon is clicked-->
+         <ul class="nav-menu-mobile list-unstyled d-block d-sm-block d-md-block d-lg-none">
+          <li class="nav-item-mobile"><a href="#home" class="nav-link-mobile text-decoration-none text-white fw-bolder me-5">Home</a></li>
+          <li class="nav-item-mobile"><a href="#about" class="nav-link-mobile text-decoration-none text-white fw-bolder me-5">About</a></li>
+          <li class="nav-item-mobile"><a href="#contact" class="nav-link-mobile text-decoration-none text-white fw-bolder me-5">Contact</a></li>
+        </ul>
+
+        <div class="hamburger d-block d-sm-block d-md-block d-lg-none" id="hamburger">
+          <span class="bar bg-purple hamburger-bar-1"></span>
+          <span class="bar bg-purple hamburger-bar-2"></span>
+          <span class="bar bg-purple hamburger-bar-3"></span>
         </div>
         
-        <ul class="list-unstyled d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-between justify-content-md-between justify-content-lg-between nav-links" id="nav-links">
-          <li><a href="#" class="text-decoration-none text-purple fw-bolder me-5">Home</a></li>
+        <!--To show only in desktop screens-->
+        <ul class="list-unstyled d-none d-sm-none d-md-none d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-between justify-content-md-between justify-content-lg-between nav-menu-desktop" id="nav-menu-desktop">
+          <li><a href="#home" class="text-decoration-none text-purple fw-bolder me-5">Home</a></li>
           <li><a href="#about" class="text-decoration-none text-purple fw-bolder me-5">About</a></li>
           <li><a href="#contact" class="text-decoration-none text-purple fw-bolder me-5">Contact</a></li>
         </ul>
       </nav>
     </header>
-
-    <main class="h-100 main-container">
-      <h1 class="text-center fw-bold mt-4">A Password generator tool.</h1>
-      
-      <p class="text-center fw-bold mt-4 slogan">Generate a unique & secure password with our password generator.</p>
-
-      <form class="form d-sm-flex d-md-flex d-lg-flex flex-sm-column flex-md-column flex-lg-column align-items-sm-center align-items-md-center align-items-lg-center">
-        <!--Make a custom password container-->
-        <div class="d-sm-flex d-md-flex d-lg-flex flex-sm-column flex-md-column flex-lg-column align-items-sm-center align-items-md-center align-items-lg-center shadow-sm my-1 py-5 make-a-password-container">
-          <h2 class="heading-3">Make a custom password</h2>
-
-          <div class="d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-between justify-content-md-between justify-content-lg-between mx-3">
-            <!--Password Length Container-->
-            <div class="d-sm-flex d-md-flex d-lg-flex flex-sm-column flex-md-column flex-lg-column align-items-sm-center align-items-md-center align-items-lg-center mx-3 mt-3 password-length-container">
-              <label for="password-length-slider" class="fw-bolder">Password Length</label><br>
-
-              <div class="d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-between justify-content-md-between justify-content-lg-between mx-3 password-slider-container">
-                <input type="range" name="password-length" min="0" max="50" value="25" oninput="passwordLength.innerText = this.value" class="range green me-3" id="password-length-slider"/>
-                <p id="passwordLength" class="mt-4 fw-bolder">25</p>
-                <i class="material-icons mt-4 ms-1 text-secondary" title="Changes the password length.">info</i>
-              </div>
-            </div>
-
-            <!--Characters & Symbols container-->
-            <div class="d-sm-flex d-md-flex d-lg-flex flex-sm-column flex-md-column flex-lg-column align-items-sm-center align-items-md-center align-items-lg-center mt-4 characters-symbols-container">
-              <div class="d-sm-inline d-md-inline d-lg-inline ms-1">
-                <input type="checkbox" name="choices2" value="Uppercase" id="uppercase" checked/>
-                <label for="uppercase">Uppercase</label>
-                <i class="material-icons mt-1 text-secondary" title="Passwords with alphabet letters from A-Z.">info</i>
-              </div>
-
-              <div class="d-sm-inline d-md-inline d-lg-inline ms-1">
-                <input type="checkbox" name="choices2" value="Lowercase" id="lowercase" checked/>
-                <label for="lowercase">Lowercase</label>
-                <i class="material-icons mt-1 text-secondary" title="Passwords with alphabet letters from a-z.">info</i>
-              </div>
-
-              <div class="d-sm-inline d-md-inline d-lg-inline ms-1">
-                <input type="checkbox" name="choices2" value="Numbers" id="numbers" checked/>
-                <label for="numbers">Numbers</label>
-                <i class="material-icons mt-1 text-secondary" title="Passwords with numbers from 0-9.">info</i>
-              </div>
-
-              <div class="d-sm-inline d-md-inline d-lg-inline ms-1">
-                <input type="checkbox" name="choices2" value="symbols" id="symbols" checked/>
-                <label for="symbols">Symbols</label>
-                <i class="material-icons mt-1 text-secondary" title="Passwords with symbols such as $*_!?">info</i>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!--Generate password button-->
-        <button type="button" value="Generate" class="border-0 rounded-pill my-5 px-4 py-3 text-white fw-bolder generate-btn">Generate</button>
-
-        <!--Input field container for randomly generated password text-->
-        <div class="d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-between justify-content-md-between justify-content-lg-between mx-3 input-field-container">
-          <input type="text" class="password-text form-control shadow-sm" id="password" name="password" placeholder=""/>
-
-          <div class="form-container-2 d-sm-flex flex-sm-row d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-between justify-content-md-between justify-content-lg-between">
-            <button type="button" class="copy-btn border-0 bg-white" title="Copy"><i class="material-icons copy-icon text-secondary">content_copy</i></button>
-            <button type="button" class="refresh border-0 bg-white" title="Generate password" id="loop"><i class="material-icons refresh text-secondary">loop</i></button>
-          </div>
-        </div>
-
-        <small class="copied-password-message"></small>
-      </form>  
-    </main>
-    
-    <footer class="d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-around justify-content-md-around justify-content-lg-around align-items-sm-baseline align-items-md-baseline align-items-lg-baseline p-3">
-      <p class="fw-bold py-5 text-white text-1">&copy; <span class="text-white" id="date"><script>document.getElementById('date').innerHTML = new Date().getFullYear();</script></span> Aver Labs. All rights reserved.</p>
-      <p class="fw-bold text-white text-2">Made with 🤍 in Fiji.</p>
-      <ul class="list-unstyled d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-between justify-content-md-between justify-content-lg-between">
-        <li><a href="#about" class="text-decoration-none text-white fw-bolder me-4">About us</a></li>
-        <li><a href="#contact" class="text-decoration-none text-white fw-bolder me-4">Contact us</a></li>
-      </ul>
-    </footer>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   </body>

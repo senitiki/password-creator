@@ -1,3 +1,4 @@
+import { hamburger, openMenu, closeMenu } from './modules/navbar-hamburger.js';
 import './style.css';
 
 // Define character set
@@ -30,6 +31,12 @@ let password_ctrl = document.getElementById('password');
 let generate_btn = document.querySelector('.generate-btn');
 
 let copied_password_message = document.querySelector('.copied-password-message');
+
+// Open Nav Menu for click
+hamburger.addEventListener('click', openMenu);
+
+// Close Nav Menu for click
+document.querySelectorAll('.nav-link-mobile').forEach((n) => n.addEventListener('click', closeMenu));
 
 // For mobile & tablet screens
 copy_ctrl.addEventListener('touchstart', copyPassword);
