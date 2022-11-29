@@ -30,7 +30,7 @@ let loop_ctrl = document.querySelector('.loop-btn');
 // ID matches with the Bootstrap class used for the input field
 let password_ctrl = document.getElementById('form-control');
 
-let generate_btn = document.querySelector('.generate-btn');
+let create_btn = document.querySelector('.create-btn');
 
 let copied_password_message = document.querySelector('.copied-password-message');
 
@@ -45,13 +45,13 @@ copy_ctrl.addEventListener('touchstart', copyPassword);
 copy_ctrl.addEventListener('touchend', copyPassword);
 loop_ctrl.addEventListener('touchstart', generate);
 loop_ctrl.addEventListener('touchend', generate);
-generate_btn.addEventListener('touchstart', generate);
-generate_btn.addEventListener('touchend', generate);
+create_btn.addEventListener('touchstart', generate);
+create_btn.addEventListener('touchend', generate);
 
 // For laptop & desktop screens
 copy_ctrl.addEventListener('click', copyPassword);
 loop_ctrl.addEventListener('click', generate);
-generate_btn.addEventListener('click', generate);
+create_btn.addEventListener('click', generate);
 
 uppercase_ctrl.addEventListener('change', (e) => {
     if (e.target.checked) {
