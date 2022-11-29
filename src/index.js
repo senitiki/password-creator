@@ -25,7 +25,7 @@ let checkBoxChecked = 4;
 const minimumChecked = 2;
 
 let copy_ctrl = document.querySelector('.copy-btn');
-let loop_ctrl = document.getElementById('loop');
+let loop_ctrl = document.querySelector('.loop-btn');
 let password_ctrl = document.getElementById('password');
 
 let generate_btn = document.querySelector('.generate-btn');
