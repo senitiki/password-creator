@@ -215,6 +215,7 @@ input[type=range]::-webkit-slider-thumb:active {
   box-shadow: 5px -3px 14px 0 rgba(0, 0, 0, 0.1);
   width: 100%;
 }
+
 .footer-links {
   display: flex;
 }

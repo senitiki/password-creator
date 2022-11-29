@@ -10,7 +10,7 @@ const charCategories = 4;
 
 let password = '';
 
-let password_length_ctrl = document.getElementById('password-length-slider');
+let password_length_ctrl = document.getElementById('range-slider');
 let uppercase_ctrl = document.getElementById('uppercase');
 let lowercase_ctrl = document.getElementById('lowercase');
 let numbers_ctrl = document.getElementById('numbers');
