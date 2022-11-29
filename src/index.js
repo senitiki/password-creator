@@ -433,8 +433,11 @@ function copyPassword(){
   navigator.clipboard.writeText(password_ctrl.value);
 
   copied_password_message.textContent = "\"Copied to clipboard!\""
+  copied_password_message.style.textAlign = "center";
   copied_password_message.style.color = "green";
+  copied_password_message.style.fontSize = "25px";
   copied_password_message.style.marginTop = "10px";
+  copied_password_message.style.marginBottom = "10px";
 }
 
 generate();
