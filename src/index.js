@@ -26,7 +26,9 @@ const minimumChecked = 2;
 
 let copy_ctrl = document.querySelector('.copy-btn');
 let loop_ctrl = document.querySelector('.loop-btn');
-let password_ctrl = document.getElementById('password');
+
+// ID matches with the Bootstrap class used for the input field
+let password_ctrl = document.getElementById('form-control');
 
 let generate_btn = document.querySelector('.generate-btn');
 
