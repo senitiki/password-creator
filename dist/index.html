@@ -44,6 +44,62 @@
         </ul>
       </nav>
     </header>
+
+    <main class="container-fluid main-container">
+      <h1 class="hero-text text-center fw-bold dm-sans-display-font">Create a unique & secure password with our password generator.</h1>
+
+      <form class="form row">
+        <!--Make a custom password container-->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 make-a-password-container">
+          <h2 class="heading-2 dm-sans-display-font fw-bolder" id="heading-2">Create a custom password</h2>
+
+          <!--Password options container-->
+          <div class="password-options-container d-flex d-sm-flex d-md-flex flex-column flex-sm-column flex-md-column">
+            <!--Password Length Container-->
+            <div class="password-length-container">
+              <label for="password-length-slider" class="fw-bolder">Password Length: 
+                <span id="passwordLength" class="mt-4 fw-bolder">25</span>
+              </label>
+
+              <!--Range Container-->
+              <div class="range-container">
+                <button type="button" class="minus-btn">-</button>
+                <input type="range" name="password-length" min="0" max="50" value="25" oninput="passwordLength.innerText = this.value" class="range-slider purple me-3" id="range-slider"/>
+                <button type="button" class="add-btn">+</button>
+              </div>
+              <br>
+            </div>
+
+            <!--Characters & Symbols Container-->
+            <div class="characters-symbols-container">
+              <div class="uppercase-container form-check">
+                <input type="checkbox" name="uppercase-choice" value="Uppercase" class="form-check-input p-2" id="uppercase" checked/>
+                <label for="uppercase">Uppercase</label>
+                <i class="material-icons mt-1 text-secondary" title="Passwords with alphabet letters from A-Z.">info</i>
+              </div>
+
+              <div class="lowercase-container form-check">
+                <input type="checkbox" name="lowercase-choice" class="form-check-input p-2"value="Lowercase" id="lowercase" checked/>
+                <label for="lowercase">Lowercase</label>
+                <i class="material-icons mt-1 text-secondary" title="Passwords with alphabet letters from a-z.">info</i>
+              </div>
+
+              <div class="numbers-container form-check">
+                <input type="checkbox" name="numbers-choice" value="Numbers" class="form-check-input p-2" id="numbers" checked/>
+                <label for="numbers">Numbers</label>
+                <i class="material-icons mt-1 text-secondary" title="Passwords with numbers from 0-9.">info</i>
+              </div>
+
+              <div class="symbols-container form-check">
+                <input type="checkbox" name="symbols-choice" value="symbols" class="form-check-input p-2" id="symbols" checked/>
+                <label for="symbols">Symbols</label>
+                <i class="material-icons mt-1 text-secondary" title="Passwords with symbols such as $*_!?">info</i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   </body>

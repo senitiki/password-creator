@@ -33,6 +33,10 @@ body {
   color: rgb(176, 102, 176);
 }
 
+.dm-sans-display-font {
+  font-family: 'DM Serif Display', serif;
+}
+
 .nav-menu-mobile {
   display: flex;
   justify-content: space-between;
@@ -52,6 +56,153 @@ body {
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+
+.heading-2 {
+  font-size: 19px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgrey;
+  width: 100%;
+}
+
+.range-container {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 10px;
+}
+
+.range-container > button {
+  border: 1px solid grey;
+  border-radius: 10px;
+  background-color: white;
+  color: grey;
+  padding: 4px 10px;
+}
+
+/* Range slider for password length */
+.range-slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  left: 37%;
+  top: 50%;
+  width: 140px;
+  margin-top: 15px;
+  transform: translate(-50%, -50%);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: rgba(59, 173, 227, 1);
+  background: -moz-linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+  background: -o-linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+  background: linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+  height: 2px;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 2px solid;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  max-width: 80px;
+  position: relative;
+  bottom: 11px;
+  background-color: #1d1c25;
+  cursor: -webkit-grab;
+  -webkit-transition: border 1000ms ease;
+  transition: border 1000ms ease;
+}
+
+.range.blue::-webkit-slider-thumb {
+  border-color: rgb(59, 173, 227);
+}
+
+.range.ltpurple::-webkit-slider-thumb {
+  border-color: rgb(87, 111, 230);
+}
+
+.range.purple::-webkit-slider-thumb {
+  border-color: rgb(152, 68, 183);
+}
+
+.range.pink::-webkit-slider-thumb {
+  border-color: rgb(255, 53, 127);
+}
+
+input[type=range]::-webkit-slider-thumb:active {
+  cursor: -webkit-grabbing;
+}
+
+.characters-symbols-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.characters-symbols-container > div {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  width: 100px;
+}
+
+.characters-symbols-container label {
+  font-size: 16.3px;
+}
+
+.characters-symbols-container i {
+  font-size: 20px;
+}
+
+.password-tips {
+  font-size: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgrey;
+  width: 100%;
+}
+
+.create-btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-btn {
+  background: rgba(59, 173, 227, 1);
+  background: linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.password-input-field-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Password Input Field */
+#form-control {
+  padding: 25px;
+}
+
+.input-field-icons-container {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: 27px;
+  left: -80px;
+}
+
+/* The buttons/icons in the password input field */
+.copy-btn,
+.loop-btn {
+  color: grey;
 }
 
 /* Extra small devices */
@@ -155,8 +306,30 @@ body {
 
   /* Main container */
   .hero-text {
-    font-family: 'DM Serif Display', serif;
     padding-top: 60px;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #make-a-password-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    width: 85%;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 20px 17px;
+  }
+
+  .heading-2 {
+    font-size: 18px;
   }
 }
 
@@ -263,8 +436,34 @@ body {
 
   /* Main container */
   .hero-text {
-    font-family: 'DM Serif Display', serif;
     padding-top: 60px;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #make-a-password-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    width: 85%;
+    margin-top: 30px;
+    margin-left: 15px;
+    padding: 20px 17px;
+  }
+
+  .range-container > button {
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: white;
+    color: grey;
+    padding: 4px 10px;
   }
 }
 
@@ -371,8 +570,26 @@ body {
 
   /* Main container */
   .hero-text {
-    font-family: 'DM Serif Display', serif;
     padding-top: 60px;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #make-a-password-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    width: 85%;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 20px 17px;
   }
 }
 
@@ -479,8 +696,26 @@ body {
 
   /* Main container */
   .hero-text {
-    font-family: 'DM Serif Display', serif;
     padding-top: 60px;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #make-a-password-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    width: 85%;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 20px 17px;
   }
 }
 
@@ -587,8 +822,23 @@ body {
 
   /* Main container */
   .hero-text {
-    font-family: 'DM Serif Display', serif;
     padding-top: 60px;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #make-a-password-container {
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    width: 85%;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 20px 17px;
   }
 }
 
@@ -695,8 +945,26 @@ body {
 
   /* Main container */
   .hero-text {
-    font-family: 'DM Serif Display', serif;
     padding-top: 60px;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #make-a-password-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    width: 85%;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 20px 17px;
   }
 }
 
@@ -803,8 +1071,26 @@ body {
 
   /* Main container */
   .hero-text {
-    font-family: 'DM Serif Display', serif;
     padding-top: 60px;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #make-a-password-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    width: 85%;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 20px 17px;
   }
 }
 
@@ -911,8 +1197,26 @@ body {
 
   /* Main container */
   .hero-text {
-    font-family: 'DM Serif Display', serif;
     padding-top: 60px;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #make-a-password-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    width: 93%;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 20px 17px;
   }
 }
 
@@ -951,8 +1255,23 @@ body {
 
   /* Main container */
   .hero-text {
-    font-family: 'DM Serif Display', serif;
     padding-top: 100px;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .make-a-password-container {
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    width: 93%;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 32px 74px;
   }
 }
 
@@ -991,8 +1310,23 @@ body {
 
   /* Main container */
   .hero-text {
-    font-family: 'DM Serif Display', serif;
     padding-top: 100px;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .make-a-password-container {
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    width: 93%;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 32px 74px;
   }
 }
 
@@ -1031,8 +1365,23 @@ body {
 
   /* Main container */
   .hero-text {
-    font-family: 'DM Serif Display', serif;
     padding-top: 100px;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .make-a-password-container {
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    width: 93%;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 32px 74px;
   }
 }
 
@@ -1071,7 +1420,22 @@ body {
 
   /* Main container */
   .hero-text {
-    font-family: 'DM Serif Display', serif;
     padding-top: 100px;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .make-a-password-container {
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    width: 93%;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 32px 74px;
   }
 }
