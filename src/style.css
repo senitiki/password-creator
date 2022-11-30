@@ -26,11 +26,11 @@ body {
 }
 
 .bg-purple {
-  background-color: rgb(176, 102, 176);
+  background-color: #720026;
 }
 
 .text-purple {
-  color: rgb(176, 102, 176);
+  color: #720026;
 }
 
 .dm-sans-display-font {
@@ -94,11 +94,7 @@ body {
 
 input[type=range]::-webkit-slider-runnable-track {
   -webkit-appearance: none;
-  background: rgba(59, 173, 227, 1);
-  background: -moz-linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
-  background: -webkit-linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
-  background: -o-linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
-  background: linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+  background: orangered;
   height: 2px;
 }
 
@@ -122,19 +118,19 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .range.blue::-webkit-slider-thumb {
-  border-color: rgb(59, 173, 227);
+  border-color: orangered;
 }
 
 .range.ltpurple::-webkit-slider-thumb {
-  border-color: rgb(87, 111, 230);
+  border-color: orangered;
 }
 
 .range.purple::-webkit-slider-thumb {
-  border-color: rgb(152, 68, 183);
+  border-color: orangered;
 }
 
 .range.pink::-webkit-slider-thumb {
-  border-color: rgb(255, 53, 127);
+  border-color: orangered;
 }
 
 input[type=range]::-webkit-slider-thumb:active {
@@ -152,6 +148,11 @@ input[type=range]::-webkit-slider-thumb:active {
   align-items: center;
   column-gap: 5px;
   width: 100px;
+}
+
+.form-check-input:checked {
+  background-color: orangered;
+  border-color: orangered;
 }
 
 .characters-symbols-container label {
@@ -176,8 +177,7 @@ input[type=range]::-webkit-slider-thumb:active {
 }
 
 .create-btn {
-  background: rgba(59, 173, 227, 1);
-  background: linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+  background: orangered;
   font-size: 20px;
   border-radius: 10px;
 }
@@ -211,8 +211,7 @@ input[type=range]::-webkit-slider-thumb:active {
   justify-content: space-around;
   align-items: center;
   column-gap: 20px;
-  background: rgba(59, 173, 227, 1);
-  background: linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+  background: #720026;
   box-shadow: 5px -3px 14px 0 rgba(0, 0, 0, 0.1);
   width: 100%;
 }
@@ -241,7 +240,7 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   .nav-logo {
-    background-image: url("./images/access-logo-2.png");
+    background-image: url("./images/access-logo-3.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -369,7 +368,7 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   .nav-logo {
-    background-image: url("./images/access-logo-2.png");
+    background-image: url("./images/access-logo-3.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -503,7 +502,7 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   .nav-logo {
-    background-image: url("./images/access-logo-2.png");
+    background-image: url("./images/access-logo-3.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -629,7 +628,7 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   .nav-logo {
-    background-image: url("./images/access-logo-2.png");
+    background-image: url("./images/access-logo-3.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -755,7 +754,7 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   .nav-logo {
-    background-image: url("./images/access-logo-2.png");
+    background-image: url("./images/access-logo-3.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -878,7 +877,7 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   .nav-logo {
-    background-image: url("./images/access-logo-2.png");
+    background-image: url("./images/access-logo-3.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -1004,7 +1003,7 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   .nav-logo {
-    background-image: url("./images/access-logo-2.png");
+    background-image: url("./images/access-logo-3.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -1130,7 +1129,7 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   .nav-logo {
-    background-image: url("./images/access-logo-2.png");
+    background-image: url("./images/access-logo-3.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -1257,7 +1256,7 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   .nav-logo {
-    background-image: url("./images/access-logo-2.png");
+    background-image: url("./images/access-logo-3.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -1312,7 +1311,7 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   .nav-logo {
-    background-image: url("./images/access-logo-2.png");
+    background-image: url("./images/access-logo-3.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -1367,7 +1366,7 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   .nav-logo {
-    background-image: url("./images/access-logo-2.png");
+    background-image: url("./images/access-logo-3.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -1422,7 +1421,7 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   .nav-logo {
-    background-image: url("./images/access-logo-2.png");
+    background-image: url("./images/access-logo-3.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
