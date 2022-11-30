@@ -187,6 +187,50 @@ input[type=range]::-webkit-slider-thumb:active {
   justify-content: center;
 }
 
+.slide-1 {
+  background-image: url("./images/1.png");
+}
+
+.slide-2 {
+  background-image: url("./images/2.png");
+}
+
+.slide-3 {
+  background-image: url("./images/3.png");
+}
+
+.slide-4 {
+  background-image: url("./images/4.png");
+}
+
+.slide-5 {
+  background-image: url("./images/5.png");
+}
+
+.slide-6 {
+  background-image: url("./images/6.png");
+}
+
+.slide-7 {
+  background-image: url("./images/7.png");
+}
+
+.slide-8 {
+  background-image: url("./images/8.png");
+}
+
+.carousel-item {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 78px 20px 10px 20px;
+  margin-top: 25px;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: darkslategrey;
+}
+
 /* Password Input Field */
 #form-control {
   padding: 25px;
