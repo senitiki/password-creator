@@ -68,6 +68,7 @@ body {
 .range-container {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   column-gap: 10px;
 }
 

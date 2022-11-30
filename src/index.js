@@ -50,18 +50,6 @@ hamburger.addEventListener('click', openMenu);
 document.querySelectorAll('.nav-link-mobile').forEach((n) => n.addEventListener('click', closeMenu));
 
 // For mobile & tablet screens
-minusBtn.addEventListener('touchstart', (e) => {
-  changePasswordLength(e);
-});
-minusBtn.addEventListener('touchend', (e) => {
-  changePasswordLength(e);
-});
-addBtn.addEventListener('touchstart', (e) => {
-  changePasswordLength(e);
-});
-addBtn.addEventListener('touchend', (e) => {
-  changePasswordLength(e);
-});
 copy_ctrl.addEventListener('touchstart', copyPassword);
 copy_ctrl.addEventListener('touchend', copyPassword);
 loop_ctrl.addEventListener('touchstart', generate);
@@ -70,12 +58,6 @@ create_btn.addEventListener('touchstart', generate);
 create_btn.addEventListener('touchend', generate);
 
 // For laptop & desktop screens
-minusBtn.addEventListener('click', (e) => {
-  changePasswordLength(e);
-});
-addBtn.addEventListener('click', (e) => {
-  changePasswordLength(e);
-});
 copy_ctrl.addEventListener('click', copyPassword);
 loop_ctrl.addEventListener('click', generate);
 create_btn.addEventListener('click', generate);
@@ -152,23 +134,6 @@ lowercase_ctrl.addEventListener('change', (e) => { lowercase_selected = (e.targe
 numbers_ctrl.addEventListener('change', (e) => { numbers_selected = (e.target.checked) ? true : false; console.log('numbers: ' + numbers_selected); });
 
 symbols_ctrl.addEventListener('change', (e) => { symbols_selected = (e.target.checked) ? true : false; console.log('symbols: ' + symbols_selected); });*/
-
-function changePasswordLength(e){
-    if (currentPasswordLength >= 0 && currentPasswordLength <= 50) {
-      if (e.target.id === "minus-btn"){
-        newPasswordLength = (currentPasswordLength - 1).toString();
-        } else if (e.target.id === "add-btn") {
-        newPasswordLength = (currentPasswordLength + 1).toString();
-      }
-    } else {
-      passwordLength.textContent = passwordLength === 0 ? "0" : "50";
-    }
-  
-    passwordLength.textContent = newPasswordLength;
-    currentPasswordLength = parseInt(passwordLength.textContent);
-    newPasswordLength = '';
-    newPasswordLength = '';
-}
 
 function all(password, passwordLength, categories) {
 
