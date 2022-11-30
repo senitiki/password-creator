@@ -320,7 +320,7 @@ input[type=range]::-webkit-slider-thumb:active {
     height: 100%;
     text-align: center;
     transition: 0.3s;
-    z-index: 1;
+    z-index: 3;
     padding-top: 154px;
   }
 
@@ -450,7 +450,7 @@ input[type=range]::-webkit-slider-thumb:active {
     height: 100%;
     text-align: center;
     transition: 0.3s;
-    z-index: 1;
+    z-index: 3;
     padding-top: 154px;
   }
 
@@ -584,7 +584,7 @@ input[type=range]::-webkit-slider-thumb:active {
     height: 100%;
     text-align: center;
     transition: 0.3s;
-    z-index: 1;
+    z-index: 3;
     padding-top: 154px;
   }
 
@@ -710,7 +710,7 @@ input[type=range]::-webkit-slider-thumb:active {
     height: 100%;
     text-align: center;
     transition: 0.3s;
-    z-index: 1;
+    z-index: 3;
     padding-top: 154px;
   }
 
@@ -836,7 +836,7 @@ input[type=range]::-webkit-slider-thumb:active {
     height: 100%;
     text-align: center;
     transition: 0.3s;
-    z-index: 1;
+    z-index: 3;
     padding-top: 154px;
   }
 
@@ -959,7 +959,7 @@ input[type=range]::-webkit-slider-thumb:active {
     height: 100%;
     text-align: center;
     transition: 0.3s;
-    z-index: 1;
+    z-index: 3;
     padding-top: 154px;
   }
 
@@ -1085,7 +1085,7 @@ input[type=range]::-webkit-slider-thumb:active {
     height: 100%;
     text-align: center;
     transition: 0.3s;
-    z-index: 1;
+    z-index: 3;
     padding-top: 154px;
   }
 
@@ -1211,7 +1211,7 @@ input[type=range]::-webkit-slider-thumb:active {
     height: 100%;
     text-align: center;
     transition: 0.3s;
-    z-index: 1;
+    z-index: 3;
     padding-top: 154px;
   }
 
