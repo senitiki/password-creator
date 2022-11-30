@@ -253,10 +253,6 @@ input[type=range]::-webkit-slider-thumb:active {
   width: 100%;
 }
 
-.footer-links {
-  display: flex;
-}
-
 /* Extra small devices */
 @media only screen and (max-width: 280px){
   .nav {
