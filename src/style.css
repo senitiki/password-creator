@@ -163,30 +163,6 @@ input[type=range]::-webkit-slider-thumb:active {
   font-size: 20px;
 }
 
-.password-tips {
-  font-size: 15px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid lightgrey;
-  width: 100%;
-}
-
-.create-btn-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.create-btn {
-  background: orangered;
-  font-size: 20px;
-  border-radius: 10px;
-}
-
-.password-input-field-container {
-  display: flex;
-  justify-content: center;
-}
-
 .slide-1 {
   background-image: url("./images/1.png");
 }
@@ -229,6 +205,23 @@ input[type=range]::-webkit-slider-thumb:active {
 
 .carousel-indicators [data-bs-target] {
   background-color: darkslategrey;
+}
+
+.create-btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-btn {
+  background: orangered;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.password-input-field-container {
+  display: flex;
+  justify-content: center;
 }
 
 /* Password Input Field */
