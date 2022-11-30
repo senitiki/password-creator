@@ -1,4 +1,3 @@
-import { add } from 'lodash';
 import { hamburger, openMenu, closeMenu } from './modules/navbar-hamburger.js';
 import './style.css';
 
@@ -12,13 +11,6 @@ const charCategories = 4;
 let password = '';
 
 let password_length_ctrl = document.getElementById('range-slider');
-let minusBtn = document.querySelector('.minus-btn');
-let addBtn = document.querySelector('.add-btn');
-
-// <span> tag holding password length value
-let passwordLength = document.getElementById('passwordLength');
-let currentPasswordLength = parseInt(passwordLength.textContent);
-let newPasswordLength = '';
 
 let uppercase_ctrl = document.getElementById('uppercase');
 let lowercase_ctrl = document.getElementById('lowercase');
@@ -34,7 +26,6 @@ let checkBoxChecked = 4;
 const minimumChecked = 2;
 
 let copy_ctrl = document.querySelector('.copy-btn');
-let loop_ctrl = document.querySelector('.loop-btn');
 
 // ID matches with the Bootstrap class used for the input field
 let password_ctrl = document.getElementById('form-control');
@@ -52,14 +43,11 @@ document.querySelectorAll('.nav-link-mobile').forEach((n) => n.addEventListener(
 // For mobile & tablet screens
 copy_ctrl.addEventListener('touchstart', copyPassword);
 copy_ctrl.addEventListener('touchend', copyPassword);
-loop_ctrl.addEventListener('touchstart', generate);
-loop_ctrl.addEventListener('touchend', generate);
 create_btn.addEventListener('touchstart', generate);
 create_btn.addEventListener('touchend', generate);
 
 // For laptop & desktop screens
 copy_ctrl.addEventListener('click', copyPassword);
-loop_ctrl.addEventListener('click', generate);
 create_btn.addEventListener('click', generate);
 
 uppercase_ctrl.addEventListener('change', (e) => {
