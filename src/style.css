@@ -200,7 +200,6 @@ input[type=range]::-webkit-slider-thumb:active {
   background-position: center;
   background-size: cover;
   padding: 78px 20px 10px 20px;
-  margin-top: 25px;
 }
 
 .carousel-indicators [data-bs-target] {
