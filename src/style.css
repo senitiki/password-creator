@@ -25,12 +25,12 @@ body {
   margin: 0;
 }
 
-.bg-purple {
-  background-color: #720026;
+.bg-teal {
+  background-color: #07beb8;
 }
 
-.text-purple {
-  color: #720026;
+.text-teal {
+  color: #07beb8;
 }
 
 .dm-sans-display-font {
@@ -94,7 +94,7 @@ body {
 
 input[type=range]::-webkit-slider-runnable-track {
   -webkit-appearance: none;
-  background: orangered;
+  background: #07beb8;
   height: 2px;
 }
 
@@ -104,33 +104,33 @@ input[type=range]:focus {
 
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  border: 2px solid;
+  border: 2px solid #07beb8;
   border-radius: 50%;
   height: 25px;
   width: 25px;
   max-width: 80px;
   position: relative;
   bottom: 11px;
-  background-color: #1d1c25;
+  background-color: #07beb8;
   cursor: -webkit-grab;
   -webkit-transition: border 1000ms ease;
   transition: border 1000ms ease;
 }
 
 .range.blue::-webkit-slider-thumb {
-  border-color: orangered;
+  border-color: #07beb8;
 }
 
 .range.ltpurple::-webkit-slider-thumb {
-  border-color: orangered;
+  border-color: #07beb8;
 }
 
 .range.purple::-webkit-slider-thumb {
-  border-color: orangered;
+  border-color: #07beb8;
 }
 
 .range.pink::-webkit-slider-thumb {
-  border-color: orangered;
+  border-color: #07beb8
 }
 
 input[type=range]::-webkit-slider-thumb:active {
@@ -151,8 +151,8 @@ input[type=range]::-webkit-slider-thumb:active {
 }
 
 .form-check-input:checked {
-  background-color: orangered;
-  border-color: orangered;
+  background-color: #07beb8;
+  border-color: #07beb8;
 }
 
 .characters-symbols-container label {
@@ -214,7 +214,6 @@ input[type=range]::-webkit-slider-thumb:active {
 }
 
 .create-btn {
-  background: orangered;
   font-size: 20px;
   border-radius: 10px;
 }
@@ -249,7 +248,6 @@ input[type=range]::-webkit-slider-thumb:active {
   justify-content: space-around;
   align-items: center;
   column-gap: 20px;
-  background: #720026;
   box-shadow: 5px -3px 14px 0 rgba(0, 0, 0, 0.1);
   width: 100%;
 }
@@ -314,7 +312,6 @@ input[type=range]::-webkit-slider-thumb:active {
     top: 0;
     gap: 0;
     flex-direction: column;
-    background-color: #720026;
     mix-blend-mode: multiply;
     backdrop-filter: blur(9px);
     width: 100%;
@@ -448,7 +445,6 @@ input[type=range]::-webkit-slider-thumb:active {
     top: 0;
     gap: 0;
     flex-direction: column;
-    background-color: #720026;
     mix-blend-mode: multiply;
     backdrop-filter: blur(9px);
     width: 100%;
@@ -582,7 +578,6 @@ input[type=range]::-webkit-slider-thumb:active {
     top: 0;
     gap: 0;
     flex-direction: column;
-    background-color: #720026;
     mix-blend-mode: multiply;
     backdrop-filter: blur(9px);
     width: 100%;
@@ -708,7 +703,6 @@ input[type=range]::-webkit-slider-thumb:active {
     top: 0;
     gap: 0;
     flex-direction: column;
-    background-color: #720026;
     mix-blend-mode: multiply;
     backdrop-filter: blur(9px);
     width: 100%;
@@ -834,7 +828,6 @@ input[type=range]::-webkit-slider-thumb:active {
     top: 0;
     gap: 0;
     flex-direction: column;
-    background-color: #720026;
     mix-blend-mode: multiply;
     backdrop-filter: blur(9px);
     width: 100%;
@@ -957,7 +950,6 @@ input[type=range]::-webkit-slider-thumb:active {
     top: 0;
     gap: 0;
     flex-direction: column;
-    background-color: #720026;
     mix-blend-mode: multiply;
     backdrop-filter: blur(9px);
     width: 100%;
@@ -1083,7 +1075,6 @@ input[type=range]::-webkit-slider-thumb:active {
     top: 0;
     gap: 0;
     flex-direction: column;
-    background-color: #720026;
     mix-blend-mode: multiply;
     backdrop-filter: blur(9px);
     width: 100%;
@@ -1213,7 +1204,6 @@ input[type=range]::-webkit-slider-thumb:active {
     top: 0;
     gap: 0;
     flex-direction: column;
-    background-color: #720026;
     mix-blend-mode: multiply;
     backdrop-filter: blur(9px);
     width: 100%;
