@@ -95,8 +95,26 @@
           </div>
         </div>
 
+        <!--Password Input Field Container-->
+        <div class="password-input-field-container mt-5">
+          <input type="text" class="password-input-field form-control fw-bolder shadow-sm" id="form-control" name="password" placeholder=""/>
+
+          <!--Input Field Icons container-->
+          <div class="input-field-icons-container" id="input-field-icons-container">
+            <i class="material-icons copy-btn" title="Copy password">content_copy</i>
+          </div>
+        </div>
+
+        <!--Message to be displayed after copying a password-->
+        <small class="copied-password-message"></small>
+
+        <!--Create Button Container-->
+        <div class="create-btn-container">
+          <button type="button" class="create-btn bg-teal border-0 rounded-pill my-5 px-5 py-4 text-white fw-bolder">Create</button>
+        </div>
+
         <!--More Tips Container-->
-        <div id="carouselWithIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselWithIndicators" class="carousel slide my-4" data-bs-ride="carousel">
           <ol class="carousel-indicators">
             <li data-bs-target="#carouselWithIndicators" data-bs-slide-to="0" class="active"></li>
             <li data-bs-target="#carouselWithIndicators" data-bs-slide-to="1"></li>
@@ -134,24 +152,6 @@
             <span class="visually-hidden">Next</span>
           </a>
         </div>
-
-        <!--Create Button Container-->
-        <div class="create-btn-container">
-          <button type="button" class="create-btn bg-teal border-0 rounded-pill my-5 px-5 py-4 text-white fw-bolder">Create</button>
-        </div>
-
-        <!--Password Input Field Container-->
-        <div class="password-input-field-container mb-5">
-          <input type="text" class="password-input-field form-control fw-bolder shadow-sm" id="form-control" name="password" placeholder=""/>
-
-          <!--Input Field Icons container-->
-          <div class="input-field-icons-container" id="input-field-icons-container">
-            <i class="material-icons copy-btn" title="Copy password">content_copy</i>
-          </div>
-        </div>
-
-        <!--Message to be displayed after copying a password-->
-        <small class="copied-password-message"></small>
       </form>
     </main>
 

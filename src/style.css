@@ -206,6 +206,31 @@ input[type=range]::-webkit-slider-thumb:active {
   background-color: darkslategrey;
 }
 
+.carousel-control-prev-icon {
+  background-image: url("./images/prev-arrow-icon.png");
+}
+
+.carousel-control-next-icon {
+  background-image: url("./images/next-arrow-icon.png");
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 100% 100%;
+}
+
+.carousel-control-next, 
+.carousel-control-prev {
+  position: absolute;
+  top: -29px;
+  bottom: 0;
+}
+
 .create-btn-container {
   display: flex;
   flex-direction: column;
