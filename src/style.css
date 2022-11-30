@@ -227,6 +227,7 @@ input[type=range]::-webkit-slider-thumb:active {
 /* Password Input Field */
 #form-control {
   padding: 25px;
+  font-size: 22px;
 }
 
 .input-field-icons-container {
@@ -378,6 +379,10 @@ input[type=range]::-webkit-slider-thumb:active {
 
   .heading-2 {
     font-size: 18px;
+  }
+
+  #form-control {
+    font-size: 13px;
   }
 }
 
@@ -1140,6 +1145,10 @@ input[type=range]::-webkit-slider-thumb:active {
     margin-left: 20px;
     padding: 20px 17px;
   }
+
+  #form-control {
+    font-size: 13px;
+  }
 }
 
 /* Medium devices */
@@ -1265,6 +1274,10 @@ input[type=range]::-webkit-slider-thumb:active {
     margin-top: 30px;
     margin-left: 20px;
     padding: 20px 17px;
+  }
+
+  #form-control {
+    font-size: 17px;
   }
 }
 
