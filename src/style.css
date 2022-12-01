@@ -291,6 +291,10 @@ input[type=range]::-webkit-slider-thumb:active {
   color: grey;
 }
 
+.copy-btn {
+  cursor: pointer;
+}
+
 .footer {
   display: flex;
   justify-content: space-around;
