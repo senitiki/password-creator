@@ -89,5 +89,5 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- My God & family
+- Our God & family
 - Microverse
