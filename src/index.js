@@ -35,8 +35,9 @@ const copiedPasswordMessage = document.querySelector('.copied-password-message')
 
 const createBtn = document.querySelector('.create-btn');
 
+/* eslint-disable */
 function changePasswordLength() {
-  let passwordLengthNum = parseInt(passwordLengthInput.value);
+  const passwordLengthNum = parseInt(passwordLengthInput.value);
 
   if (passwordLengthNum >= 0 && passwordLengthNum < 51) {
     passwordLengthCtrl.value = passwordLengthInput.value;
