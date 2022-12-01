@@ -53,17 +53,22 @@
           <div class="password-options-container d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row justify-content-lg-evenly justify-content-xl-evenly justify-content-xxl-evenly mt-4">
             <!--Password Length Container-->
             <div class="password-length-container me-5">
-              <label for="password-length-slider" class="fw-bolder">Password Length: 
-                <span id="passwordLength" class="mt-4 fw-bolder">25</span>
-              </label>
+              <label for="password-length-slider" class="fw-bolder">Password Length</label>
 
               <!--Range Container-->
               <div class="range-container">
                 <p class="minus-btn fw-bolder fs-3" id="minus-btn">-</p>
-                <input type="range" name="password-length" min="0" max="50" value="25" oninput="passwordLength.innerText = this.value" class="range-slider purple me-3" id="range-slider"/>
+                <input type="range" name="password-length" min="0" max="50" value="25" oninput="passwordLength.value = this.value" class="range-slider purple me-3" id="range-slider"/>
                 <p class="add-btn fw-bolder fs-3" id="add-btn">+</p>
               </div>
               <br>
+
+              <!--Password Length Input Container-->
+              <div class="password-length-input-container">
+                <input type="text" class="mt-4 fw-bolder shadow-sm p-4" id="passwordLength" value="25"/>
+
+                <i class="material-icons text-secondary enter-icon">subdirectory_arrow_left</i>
+              </div>
             </div>
 
             <!--Characters & Symbols Container-->

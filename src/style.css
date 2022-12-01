@@ -43,7 +43,7 @@ body {
 }
 
 .nav-heading {
-  font-size: 22px;
+  font-size: 28px;
 }
 
 .nav-menu-mobile {
@@ -264,7 +264,7 @@ input[type=range]::-webkit-slider-thumb:active {
 }
 
 .create-btn {
-  font-size: 20px;
+  font-size: 37px;
   border-radius: 10px;
 }
 
@@ -1412,7 +1412,7 @@ input[type=range]::-webkit-slider-thumb:active {
   /* Main container */
   .hero-text {
     padding-top: 100px;
-    font-size: 60px;
+    font-size: 64px;
   }
 
   .main-container {
@@ -1463,7 +1463,7 @@ input[type=range]::-webkit-slider-thumb:active {
   /* Main container */
   .hero-text {
     padding-top: 100px;
-    font-size: 65px;
+    font-size: 67px;
   }
 
   .main-container {
