@@ -58,7 +58,7 @@
               <!--Range Container-->
               <div class="range-container">
                 <p class="minus-btn fw-bolder fs-3" id="minus-btn">-</p>
-                <input type="range" name="password-length" min="0" max="50" value="25" oninput="passwordLength.value = this.value" class="range-slider purple me-3" id="range-slider"/>
+                <input type="range" name="password-length" min="0" max="50" value="25" class="range-slider purple me-3" id="range-slider" oninput="passwordLength.value = this.value"/>
                 <p class="add-btn fw-bolder fs-3" id="add-btn">+</p>
               </div>
               <br>
@@ -66,7 +66,6 @@
               <!--Password Length Input Container-->
               <div class="password-length-input-container">
                 <input type="text" class="mt-4 fw-bolder shadow-sm p-4" id="passwordLength" value="25"/>
-
                 <i class="material-icons text-secondary enter-icon">subdirectory_arrow_left</i>
               </div>
             </div>
@@ -161,8 +160,8 @@
     </main>
 
     <footer class="footer bg-teal">
-      <p class="fw-bold py-5 text-white text-1">&copy; <span class="text-white" id="date"><script>document.getElementById('date').innerHTML = new Date().getFullYear();</script></span> Aver. All rights reserved.</p>
-      <p class="fw-bold text-white text-2">Made with 🧡 in Fiji.</p>
+      <p class="py-5 text-white text-1">&copy; <span class="text-white" id="date"><script>document.getElementById('date').innerHTML = new Date().getFullYear();</script></span> Aver. All rights reserved.</p>
+      <p class="text-white text-2">Made with 🧡 in Fiji.</p>
     </footer>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

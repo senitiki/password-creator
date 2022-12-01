@@ -152,7 +152,7 @@ input[type=range]::-webkit-slider-thumb:active {
   border-radius: 10px;
 }
 
-.password-length-input-container .enter-icon {
+.password-length-input-container .enter-btn {
   position: relative;
   top: 7px;
   left: -54px;

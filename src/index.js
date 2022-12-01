@@ -11,6 +11,8 @@ const charCategories = 4;
 let password = '';
 
 let password_length_ctrl = document.getElementById('range-slider');
+let passwordLength = document.getElementById('passwordLength');
+let enter_ctrl = document.querySelector('.enter-btn');
 
 let uppercase_ctrl = document.getElementById('uppercase');
 let lowercase_ctrl = document.getElementById('lowercase');
@@ -25,30 +27,54 @@ let symbols_selected = true;
 let checkBoxChecked = 4;
 const minimumChecked = 2;
 
-let copy_ctrl = document.querySelector('.copy-btn');
-
 // ID matches with the Bootstrap class used for the input field
 let password_ctrl = document.getElementById('form-control');
 
-let create_btn = document.querySelector('.create-btn');
+let copy_ctrl = document.querySelector('.copy-btn');
 
 let copied_password_message = document.querySelector('.copied-password-message');
+
+let create_btn = document.querySelector('.create-btn');
 
 // Open Nav Menu for click
 hamburger.addEventListener('click', openMenu);
 
 // Close Nav Menu for click
 document.querySelectorAll('.nav-link-mobile').forEach((n) => n.addEventListener('click', closeMenu));
-
+  
 // For mobile & tablet screens
 copy_ctrl.addEventListener('touchstart', copyPassword);
 copy_ctrl.addEventListener('touchend', copyPassword);
 create_btn.addEventListener('touchstart', generate);
 create_btn.addEventListener('touchend', generate);
+enter_ctrl.addEventListener('touchstart', (e) => {
+  changePasswordLength(e);
+});
+enter_ctrl.addEventListener('touchend', (e) => {
+	changePasswordLength(e);
+});
+passwordLength.addEventListener('touchstart', (e) => {
+	if (e.key === "Enter") {
+		changePasswordLength(e);
+	}
+});
+passwordLength.addEventListener('touchend', (e) => {
+	if (e.key === "Enter") {
+		changePasswordLength(e);
+	}
+});
 
 // For laptop & desktop screens
 copy_ctrl.addEventListener('click', copyPassword);
 create_btn.addEventListener('click', generate);
+enter_ctrl.addEventListener('click', (e) => {
+	changePasswordLength(e);
+});
+passwordLength.addEventListener('keypress', (e) => {
+  if (e.key === "Enter") {
+  	changePasswordLength(e);
+  }
+});
 
 uppercase_ctrl.addEventListener('change', (e) => {
     if (e.target.checked) {
@@ -122,6 +148,10 @@ lowercase_ctrl.addEventListener('change', (e) => { lowercase_selected = (e.targe
 numbers_ctrl.addEventListener('change', (e) => { numbers_selected = (e.target.checked) ? true : false; console.log('numbers: ' + numbers_selected); });
 
 symbols_ctrl.addEventListener('change', (e) => { symbols_selected = (e.target.checked) ? true : false; console.log('symbols: ' + symbols_selected); });*/
+
+function changePasswordLength(e){
+  password_length_ctrl.value = passwordLength.value;
+}
 
 function all(password, passwordLength, categories) {
 
