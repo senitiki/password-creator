@@ -42,6 +42,10 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.nav-heading {
+  font-size: 22px;
+}
+
 .nav-menu-mobile {
   display: flex;
   justify-content: space-between;
@@ -64,7 +68,7 @@ body {
 }
 
 .heading-2 {
-  font-size: 19px;
+  font-size: 31px;
   padding-bottom: 10px;
   border-bottom: 1px solid lightgrey;
   width: 100%;
@@ -77,22 +81,14 @@ body {
   column-gap: 10px;
 }
 
-.range-container > button {
-  border: 1px solid grey;
-  border-radius: 10px;
-  background-color: white;
-  color: grey;
-  padding: 4px 10px;
-}
-
 /* Range slider for password length */
 .range-slider {
   -webkit-appearance: none;
   -moz-appearance: none;
   position: relative;
-  left: 37%;
+  left: 41%;
   top: 50%;
-  width: 140px;
+  width: 248px;
   margin-top: 15px;
   transform: translate(-50%, -50%);
 }
@@ -100,7 +96,7 @@ body {
 input[type=range]::-webkit-slider-runnable-track {
   -webkit-appearance: none;
   background: #07beb8;
-  height: 2px;
+  height: 6px;
 }
 
 input[type=range]:focus {
@@ -111,11 +107,11 @@ input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: 2px solid #07beb8;
   border-radius: 50%;
-  height: 25px;
-  width: 25px;
+  height: 40px;
+  width: 40px;
   max-width: 80px;
   position: relative;
-  bottom: 11px;
+  bottom: 15px;
   background-color: #07beb8;
   cursor: -webkit-grab;
   -webkit-transition: border 1000ms ease;
@@ -142,6 +138,10 @@ input[type=range]::-webkit-slider-thumb:active {
   cursor: -webkit-grabbing;
 }
 
+.password-length-container {
+  font-size: 25px;
+}
+
 .characters-symbols-container {
   display: flex;
   flex-direction: column;
@@ -153,6 +153,8 @@ input[type=range]::-webkit-slider-thumb:active {
   align-items: center;
   column-gap: 5px;
   width: 100px;
+  margin-left: 90px;
+  margin-right: auto;
 }
 
 .form-check-input:checked {
@@ -295,11 +297,6 @@ input[type=range]::-webkit-slider-thumb:active {
     column-gap: 3px;
   }
 
-  .nav-heading {
-    font-family: 'DM Serif Display', serif;
-    font-size: 18px;
-  }
-
   .nav-logo {
     background-image: url("./images/access-logo-3.png");
     background-position: center;
@@ -424,11 +421,6 @@ input[type=range]::-webkit-slider-thumb:active {
     display: flex;
     align-items: center;
     column-gap: 3px;
-  }
-
-  .nav-heading {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
   }
 
   .nav-logo {
@@ -559,11 +551,6 @@ input[type=range]::-webkit-slider-thumb:active {
     column-gap: 3px;
   }
 
-  .nav-heading {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
-  }
-
   .nav-logo {
     background-image: url("./images/access-logo-3.png");
     background-position: center;
@@ -682,11 +669,6 @@ input[type=range]::-webkit-slider-thumb:active {
     display: flex;
     align-items: center;
     column-gap: 3px;
-  }
-
-  .nav-heading {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
   }
 
   .nav-logo {
@@ -809,11 +791,6 @@ input[type=range]::-webkit-slider-thumb:active {
     column-gap: 3px;
   }
 
-  .nav-heading {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
-  }
-
   .nav-logo {
     background-image: url("./images/access-logo-3.png");
     background-position: center;
@@ -929,11 +906,6 @@ input[type=range]::-webkit-slider-thumb:active {
     display: flex;
     align-items: center;
     column-gap: 3px;
-  }
-
-  .nav-heading {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
   }
 
   .nav-logo {
@@ -1054,11 +1026,6 @@ input[type=range]::-webkit-slider-thumb:active {
     display: flex;
     align-items: center;
     column-gap: 3px;
-  }
-
-  .nav-heading {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
   }
 
   .nav-logo {
@@ -1183,11 +1150,6 @@ input[type=range]::-webkit-slider-thumb:active {
     display: flex;
     align-items: center;
     column-gap: 3px;
-  }
-
-  .nav-heading {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
   }
 
   .nav-logo {
@@ -1315,11 +1277,6 @@ input[type=range]::-webkit-slider-thumb:active {
     column-gap: 3px;
   }
 
-  .nav-heading {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
-  }
-
   .nav-logo {
     background-image: url("./images/access-logo-3.png");
     background-position: center;
@@ -1368,11 +1325,6 @@ input[type=range]::-webkit-slider-thumb:active {
     display: flex;
     align-items: center;
     column-gap: 3px;
-  }
-
-  .nav-heading {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
   }
 
   .nav-logo {
@@ -1425,11 +1377,6 @@ input[type=range]::-webkit-slider-thumb:active {
     column-gap: 3px;
   }
 
-  .nav-heading {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
-  }
-
   .nav-logo {
     background-image: url("./images/access-logo-3.png");
     background-position: center;
@@ -1446,6 +1393,7 @@ input[type=range]::-webkit-slider-thumb:active {
   /* Main container */
   .hero-text {
     padding-top: 100px;
+    font-size: 60px;
   }
 
   .main-container {
@@ -1480,11 +1428,6 @@ input[type=range]::-webkit-slider-thumb:active {
     column-gap: 3px;
   }
 
-  .nav-heading {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
-  }
-
   .nav-logo {
     background-image: url("./images/access-logo-3.png");
     background-position: center;
@@ -1501,6 +1444,7 @@ input[type=range]::-webkit-slider-thumb:active {
   /* Main container */
   .hero-text {
     padding-top: 100px;
+    font-size: 65px;
   }
 
   .main-container {
