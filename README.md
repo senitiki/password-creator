@@ -73,6 +73,10 @@ $ npm start
 - Twitter: [@chelmerrox](https://twitter.com/chelmerrox)
 - LinkedIn: [Losalini Rokocakau](https://linkedin.com/in/losalini-rokocakau)
 
+## Collaborators
+
+👤 **Senitiki Rokocakau** | GitHub: [@senitiki](https://github.com/senitiki)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
