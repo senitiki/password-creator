@@ -139,7 +139,26 @@ input[type=range]::-webkit-slider-thumb:active {
 }
 
 .password-length-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 25px;
+  margin-top: 20px;
+  margin-bottom: 51px;
+}
+
+.password-length-input-container input {
+  width: 161px;
+  max-width: 178px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+}
+
+.password-length-input-container .enter-icon {
+  position: relative;
+  top: 7px;
+  left: -54px;
+  font-size: 35px;
 }
 
 .characters-symbols-container {
