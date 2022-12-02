@@ -44,6 +44,24 @@ function changePasswordLength() {
   }
 }
 
+function testPasswordStrength(password){
+  const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[£\$&()\*+[]@#\^-_!?])(?=.{12,})");
+  const mediumRegex = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
+
+  let strength = '';
+  
+  if (strongRegex.test(password)){
+    strength = 'Strong';
+  } else if (mediumRegex.test(password)){
+    strength = 'Medium';
+  } else {
+    strength = 'Weak';
+  }
+
+  console.log(`strength: ${strength}`);
+  return strength;
+}
+
 /* eslint-disable */
 function all(password, passwordLength, categories) {
   for (let i = 0; i < passwordLength; i++) {
@@ -329,7 +347,7 @@ function generate() {
     password = numbersSymbols('', passwordLength, 2);
   }
 
-  passwordCtrl.value = password;
+  return password;
 }
 
 function copyPassword() {
@@ -377,7 +395,9 @@ uppercaseCtrl.addEventListener('change', (e) => {
     uppercaseSelected = false;
   }
 
-  generate();
+  passwordCtrl.value = generate();
+
+  testPasswordStrength(passwordCtrl.value);
 });
 
 lowercaseCtrl.addEventListener('change', (e) => {
@@ -391,7 +411,9 @@ lowercaseCtrl.addEventListener('change', (e) => {
     lowercaseSelected = false;
   }
 
-  generate();
+  passwordCtrl.value = generate();
+
+  testPasswordStrength(passwordCtrl.value);
 });
 
 numbersCtrl.addEventListener('change', (e) => {
@@ -405,7 +427,9 @@ numbersCtrl.addEventListener('change', (e) => {
     numbersSelected = false;
   }
 
-  generate();
+  passwordCtrl.value = generate();
+
+  testPasswordStrength(passwordCtrl.value);
 });
 
 symbolsCtrl.addEventListener('change', (e) => {
@@ -419,12 +443,22 @@ symbolsCtrl.addEventListener('change', (e) => {
     symbolsSelected = false;
   }
 
-  generate();
+  passwordCtrl.value = generate();
+
+  testPasswordStrength(passwordCtrl.value);
 });
 
 // For mobile & tablet screens
-createBtn.addEventListener('touchstart', generate);
-createBtn.addEventListener('touchend', generate);
+createBtn.addEventListener('touchstart', () => {
+  passwordCtrl.value = generate();
+
+  testPasswordStrength(passwordCtrl.value);
+});
+createBtn.addEventListener('touchend', () => {
+  passwordCtrl.value = generate();
+
+  testPasswordStrength(passwordCtrl.value);
+});
 
 enterBtn.addEventListener('touchstart', changePasswordLength);
 
@@ -446,7 +480,11 @@ copyCtrl.addEventListener('touchstart', copyPassword);
 copyCtrl.addEventListener('touchend', copyPassword);
 
 // For laptop & desktop screens
-createBtn.addEventListener('click', generate);
+createBtn.addEventListener('click', () => {
+  passwordCtrl.value = generate();
+
+  testPasswordStrength(passwordCtrl.value);
+});
 
 enterBtn.addEventListener('click', changePasswordLength);
 
@@ -458,4 +496,4 @@ passwordLengthInput.addEventListener('keypress', (e) => {
 
 copyCtrl.addEventListener('click', copyPassword);
 
-generate();
+passwordCtrl.value = generate();
