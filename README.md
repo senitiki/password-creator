@@ -6,7 +6,7 @@
 
 - HTML5
 - CSS3
-- Bootstrap
+- Bootstrap v5.2.0
 - JavaScript
 - Webpack
 - Git
