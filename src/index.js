@@ -340,12 +340,24 @@ function copyPassword() {
   // Copy the text inside the text field
   navigator.clipboard.writeText(passwordCtrl.value);
 
-  copiedPasswordMessage.textContent = '"Copied to clipboard!"';
-  copiedPasswordMessage.style.textAlign = 'center';
-  copiedPasswordMessage.style.color = 'green';
-  copiedPasswordMessage.style.fontSize = '25px';
-  copiedPasswordMessage.style.marginTop = '10px';
-  copiedPasswordMessage.style.marginBottom = '10px';
+  copiedPasswordMessage.innerHTML = `
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-center fs-3 my-3">Copied to clipboard!</p>
+          </div>
+          <div class="modal-footer border-0">
+            <button type="button" class="btn close-btn-2 bg-teal fs-4" data-bs-dismiss="modal">Ok</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
 }
 
 // Open Nav Menu for click

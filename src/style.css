@@ -295,6 +295,20 @@ input[type=range]::-webkit-slider-thumb:active {
   cursor: pointer;
 }
 
+.close-btn-2 {
+  color: white;
+}
+
+.close-btn-2:hover {
+  background-color: white;
+  color: #07beb8;
+  border: 3px solid #07beb8;
+}
+
+.close-btn-2:active {
+  border: 6px solid #07beb8;
+}
+
 .footer {
   display: flex;
   justify-content: space-around;
