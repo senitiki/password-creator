@@ -44,8 +44,8 @@ function changePasswordLength() {
   }
 }
 
-function testPasswordStrength(password){
-  const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[£\$&()\*+[]@#\^-_!?])(?=.{12,})");
+/* function testPasswordStrength(password){
+  const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[£\$&\(\)\*\+\[\]@#\^-_!\?])(?=.{12,})");
   const mediumRegex = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
 
   let strength = '';
@@ -59,6 +59,40 @@ function testPasswordStrength(password){
   }
 
   console.log(`strength: ${strength}`);
+  return strength;
+} */
+
+function testPasswordStrength(password){
+  let hasLower = false;
+  let hasUpper = false;
+  let hasNumber = false;
+  let hasSymbol = false;
+  let wordLength = password.length;
+  let strength = '';
+
+  for (let i = 0; i < wordLength; i++){
+    if(/[a-z]/.test(password[i])){
+      hasLower = true;
+    } else if (/[A-Z]/.test(password[i])){
+      hasUpper = true;
+    } else if (/[0-9]/.test(password[i])){
+      hasNumber = true;
+    } else if (/[£\$&\(\)\*\+\[\]@#\^-_!\?]/.test(password[i])){
+      hasSymbol = true;
+    }
+  }
+
+  if (hasLower && hasUpper && hasNumber && 
+    hasSymbol && wordLength >= 12){
+    strength = "Strong";
+  } else if ((hasLower || hasUpper) && 
+    hasSymbol && wordLength >= 6 ){
+    strength = "Medium";
+  } else {
+    strength = "Weak";
+  }
+
+  console.log(strength);
   return strength;
 }
 
@@ -497,3 +531,5 @@ passwordLengthInput.addEventListener('keypress', (e) => {
 copyCtrl.addEventListener('click', copyPassword);
 
 passwordCtrl.value = generate();
+
+testPasswordStrength(passwordCtrl.value);
