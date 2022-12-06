@@ -8,6 +8,7 @@ const numbers = '0123456789';
 const symbols = '£$&()*+[]@#^-_!?';
 
 let password = '';
+let passwordStrength = '';
 
 const passwordLengthCtrl = document.getElementById('range-slider');
 const passwordLengthInput = document.getElementById('passwordLength');
@@ -33,6 +34,10 @@ const copyCtrl = document.querySelector('.copy-btn');
 
 const copiedPasswordMessage = document.querySelector('.copied-password-message');
 
+const strengthMeter = document.querySelector('.strength-meter');
+
+const passwordStrengthText = document.querySelector('.password-strength-text');
+
 const createBtn = document.querySelector('.create-btn');
 
 /* eslint-disable */
@@ -43,24 +48,6 @@ function changePasswordLength() {
     passwordLengthCtrl.value = passwordLengthInput.value;
   }
 }
-
-/* function testPasswordStrength(password){
-  const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[£\$&\(\)\*\+\[\]@#\^-_!\?])(?=.{12,})");
-  const mediumRegex = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
-
-  let strength = '';
-  
-  if (strongRegex.test(password)){
-    strength = 'Strong';
-  } else if (mediumRegex.test(password)){
-    strength = 'Medium';
-  } else {
-    strength = 'Weak';
-  }
-
-  console.log(`strength: ${strength}`);
-  return strength;
-} */
 
 function testPasswordStrength(password){
   let hasLower = false;
@@ -94,6 +81,34 @@ function testPasswordStrength(password){
 
   console.log(strength);
   return strength;
+}
+
+function renderPasswordStrength(passwordStrength){
+  if (passwordStrength === 'Strong') {
+    strengthMeter.style.backgroundColor = "lawngreen";
+    strengthMeter.style.width = "95.3%";
+    strengthMeter.style.transition = "0.5s";
+    passwordStrengthText.style.color = "lawngreen";
+    passwordStrengthText.style.fontSize = "38px";
+    passwordStrengthText.style.fontWeight = "bold";
+    passwordStrengthText.textContent = passwordStrength;
+  } else if (passwordStrength === "Medium") {
+    strengthMeter.style.backgroundColor = "#ffb914";
+    strengthMeter.style.width = "61.53%";
+    strengthMeter.style.transition = "0.5s";
+    passwordStrengthText.style.color = "#ffb914";
+    passwordStrengthText.style.fontSize = "38px";
+    passwordStrengthText.style.fontWeight = "bold";
+    passwordStrengthText.textContent = passwordStrength;
+  } else {
+    strengthMeter.style.backgroundColor = "red";
+    strengthMeter.style.width = "30.76%";
+    strengthMeter.style.transition = "0.5s";
+    passwordStrengthText.style.color = "red";
+    passwordStrengthText.style.fontSize = "38px";
+    passwordStrengthText.style.fontWeight = "bold";
+    passwordStrengthText.textContent = passwordStrength;
+  }
 }
 
 /* eslint-disable */
@@ -431,7 +446,9 @@ uppercaseCtrl.addEventListener('change', (e) => {
 
   passwordCtrl.value = generate();
 
-  testPasswordStrength(passwordCtrl.value);
+  passwordStrength = testPasswordStrength(passwordCtrl.value);
+
+  renderPasswordStrength(passwordStrength);
 });
 
 lowercaseCtrl.addEventListener('change', (e) => {
@@ -447,7 +464,9 @@ lowercaseCtrl.addEventListener('change', (e) => {
 
   passwordCtrl.value = generate();
 
-  testPasswordStrength(passwordCtrl.value);
+  passwordStrength = testPasswordStrength(passwordCtrl.value);
+
+  renderPasswordStrength(passwordStrength);
 });
 
 numbersCtrl.addEventListener('change', (e) => {
@@ -463,7 +482,9 @@ numbersCtrl.addEventListener('change', (e) => {
 
   passwordCtrl.value = generate();
 
-  testPasswordStrength(passwordCtrl.value);
+  passwordStrength = testPasswordStrength(passwordCtrl.value);
+
+  renderPasswordStrength(passwordStrength);
 });
 
 symbolsCtrl.addEventListener('change', (e) => {
@@ -479,7 +500,9 @@ symbolsCtrl.addEventListener('change', (e) => {
 
   passwordCtrl.value = generate();
 
-  testPasswordStrength(passwordCtrl.value);
+  passwordStrength = testPasswordStrength(passwordCtrl.value);
+
+  renderPasswordStrength(passwordStrength);
 });
 
 // For mobile & tablet screens
@@ -532,4 +555,4 @@ copyCtrl.addEventListener('click', copyPassword);
 
 passwordCtrl.value = generate();
 
-testPasswordStrength(passwordCtrl.value);
+passwordStrength = testPasswordStrength(passwordCtrl.value);

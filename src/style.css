@@ -187,6 +187,72 @@ input[type=range]::-webkit-slider-thumb:active {
   font-size: 29px;
 }
 
+.password-input-field-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Password Input Field */
+#form-control {
+  padding: 25px;
+  font-size: 22px;
+}
+
+.input-field-icons-container {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: 27px;
+  left: -80px;
+}
+
+/* The buttons/icons in the password input field */
+.copy-btn {
+  color: grey;
+  cursor: pointer;
+}
+
+.close-btn-2 {
+  color: white;
+}
+
+.close-btn-2:hover {
+  background-color: white;
+  color: #07beb8;
+  border: 3px solid #07beb8;
+}
+
+.close-btn-2:active {
+  border: 6px solid #07beb8;
+}
+
+.strength-meter {
+  background-color: lawngreen;
+  width: 95.3%;
+  margin-left: 13px;
+  padding: 7px 4px;
+  transition: 0.5s;
+}
+
+.password-strength-text {
+  color: lawngreen;
+  text-align: center;
+  font-size: 38px;
+  font-weight: bold;
+  margin-top: 38px;
+}
+
+.create-btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-btn {
+  font-size: 37px;
+  border-radius: 10px;
+}
+
 .slide-1 {
   background-image: url("./images/1.png");
 }
@@ -253,60 +319,6 @@ input[type=range]::-webkit-slider-thumb:active {
   position: absolute;
   top: -29px;
   bottom: 0;
-}
-
-.create-btn-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.create-btn {
-  font-size: 37px;
-  border-radius: 10px;
-}
-
-.password-input-field-container {
-  display: flex;
-  justify-content: center;
-}
-
-/* Password Input Field */
-#form-control {
-  padding: 25px;
-  font-size: 22px;
-}
-
-.input-field-icons-container {
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
-  top: 27px;
-  left: -80px;
-}
-
-/* The buttons/icons in the password input field */
-.copy-btn,
-.loop-btn {
-  color: grey;
-}
-
-.copy-btn {
-  cursor: pointer;
-}
-
-.close-btn-2 {
-  color: white;
-}
-
-.close-btn-2:hover {
-  background-color: white;
-  color: #07beb8;
-  border: 3px solid #07beb8;
-}
-
-.close-btn-2:active {
-  border: 6px solid #07beb8;
 }
 
 .footer {
