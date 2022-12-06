@@ -65,6 +65,72 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
+.password-input-field-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Password Input Field */
+#form-control {
+  padding: 25px;
+  font-size: 22px;
+}
+
+.input-field-icons-container {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: 27px;
+  left: -80px;
+}
+
+/* The buttons/icons in the password input field */
+.copy-btn {
+  color: grey;
+  cursor: pointer;
+}
+
+.close-btn-2 {
+  color: white;
+}
+
+.close-btn-2:hover {
+  background-color: white;
+  color: #07beb8;
+  border: 3px solid #07beb8;
+}
+
+.close-btn-2:active {
+  border: 6px solid #07beb8;
+}
+
+.strength-meter {
+  background-color: lawngreen;
+  width: 95.3%;
+  margin-left: 13px;
+  padding: 7px 4px;
+  transition: 0.5s;
+}
+
+.password-strength-text {
+  color: lawngreen;
+  text-align: center;
+  font-size: 38px;
+  font-weight: bold;
+  margin-top: 38px;
+}
+
+.create-btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-btn {
+  font-size: 37px;
+  border-radius: 10px;
+}
+
 .heading-2 {
   font-size: 31px;
   padding-bottom: 10px;
@@ -191,72 +257,6 @@ input[type=range]::-webkit-slider-thumb:active {
   margin-top: 30px;
 }
 
-.password-input-field-container {
-  display: flex;
-  justify-content: center;
-}
-
-/* Password Input Field */
-#form-control {
-  padding: 25px;
-  font-size: 22px;
-}
-
-.input-field-icons-container {
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
-  top: 27px;
-  left: -80px;
-}
-
-/* The buttons/icons in the password input field */
-.copy-btn {
-  color: grey;
-  cursor: pointer;
-}
-
-.close-btn-2 {
-  color: white;
-}
-
-.close-btn-2:hover {
-  background-color: white;
-  color: #07beb8;
-  border: 3px solid #07beb8;
-}
-
-.close-btn-2:active {
-  border: 6px solid #07beb8;
-}
-
-.strength-meter {
-  background-color: lawngreen;
-  width: 95.3%;
-  margin-left: 13px;
-  padding: 7px 4px;
-  transition: 0.5s;
-}
-
-.password-strength-text {
-  color: lawngreen;
-  text-align: center;
-  font-size: 38px;
-  font-weight: bold;
-  margin-top: 38px;
-}
-
-.create-btn-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.create-btn {
-  font-size: 37px;
-  border-radius: 10px;
-}
-
 .footer {
   display: flex;
   justify-content: space-around;
@@ -360,14 +360,18 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   /* Main container */
-  .hero-text {
-    padding-top: 60px;
-  }
-
   .main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .hero-text {
+    padding-top: 60px;
+  }
+
+  #form-control {
+    font-size: 13px;
   }
 
   #make-a-password-container {
@@ -379,16 +383,13 @@ input[type=range]::-webkit-slider-thumb:active {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     width: 85%;
     margin-top: 30px;
+    margin-bottom: 30px;
     margin-left: 20px;
     padding: 20px 17px;
   }
 
   .heading-2 {
     font-size: 18px;
-  }
-
-  #form-control {
-    font-size: 13px;
   }
 }
 
@@ -488,14 +489,14 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   /* Main container */
-  .hero-text {
-    padding-top: 60px;
-  }
-
   .main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .hero-text {
+    padding-top: 60px;
   }
 
   #make-a-password-container {
@@ -507,6 +508,7 @@ input[type=range]::-webkit-slider-thumb:active {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     width: 85%;
     margin-top: 30px;
+    margin-bottom: 30px;
     margin-left: 15px;
     padding: 20px 17px;
   }
@@ -616,14 +618,14 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   /* Main container */
-  .hero-text {
-    padding-top: 60px;
-  }
-
   .main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .hero-text {
+    padding-top: 60px;
   }
 
   #make-a-password-container {
@@ -635,6 +637,7 @@ input[type=range]::-webkit-slider-thumb:active {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     width: 85%;
     margin-top: 30px;
+    margin-bottom: 30px;
     margin-left: 20px;
     padding: 20px 17px;
   }
@@ -736,14 +739,14 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   /* Main container */
-  .hero-text {
-    padding-top: 60px;
-  }
-
   .main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .hero-text {
+    padding-top: 60px;
   }
 
   #make-a-password-container {
@@ -755,6 +758,7 @@ input[type=range]::-webkit-slider-thumb:active {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     width: 85%;
     margin-top: 30px;
+    margin-bottom: 30px;
     margin-left: 20px;
     padding: 20px 17px;
   }
@@ -856,14 +860,14 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   /* Main container */
-  .hero-text {
-    padding-top: 60px;
-  }
-
   .main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .hero-text {
+    padding-top: 60px;
   }
 
   #make-a-password-container {
@@ -872,6 +876,7 @@ input[type=range]::-webkit-slider-thumb:active {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     width: 85%;
     margin-top: 30px;
+    margin-bottom: 30px;
     margin-left: 20px;
     padding: 20px 17px;
   }
@@ -978,14 +983,14 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   /* Main container */
-  .hero-text {
-    padding-top: 60px;
-  }
-
   .main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .hero-text {
+    padding-top: 60px;
   }
 
   #make-a-password-container {
@@ -997,6 +1002,7 @@ input[type=range]::-webkit-slider-thumb:active {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     width: 85%;
     margin-top: 30px;
+    margin-bottom: 30px;
     margin-left: 20px;
     padding: 20px 17px;
   }
@@ -1098,14 +1104,18 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   /* Main container */
-  .hero-text {
-    padding-top: 60px;
-  }
-
   .main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .hero-text {
+    padding-top: 60px;
+  }
+
+  #form-control {
+    font-size: 13px;
   }
 
   #make-a-password-container {
@@ -1117,6 +1127,7 @@ input[type=range]::-webkit-slider-thumb:active {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     width: 85%;
     margin-top: 30px;
+    margin-bottom: 30px;
     margin-left: 20px;
     padding: 20px 17px;
   }
@@ -1128,10 +1139,6 @@ input[type=range]::-webkit-slider-thumb:active {
 
   #table {
     width: 100%;
-  }
-
-  #form-control {
-    font-size: 13px;
   }
 }
 
@@ -1241,6 +1248,10 @@ input[type=range]::-webkit-slider-thumb:active {
     align-items: center;
   }
 
+  #form-control {
+    font-size: 17px;
+  }
+
   #make-a-password-container {
     display: flex;
     flex-direction: column;
@@ -1250,16 +1261,13 @@ input[type=range]::-webkit-slider-thumb:active {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     width: 93%;
     margin-top: 30px;
+    margin-bottom: 30px;
     margin-left: 20px;
     padding: 20px 17px;
   }
 
   #table {
     width: 100%;
-  }
-
-  #form-control {
-    font-size: 17px;
   }
 }
 
@@ -1365,6 +1373,7 @@ input[type=range]::-webkit-slider-thumb:active {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     width: 93%;
     margin-top: 30px;
+    margin-bottom: 30px;
     margin-left: 20px;
     padding: 32px 74px;
   }
@@ -1424,6 +1433,7 @@ input[type=range]::-webkit-slider-thumb:active {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     width: 93%;
     margin-top: 30px;
+    margin-bottom: 30px;
     margin-left: 20px;
     padding: 32px 74px;
   }
@@ -1485,6 +1495,7 @@ input[type=range]::-webkit-slider-thumb:active {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     width: 93%;
     margin-top: 30px;
+    margin-bottom: 30px;
     margin-left: 20px;
     padding: 32px 74px;
   }
@@ -1546,6 +1557,7 @@ input[type=range]::-webkit-slider-thumb:active {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     width: 93%;
     margin-top: 30px;
+    margin-bottom: 30px;
     margin-left: 20px;
     padding: 32px 74px;
   }

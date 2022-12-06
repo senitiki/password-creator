@@ -10,6 +10,14 @@ const symbols = '£$&()*+[]@#^-_!?';
 let password = '';
 let passwordStrength = '';
 
+// ID matches with the Bootstrap class used for the input field
+const passwordCtrl = document.getElementById('form-control');
+const copyCtrl = document.querySelector('.copy-btn');
+const copiedPasswordMessage = document.querySelector('.copied-password-message');
+const strengthMeter = document.querySelector('.strength-meter');
+const passwordStrengthText = document.querySelector('.password-strength-text');
+const createBtn = document.querySelector('.create-btn');
+
 const passwordLengthCtrl = document.getElementById('range-slider');
 const passwordLengthInput = document.getElementById('passwordLength');
 const enterBtn = document.querySelector('.enter-btn');
@@ -26,19 +34,6 @@ let symbolsSelected = true;
 
 let checkBoxChecked = 4;
 const minimumChecked = 2;
-
-// ID matches with the Bootstrap class used for the input field
-const passwordCtrl = document.getElementById('form-control');
-
-const copyCtrl = document.querySelector('.copy-btn');
-
-const copiedPasswordMessage = document.querySelector('.copied-password-message');
-
-const strengthMeter = document.querySelector('.strength-meter');
-
-const passwordStrengthText = document.querySelector('.password-strength-text');
-
-const createBtn = document.querySelector('.create-btn');
 
 /* eslint-disable */
 function changePasswordLength() {

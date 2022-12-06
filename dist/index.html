@@ -42,13 +42,37 @@
     </header>
 
     <main class="container-fluid main-container">
-      <h1 class="hero-text text-center fw-bold poppins-font">One more Passsword Generator. 
+      <h1 class="hero-text text-center fw-bold poppins-font">One more Password Generator. 
         <span class="text-teal">Simplified.</span>
       </h1>
 
       <form class="form row">
+        <!--Password Input Field Container-->
+        <div class="password-input-field-container mt-5">
+          <input type="text" class="password-input-field form-control fw-bolder shadow-sm" id="form-control" name="password" placeholder=""/>
+
+          <!--Input Field Icons container-->
+          <div class="input-field-icons-container" id="input-field-icons-container">
+            <i class="material-icons copy-btn" title="Copy password" data-bs-toggle="modal" data-bs-target="#exampleModal">content_copy</i>
+          </div>
+        </div>
+
+        <!--Password Strength Meter-->
+        <div class="strength-meter"></div>
+
+        <!--Password Strength Value-->
+        <p class="password-strength-text">Strong</p>
+
+        <!--Pop Up Modal/Message to be displayed after copying a password-->
+        <div class="copied-password-message"></div>
+
+        <!--Create Button Container-->
+        <div class="create-btn-container">
+          <button type="button" class="create-btn bg-teal border-0 rounded-pill my-5 px-5 py-4 text-white fw-bolder">Create</button>
+        </div>
+
         <!--Make a custom password container-->
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 make-a-password-container" id="make-a-password-container">
+        <div class="make-a-password-container" id="make-a-password-container">
           <h2 class="heading-2 poppins-font" id="heading-2">Create a custom & unique password</h2>
 
           <!--Password options container-->
@@ -135,30 +159,6 @@
               </tbody>
             </table>
           </div>
-        </div>
-
-        <!--Password Input Field Container-->
-        <div class="password-input-field-container mt-5">
-          <input type="text" class="password-input-field form-control fw-bolder shadow-sm" id="form-control" name="password" placeholder=""/>
-
-          <!--Input Field Icons container-->
-          <div class="input-field-icons-container" id="input-field-icons-container">
-            <i class="material-icons copy-btn" title="Copy password" data-bs-toggle="modal" data-bs-target="#exampleModal">content_copy</i>
-          </div>
-        </div>
-
-        <!--Password Strength Meter-->
-        <div class="strength-meter"></div>
-
-        <!--Password Strength Value-->
-        <p class="password-strength-text">Strong</p>
-
-        <!--Pop Up Modal/Message to be displayed after copying a password-->
-        <div class="copied-password-message"></div>
-
-        <!--Create Button Container-->
-        <div class="create-btn-container">
-          <button type="button" class="create-btn bg-teal border-0 rounded-pill my-5 px-5 py-4 text-white fw-bolder">Create</button>
         </div>
       </form>
     </main>
