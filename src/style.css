@@ -271,6 +271,16 @@ input[type=range]::-webkit-slider-thumb:active {
   width: 100%;
 }
 
+.footer .text-2 {
+  text-decoration: none;
+  color: white;
+}
+
+.footer .text-2:hover {
+  text-decoration: underline;
+  color: white;
+}
+
 /* Extra small devices */
 @media only screen and (max-width: 280px) {
   .nav {
@@ -1620,6 +1630,7 @@ input[type=range]::-webkit-slider-thumb:active {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 1300px;
   }
 
   .btn-container {
