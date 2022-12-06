@@ -127,8 +127,20 @@ body {
 }
 
 .create-btn {
+  color: white;
   font-size: 37px;
-  border-radius: 10px;
+  border: none;
+  border-radius: 50rem;
+}
+
+.create-btn:hover {
+  background-color: white;
+  color: #07e8d4;
+  border: 3px solid #07e8d4;
+}
+
+.create-btn:active {
+  border: 6px solid #07e8d4;
 }
 
 .heading-2 {
