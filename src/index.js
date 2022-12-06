@@ -414,7 +414,7 @@ function copyPassword() {
             <p class="text-center fs-3 my-3">Copied to clipboard!</p>
           </div>
           <div class="modal-footer border-0">
-            <button type="button" class="btn close-btn-2 bg-teal fs-4" data-bs-dismiss="modal">Ok</button>
+            <button type="button" class="btn close-btn-2 bg-seagreen fs-4" data-bs-dismiss="modal">Ok</button>
           </div>
         </div>
       </div>
