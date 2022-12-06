@@ -77,15 +77,15 @@ body {
 }
 
 .strength-meter {
-  background-color: red;
-  width: 30.76%;
+  background-color: green;
+  width: 93.76%;
   margin-left: 13px;
   padding: 7px 4px;
   transition: 0.5s;
 }
 
 .password-strength-text {
-  color: red;
+  color: green;
   text-align: center;
   font-size: 38px;
   font-weight: bold;
