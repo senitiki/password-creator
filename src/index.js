@@ -39,7 +39,7 @@ const minimumChecked = 2;
 function changePasswordLength() {
   const passwordLengthNum = parseInt(passwordLengthInput.value);
 
-  if (passwordLengthNum >= 0 && passwordLengthNum < 51) {
+  if (passwordLengthNum >= 5 && passwordLengthNum < 51) {
     passwordLengthCtrl.value = passwordLengthInput.value;
   }
 }

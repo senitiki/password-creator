@@ -84,14 +84,14 @@
               <!--Range Container-->
               <div class="range-container">
                 <p class="minus-btn fw-bolder fs-3" id="minus-btn">-</p>
-                <input type="range" name="password-length" min="0" max="50" value="25" class="range-slider me-3" id="range-slider" oninput="passwordLength.value = this.value"/>
+                <input type="range" name="password-length" min="0" max="50" value="5" class="range-slider me-3" id="range-slider" oninput="if (this.value >= 5 & this.value < 51) { passwordLength.value = this.value }"/>
                 <p class="add-btn fw-bolder fs-3" id="add-btn">+</p>
               </div>
               <br>
 
               <!--Password Length Input Container-->
               <div class="password-length-input-container">
-                <input type="text" class="mt-4 fw-bolder shadow-sm p-4" id="passwordLength" value="25"/>
+                <input type="text" class="mt-4 fw-bolder shadow-sm p-4" id="passwordLength" value="5"/>
                 <i class="material-icons text-secondary enter-btn">subdirectory_arrow_left</i>
               </div>
             </div>
