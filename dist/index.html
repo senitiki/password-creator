@@ -42,7 +42,7 @@
     </header>
 
     <main class="container-fluid main-container">
-      <h1 class="hero-text text-center fw-bold poppins-font">One more Password Generator. 
+      <h1 class="hero-text text-center fw-bold poppins-font">One more Password Creator.
         <span class="text-seagreen">Simplified.</span>
       </h1>
 
@@ -50,26 +50,22 @@
         <!--Password Input Field Container-->
         <div class="password-input-field-container mt-5">
           <input type="text" class="password-input-field form-control fw-bolder shadow-sm" id="form-control" name="password" placeholder=""/>
-
-          <!--Input Field Icons container-->
-          <div class="input-field-icons-container" id="input-field-icons-container">
-            <i class="material-icons copy-btn" title="Copy password" data-bs-toggle="modal" data-bs-target="#exampleModal">content_copy</i>
-          </div>
         </div>
 
         <!--Password Strength Meter-->
         <div class="strength-meter"></div>
 
         <!--Password Strength Value-->
-        <p class="password-strength-text">Strong</p>
+        <p class="password-strength-text">Weak</p>
+
+        <!--Create Button Container-->
+        <div class="btn-container" id="btn-container">
+          <button type="button" class="create-btn bg-seagreen my-5 px-5 py-4 fw-bolder">Create</button>
+          <button type="button" class="copy-btn my-5 px-5 py-4 fw-bolder" data-bs-toggle="modal" data-bs-target="#exampleModal">Copy</button>
+        </div>
 
         <!--Pop Up Modal/Message to be displayed after copying a password-->
         <div class="copied-password-message"></div>
-
-        <!--Create Button Container-->
-        <div class="create-btn-container">
-          <button type="button" class="create-btn bg-seagreen my-5 px-5 py-4 fw-bolder">Create</button>
-        </div>
 
         <!--Make a custom password container-->
         <div class="make-a-password-container" id="make-a-password-container">

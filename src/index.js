@@ -80,10 +80,10 @@ function testPasswordStrength(password){
 
 function renderPasswordStrength(passwordStrength){
   if (passwordStrength === 'Strong') {
-    strengthMeter.style.backgroundColor = "lawngreen";
+    strengthMeter.style.backgroundColor = "green";
     strengthMeter.style.width = "95.3%";
     strengthMeter.style.transition = "0.5s";
-    passwordStrengthText.style.color = "lawngreen";
+    passwordStrengthText.style.color = "green";
     passwordStrengthText.style.fontSize = "38px";
     passwordStrengthText.style.fontWeight = "bold";
     passwordStrengthText.textContent = passwordStrength;
@@ -504,12 +504,16 @@ symbolsCtrl.addEventListener('change', (e) => {
 createBtn.addEventListener('touchstart', () => {
   passwordCtrl.value = generate();
 
-  testPasswordStrength(passwordCtrl.value);
+  passwordStrength = testPasswordStrength(passwordCtrl.value);
+
+  renderPasswordStrength(passwordStrength);
 });
 createBtn.addEventListener('touchend', () => {
   passwordCtrl.value = generate();
 
-  testPasswordStrength(passwordCtrl.value);
+  passwordStrength = testPasswordStrength(passwordCtrl.value);
+
+  renderPasswordStrength(passwordStrength);
 });
 
 enterBtn.addEventListener('touchstart', changePasswordLength);
@@ -535,7 +539,9 @@ copyCtrl.addEventListener('touchend', copyPassword);
 createBtn.addEventListener('click', () => {
   passwordCtrl.value = generate();
 
-  testPasswordStrength(passwordCtrl.value);
+  passwordStrength = testPasswordStrength(passwordCtrl.value);
+
+  renderPasswordStrength(passwordStrength);
 });
 
 enterBtn.addEventListener('click', changePasswordLength);
