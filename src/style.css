@@ -65,6 +65,12 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .password-input-field-container {
   display: flex;
   justify-content: center;
