@@ -28,6 +28,10 @@ body {
   background-color: #07e8d4;
 }
 
+.bg-darkblack {
+  background-color: black;
+}
+
 .text-seagreen {
   color: #07e8d4;
 }
@@ -41,7 +45,9 @@ body {
 }
 
 .nav-heading {
+  color: white;
   font-size: 28px;
+  border-radius: 50rem;
 }
 
 .nav-menu-mobile {
@@ -69,6 +75,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.hero-text .text-1 {
+  color: white;
+  border-radius: 50rem;
 }
 
 .password-input-field-container {
@@ -301,13 +312,6 @@ input[type=range]::-webkit-slider-thumb:active {
     column-gap: 3px;
   }
 
-  .nav-logo {
-    background-image: url("./images/access-logo-3.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-
   #hamburger {
     display: block;
     margin-top: 1px;
@@ -432,15 +436,6 @@ input[type=range]::-webkit-slider-thumb:active {
     display: flex;
     align-items: center;
     column-gap: 3px;
-  }
-
-  .nav-logo {
-    background-image: url("./images/access-logo-3.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding: 11px;
-    margin-bottom: 15px;
   }
 
   #hamburger {
@@ -569,15 +564,6 @@ input[type=range]::-webkit-slider-thumb:active {
     column-gap: 3px;
   }
 
-  .nav-logo {
-    background-image: url("./images/access-logo-3.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding: 11px;
-    margin-bottom: 15px;
-  }
-
   #hamburger {
     display: block;
     margin-top: -11px;
@@ -696,15 +682,6 @@ input[type=range]::-webkit-slider-thumb:active {
     column-gap: 3px;
   }
 
-  .nav-logo {
-    background-image: url("./images/access-logo-3.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding: 11px;
-    margin-bottom: 15px;
-  }
-
   #hamburger {
     display: block;
     margin-top: -11px;
@@ -821,15 +798,6 @@ input[type=range]::-webkit-slider-thumb:active {
     display: flex;
     align-items: center;
     column-gap: 3px;
-  }
-
-  .nav-logo {
-    background-image: url("./images/access-logo-3.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding: 11px;
-    margin-bottom: 15px;
   }
 
   #hamburger {
@@ -952,15 +920,6 @@ input[type=range]::-webkit-slider-thumb:active {
     column-gap: 3px;
   }
 
-  .nav-logo {
-    background-image: url("./images/access-logo-3.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding: 11px;
-    margin-bottom: 15px;
-  }
-
   #hamburger {
     display: block;
     margin-top: -11px;
@@ -1077,15 +1036,6 @@ input[type=range]::-webkit-slider-thumb:active {
     display: flex;
     align-items: center;
     column-gap: 3px;
-  }
-
-  .nav-logo {
-    background-image: url("./images/access-logo-3.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding: 11px;
-    margin-bottom: 15px;
   }
 
   #hamburger {
@@ -1219,15 +1169,6 @@ input[type=range]::-webkit-slider-thumb:active {
     column-gap: 3px;
   }
 
-  .nav-logo {
-    background-image: url("./images/access-logo-3.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding: 11px;
-    margin-bottom: 15px;
-  }
-
   .hamburger {
     display: block;
     margin-top: 12px;
@@ -1355,15 +1296,6 @@ input[type=range]::-webkit-slider-thumb:active {
     column-gap: 3px;
   }
 
-  .nav-logo {
-    background-image: url("./images/access-logo-3.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding: 11px;
-    margin-bottom: 15px;
-  }
-
   .hamburger {
     display: block;
     margin-top: 12px;
@@ -1478,15 +1410,6 @@ input[type=range]::-webkit-slider-thumb:active {
     column-gap: 3px;
   }
 
-  .nav-logo {
-    background-image: url("./images/access-logo-3.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding: 11px;
-    margin-bottom: 15px;
-  }
-
   .nav-menu-desktop li a {
     font-size: 20px;
   }
@@ -1543,15 +1466,6 @@ input[type=range]::-webkit-slider-thumb:active {
     display: flex;
     align-items: center;
     column-gap: 3px;
-  }
-
-  .nav-logo {
-    background-image: url("./images/access-logo-3.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding: 11px;
-    margin-bottom: 15px;
   }
 
   .nav-menu-desktop li a {
@@ -1611,15 +1525,6 @@ input[type=range]::-webkit-slider-thumb:active {
     display: flex;
     align-items: center;
     column-gap: 3px;
-  }
-
-  .nav-logo {
-    background-image: url("./images/access-logo-3.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding: 11px;
-    margin-bottom: 15px;
   }
 
   .nav-menu-desktop li a {
