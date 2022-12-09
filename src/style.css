@@ -1571,3 +1571,24 @@ input[type=range]::-webkit-slider-thumb:active {
     width: 30%;
   }
 }
+
+#brand::before {
+  content: "YA";
+  animation: animate infinite 3s;
+  padding-left: 10px;
+}
+
+@keyframes animate {
+  
+  0% {
+      content: "YA";
+  }
+
+  50% {
+      content: "Yet";
+  }
+
+  75% {
+      content: "Yet Another";
+  }
+}
