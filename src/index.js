@@ -428,6 +428,19 @@ hamburger.addEventListener('click', openMenu);
 // Close Nav Menu for click
 document.querySelectorAll('.nav-link-mobile').forEach((n) => n.addEventListener('click', closeMenu));
 
+passwordLengthCtrl.addEventListener('input', (e) => {
+  let passwordLengthCtrlVal = e.target.value;
+
+  if (passwordLengthCtrlVal < 5) {
+    passwordLengthCtrl.value = 5;
+  }
+
+  if (passwordLengthCtrlVal >= 5 && passwordLengthCtrlVal < 51) {
+    passwordLengthInput.value = passwordLengthCtrlVal;
+  }
+});
+
+
 uppercaseCtrl.addEventListener('change', (e) => {
   if (e.target.checked) {
     checkBoxChecked += 1;
