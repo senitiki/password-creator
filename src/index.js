@@ -440,7 +440,6 @@ passwordLengthCtrl.addEventListener('input', (e) => {
   }
 });
 
-
 uppercaseCtrl.addEventListener('change', (e) => {
   if (e.target.checked) {
     checkBoxChecked += 1;
@@ -513,42 +512,7 @@ symbolsCtrl.addEventListener('change', (e) => {
   renderPasswordStrength(passwordStrength);
 });
 
-// For mobile & tablet screens
-createBtn.addEventListener('touchstart', () => {
-  passwordCtrl.value = generate();
-
-  passwordStrength = testPasswordStrength(passwordCtrl.value);
-
-  renderPasswordStrength(passwordStrength);
-});
-createBtn.addEventListener('touchend', () => {
-  passwordCtrl.value = generate();
-
-  passwordStrength = testPasswordStrength(passwordCtrl.value);
-
-  renderPasswordStrength(passwordStrength);
-});
-
-enterBtn.addEventListener('touchstart', changePasswordLength);
-
-enterBtn.addEventListener('touchend', changePasswordLength);
-
-passwordLengthInput.addEventListener('touchstart', (e) => {
-  if (e.key === 'Enter') {
-    changePasswordLength();
-  }
-});
-
-passwordLengthInput.addEventListener('touchend', (e) => {
-  if (e.key === 'Enter') {
-    changePasswordLength();
-  }
-});
-
-copyCtrl.addEventListener('touchstart', copyPassword);
-copyCtrl.addEventListener('touchend', copyPassword);
-
-// For laptop & desktop screens
+// For all screens
 createBtn.addEventListener('click', () => {
   passwordCtrl.value = generate();
 
