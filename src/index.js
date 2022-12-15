@@ -35,12 +35,33 @@ let symbolsSelected = true;
 let checkBoxChecked = 4;
 const minimumChecked = 2;
 
+const errorMsg = document.querySelector('.error-msg');
+
+let count = 0;
+
 /* eslint-disable */
 function changePasswordLength() {
   const passwordLengthNum = parseInt(passwordLengthInput.value);
 
   if (passwordLengthNum >= 5 && passwordLengthNum < 51) {
     passwordLengthCtrl.value = passwordLengthInput.value;
+    errorMsg.style.display = "none";
+  } else {
+    count += 1;
+
+    if (passwordLengthNum < 5) { 
+      passwordLengthCtrl.value = 5; 
+    }
+
+    errorMsg.style.display = "block";
+    errorMsg.textContent = "Please enter a value from 5 to 50."
+    errorMsg.style.color = "red";
+    errorMsg.style.fontSize = "20px";
+    errorMsg.style.textAlign = "center";
+
+    if (count === 1){
+      passwordStrengthText.after(errorMsg);
+    }
   }
 }
 
@@ -394,32 +415,36 @@ function generate() {
   return password;
 }
 
-function copyPassword() {
-  // Select the text field
-  passwordCtrl.select();
-  passwordCtrl.setSelectionRange(0, 99999); // For mobile devices
-
-  // Copy the text inside the text field
-  navigator.clipboard.writeText(passwordCtrl.value);
-
-  copiedPasswordMessage.innerHTML = `
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header border-0">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p class="text-center fs-3 my-3">Copied to clipboard!</p>
-          </div>
-          <div class="modal-footer border-0">
-            <button type="button" class="btn close-btn-2 bg-seagreen fs-4" data-bs-dismiss="modal">Ok</button>
+async function copyPassword() {
+  try {
+    copiedPasswordMessage.innerHTML = `
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p class="text-center fs-3 my-3">Copied to clipboard!</p>
+            </div>
+            <div class="modal-footer border-0">
+              <button type="button" class="btn close-btn-2 bg-seagreen fs-4" data-bs-dismiss="modal">Ok</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  `;
+    `;
+
+    // Select the text field
+    passwordCtrl.select();
+    passwordCtrl.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the text inside the text field
+    await navigator.clipboard.writeText(passwordCtrl.value);
+  } catch (err){
+    console.error('Failed to copy: ', err);
+  }
 }
 
 // Open Nav Menu for click
@@ -431,12 +456,23 @@ document.querySelectorAll('.nav-link-mobile').forEach((n) => n.addEventListener(
 passwordLengthCtrl.addEventListener('input', (e) => {
   let passwordLengthCtrlVal = e.target.value;
 
-  if (passwordLengthCtrlVal < 5) {
-    passwordLengthCtrl.value = 5;
-  }
-
   if (passwordLengthCtrlVal >= 5 && passwordLengthCtrlVal < 51) {
     passwordLengthInput.value = passwordLengthCtrlVal;
+    errorMsg.style.display = "none";
+  } else {
+    count += 1;
+
+    if (passwordLengthCtrlVal < 5) { e.target.value = 5; }
+
+    errorMsg.style.display = "block";
+    errorMsg.textContent = "Please enter a value from 5 to 50."
+    errorMsg.style.color = "red";
+    errorMsg.style.fontSize = "20px";
+    errorMsg.style.textAlign = "center";
+
+    if (count === 1){
+      passwordStrengthText.after(errorMsg);
+    }
   }
 });
 
@@ -525,7 +561,7 @@ enterBtn.addEventListener('click', changePasswordLength);
 
 passwordLengthInput.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
-  	changePasswordLength();
+    changePasswordLength();
   }
 });
 
