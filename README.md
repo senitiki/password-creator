@@ -1,4 +1,4 @@
-# Pasitaka
+# Password Creator
 
 > A password generator that generates random &amp; unique passwords for those trying to find one.
 
@@ -6,6 +6,7 @@
 
 - HTML5
 - CSS3
+- Bootstrap v5.2.0
 - JavaScript
 - Webpack
 - Git
@@ -16,7 +17,7 @@
 
 ## Live Demo
 
-[Live Demo Link from ./dist/index.html](https://raw.githack.com/chelmerrox/pasitaka/development/dist/index.html)
+[Live Demo Link from ./dist/index.html](https://raw.githack.com/chelmerrox/password-creator/page_structure/dist/index.html)
 
 ## Getting Started
 
@@ -40,13 +41,13 @@ From the command line, do the following steps below:
 
 ```bash
 # Clone this repository
-$ git clone git@github.com:chelmerrox/pasitaka.git
+$ git clone git@github.com:chelmerrox/password-creator.git
 
 ```
 2. Change directory/Go into the repository with the command below.
 
 ```bash
-$ cd pasitaka
+$ cd password-creator
 
 ```
 
@@ -72,11 +73,15 @@ $ npm start
 - Twitter: [@chelmerrox](https://twitter.com/chelmerrox)
 - LinkedIn: [Losalini Rokocakau](https://linkedin.com/in/losalini-rokocakau)
 
+## Collaborators
+
+👤 **Senitiki Rokocakau** | GitHub: [@senitiki](https://github.com/senitiki)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/chelmerrox/pasitaka/issues).
+Feel free to check the [issues page](https://github.com/chelmerrox/password-creator/issues).
 
 ## Show your support
 
@@ -84,9 +89,5 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- My God & family
+- Our God & family
 - Microverse
-
-## 📝 License
-
-This project is [MIT](./MIT.md) licensed.
