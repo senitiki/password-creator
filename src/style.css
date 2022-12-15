@@ -1579,16 +1579,15 @@ input[type=range]::-webkit-slider-thumb:active {
 }
 
 @keyframes animate {
-  
   0% {
-      content: "YA";
+    content: "YA";
   }
 
   50% {
-      content: "Yet";
+    content: "Yet";
   }
 
   75% {
-      content: "Yet Another";
+    content: "Yet Another";
   }
 }
