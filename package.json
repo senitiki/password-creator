@@ -1,5 +1,5 @@
 {
-  "name": "access",
+  "name": "password-creator",
   "version": "1.0.0",
   "description": "> A password generator that generates random &amp; unique passwords for those trying to find one.",
   "private": true,
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chelmerrox/pasitaka.git"
+    "url": "git+https://github.com/senitiki/password-creator.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chelmerrox/pasitaka/issues"
+    "url": "https://github.com/senitiki/password-creator/issues"
   },
-  "homepage": "https://github.com/chelmerrox/pasitaka#readme",
+  "homepage": "https://github.com/senitiki/password-creator#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.1",
