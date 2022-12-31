@@ -275,8 +275,14 @@ input[type=range]::-webkit-slider-thumb:active {
   font-size: 29px;
 }
 
-.table {
+.more-info-container {
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
+  width: 95%;
   margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 32px 74px;
 }
 
 .footer {
@@ -1273,7 +1279,7 @@ input[type=range]::-webkit-slider-thumb:active {
     margin-top: 30px;
     margin-bottom: 30px;
     margin-left: 20px;
-    padding: 20px 17px;
+    padding: 65px 17px;
   }
 
   #table {
@@ -1449,7 +1455,7 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   .table {
-    width: 30%;
+    width: 100%;
   }
 }
 
@@ -1508,7 +1514,7 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   .table {
-    width: 30%;
+    width: 100%;
   }
 }
 
@@ -1568,7 +1574,7 @@ input[type=range]::-webkit-slider-thumb:active {
   }
 
   .table {
-    width: 30%;
+    width: 100%;
   }
 }
 
