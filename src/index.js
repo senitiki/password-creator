@@ -34,8 +34,6 @@ let symbolsSelected = true;
 let checkBoxChecked = 4;
 const minimumChecked = 2;
 
-let count = 0;
-
 /* eslint-disable */
 function testPasswordStrength(password){
   let hasLower = false;
