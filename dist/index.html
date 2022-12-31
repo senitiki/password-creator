@@ -71,9 +71,6 @@
         <!--Password Strength Value-->
         <p class="password-strength-text">Strong</p>
 
-        <!--Error Message for Wrong Password Length-->
-        <small class="error-msg"></small>
-
         <!--Create Button Container-->
         <div class="btn-container" id="btn-container">
           <button type="button" class="create-btn bg-seagreen my-5 px-5 py-4 fw-bolder">Create</button>
@@ -91,20 +88,13 @@
           <div class="password-options-container d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row justify-content-lg-evenly justify-content-xl-evenly justify-content-xxl-evenly mt-4">
             <!--Password Length Container-->
             <div class="password-length-container me-5">
-              <label for="password-length-slider" class="fw-bolder">Password Length</label>
+              <label for="password-length-slider" class="fw-bolder">Password Length: <span id="passwordLength">12</span></label>
 
               <!--Range Container-->
               <div class="range-container">
                 <p class="minus-btn fw-bolder fs-3" id="minus-btn">-</p>
-                <input type="range" name="password-length" min="0" max="50" value="12" class="range-slider me-3" id="range-slider" />
+                <input type="range" name="password-length" min="5" max="50" value="12" class="range-slider me-3" id="range-slider" />
                 <p class="add-btn fw-bolder fs-3" id="add-btn">+</p>
-              </div>
-              <br>
-
-              <!--Password Length Input Container-->
-              <div class="password-length-input-container">
-                <input type="text" class="mt-4 fw-bolder shadow-sm p-4" id="passwordLength" value="12"/>
-                <i class="material-icons text-secondary enter-btn">subdirectory_arrow_left</i>
               </div>
             </div>
 
@@ -134,45 +124,47 @@
                 <i class="material-icons mt-1 text-secondary" title="Passwords with symbols such as $*_!?">info</i>
               </div>
             </div>
-
-            <!--More Tips Container-->
-            <table class="table table-sm" id="table">
-              <thead>
-                <tr>
-                  <th scope="col" class="text-seagreen fs-3">More Tips</th>
-                  <th scope="col" class="text-seagreen fs-3">?</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td scope="row" class="text-secondary py-3">Choose a long password of at least 12 characters long.</td>
-                </tr>
-                <tr>
-                  <td scope="row" class="text-secondary py-3">Must have at least 1 capital letter, 1 lowercase letter, 1 number and 1 symbol.</td>
-                </tr>
-                <tr>
-                  <td scope="row" class="text-secondary py-3">Must have a combination of capital, lowercase, number & symbols.</td>
-                </tr>
-                <tr>
-                  <td scope="row" class="text-secondary py-3">Must not have spaces in between.</td>
-                </tr>
-                <tr>
-                  <td scope="row" class="text-secondary py-3">Cannot be based on your Name, NetID or words found in the dictionary.</td>
-                </tr>
-                <tr>
-                  <td scope="row" class="text-secondary py-3">Cannot be based on simple repeating patterns.</td>
-                </tr>
-                <tr>
-                  <td scope="row" class="text-secondary py-3">Use a unique password for every unique service.</td>
-                </tr>
-                <tr>
-                  <td scope="row" class="text-secondary py-3">Do not share your password or share it through email.</td>
-                </tr>
-              </tbody>
-            </table>
           </div>
         </div>
       </form>
+
+      <!--More Tips Container-->
+      <div class="more-info-container">
+        <table class="table table-lg" id="table">
+          <thead>
+            <tr>
+              <th scope="col" class="text-seagreen fs-3">More Tips</th>
+              <th scope="col" class="text-seagreen fs-3">?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row" class="text-secondary py-3">Choose a long password of at least 12 characters long.</td>
+            </tr>
+            <tr>
+              <td scope="row" class="text-secondary py-3">Must have at least 1 capital letter, 1 lowercase letter, 1 number and 1 symbol.</td>
+            </tr>
+            <tr>
+              <td scope="row" class="text-secondary py-3">Must have a combination of capital, lowercase, number & symbols.</td>
+            </tr>
+            <tr>
+              <td scope="row" class="text-secondary py-3">Must not have spaces in between.</td>
+            </tr>
+            <tr>
+              <td scope="row" class="text-secondary py-3">Cannot be based on your Name, NetID or words found in the dictionary.</td>
+            </tr>
+            <tr>
+              <td scope="row" class="text-secondary py-3">Cannot be based on simple repeating patterns.</td>
+            </tr>
+            <tr>
+              <td scope="row" class="text-secondary py-3">Use a unique password for every unique service.</td>
+            </tr>
+            <tr>
+              <td scope="row" class="text-secondary py-3">Do not share your password or share it through email.</td>
+            </tr>
+          </tbody>
+        </table>  
+      </div>    
     </main>
 
     <footer class="footer bg-seagreen">

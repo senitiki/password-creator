@@ -19,8 +19,7 @@ const passwordStrengthText = document.querySelector('.password-strength-text');
 const createBtn = document.querySelector('.create-btn');
 
 const passwordLengthCtrl = document.getElementById('range-slider');
-const passwordLengthInput = document.getElementById('passwordLength');
-const enterBtn = document.querySelector('.enter-btn');
+const passwordLength = document.getElementById('passwordLength');
 
 const uppercaseCtrl = document.getElementById('uppercase');
 const lowercaseCtrl = document.getElementById('lowercase');
@@ -35,36 +34,7 @@ let symbolsSelected = true;
 let checkBoxChecked = 4;
 const minimumChecked = 2;
 
-const errorMsg = document.querySelector('.error-msg');
-
-let count = 0;
-
 /* eslint-disable */
-function changePasswordLength() {
-  const passwordLengthNum = parseInt(passwordLengthInput.value);
-
-  if (passwordLengthNum >= 5 && passwordLengthNum < 51) {
-    passwordLengthCtrl.value = passwordLengthInput.value;
-    errorMsg.style.display = "none";
-  } else {
-    count += 1;
-
-    if (passwordLengthNum < 5) { 
-      passwordLengthCtrl.value = 5; 
-    }
-
-    errorMsg.style.display = "block";
-    errorMsg.textContent = "Please enter a value from 5 to 50."
-    errorMsg.style.color = "red";
-    errorMsg.style.fontSize = "20px";
-    errorMsg.style.textAlign = "center";
-
-    if (count === 1){
-      passwordStrengthText.after(errorMsg);
-    }
-  }
-}
-
 function testPasswordStrength(password){
   let hasLower = false;
   let hasUpper = false;
@@ -454,26 +424,7 @@ hamburger.addEventListener('click', openMenu);
 document.querySelectorAll('.nav-link-mobile').forEach((n) => n.addEventListener('click', closeMenu));
 
 passwordLengthCtrl.addEventListener('input', (e) => {
-  let passwordLengthCtrlVal = e.target.value;
-
-  if (passwordLengthCtrlVal >= 5 && passwordLengthCtrlVal < 51) {
-    passwordLengthInput.value = passwordLengthCtrlVal;
-    errorMsg.style.display = "none";
-  } else {
-    count += 1;
-
-    if (passwordLengthCtrlVal < 5) { e.target.value = 5; }
-
-    errorMsg.style.display = "block";
-    errorMsg.textContent = "Please enter a value from 5 to 50."
-    errorMsg.style.color = "red";
-    errorMsg.style.fontSize = "20px";
-    errorMsg.style.textAlign = "center";
-
-    if (count === 1){
-      passwordStrengthText.after(errorMsg);
-    }
-  }
+  passwordLength.textContent = e.target.value;
 });
 
 uppercaseCtrl.addEventListener('change', (e) => {
@@ -555,14 +506,6 @@ createBtn.addEventListener('click', () => {
   passwordStrength = testPasswordStrength(passwordCtrl.value);
 
   renderPasswordStrength(passwordStrength);
-});
-
-enterBtn.addEventListener('click', changePasswordLength);
-
-passwordLengthInput.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') {
-    changePasswordLength();
-  }
 });
 
 copyCtrl.addEventListener('click', copyPassword);
