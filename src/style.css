@@ -82,6 +82,30 @@ body {
   border-radius: 50rem;
 }
 
+/* Tabs for single & bulk passwords */
+.password-tabs-container {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.tabs {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.single-tab.active,
+.bulk-tab.active {
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+  border-bottom: 7px solid #07e8d4;
+  color: black;
+}
+
+.single-tab,
+.bulk-tab {
+  color: lightslategrey;
+}
+
 .password-input-field-container {
   display: flex;
   justify-content: center;
@@ -160,6 +184,28 @@ body {
   width: 100%;
 }
 
+.password-length-container,
+.multiple-passwords-container.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25px;
+  margin-top: 20px;
+  margin-bottom: 51px;
+}
+
+.multiple-passwords-container.hide {
+  display: none;;
+}
+
+.password-length-input-container input {
+  width: 161px;
+  max-width: 178px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+}
+
+.range-container-1,
 .range-container {
   display: flex;
   justify-content: space-between;
@@ -168,6 +214,7 @@ body {
 }
 
 /* Range slider for password length */
+.range-slider-1,
 .range-slider {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -222,29 +269,6 @@ input[type=range]::-webkit-slider-thumb {
 
 input[type=range]::-webkit-slider-thumb:active {
   cursor: -webkit-grabbing;
-}
-
-.password-length-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 25px;
-  margin-top: 20px;
-  margin-bottom: 51px;
-}
-
-.password-length-input-container input {
-  width: 161px;
-  max-width: 178px;
-  border: 1px solid lightgrey;
-  border-radius: 10px;
-}
-
-.password-length-input-container .enter-btn {
-  position: relative;
-  top: 7px;
-  left: -54px;
-  font-size: 35px;
 }
 
 .characters-symbols-container {

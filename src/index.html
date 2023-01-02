@@ -59,6 +59,12 @@
         </span>
       </h1>
 
+      <!--Tabs for single password & bulk password-->
+      <div class="password-tabs-container">
+        <p class="tabs single-tab active p-3">Single</p>
+        <p class="tabs bulk-tab p-3">Multiple</p>
+      </div>
+
       <form class="form row">
         <!--Password Input Field Container-->
         <div class="password-input-field-container mt-5">
@@ -71,7 +77,7 @@
         <!--Password Strength Value-->
         <p class="password-strength-text">Strong</p>
 
-        <!--Create Button Container-->
+        <!--Create & Copy Button Container-->
         <div class="btn-container" id="btn-container">
           <button type="button" class="create-btn bg-seagreen my-5 px-5 py-4 fw-bolder">Create</button>
           <button type="button" class="copy-btn my-5 px-5 py-4 fw-bolder" data-bs-toggle="modal" data-bs-target="#exampleModal">Copy</button>
@@ -86,9 +92,23 @@
 
           <!--Password options container-->
           <div class="password-options-container d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row justify-content-lg-evenly justify-content-xl-evenly justify-content-xxl-evenly mt-4">
+            <!--Number of multiple/bulk passwords container-->
+            <div class="multiple-passwords-container hide">
+              <label for="range-slider-1" class="fw-bolder">Number of passwords</label>
+
+              <!--Range Container-->
+              <div class="range-container-1">
+                <p class="minus-btn fw-bolder fs-3" id="minus-btn">-</p>
+                <input type="range" name="multiple-passwords" min="5" max="50" value="10" class="range-slider-1 me-3" id="range-slider-1" />
+                <p class="add-btn fw-bolder fs-3" id="add-btn">+</p>
+              </div>
+
+              <p class="mt-5 fw-bolder fs-2" id="numOfPasswords">10</p>
+            </div>
+            
             <!--Password Length Container-->
             <div class="password-length-container me-5">
-              <label for="password-length-slider" class="fw-bolder">Password Length</label>
+              <label for="range-slider" class="fw-bolder">Password Length</label>
 
               <!--Range Container-->
               <div class="range-container">
@@ -99,7 +119,7 @@
 
               <p class="mt-5 fw-bolder fs-2" id="passwordLength">12</p>
             </div>
-
+              
             <!--Characters & Symbols Container-->
             <div class="characters-symbols-container" id="characters-symbols-container">
               <div class="uppercase-container form-check mb-3">

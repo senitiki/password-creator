@@ -10,16 +10,30 @@ const symbols = '£$&()*+[]@#^-_!?';
 let password = '';
 let passwordStrength = '';
 
+const singleTab = document.querySelector('.single-tab');
+const bulkTab = document.querySelector('.bulk-tab');
+
 // ID matches with the Bootstrap class used for the input field
+const makeCustomPasswordContainer = document.querySelector('.make-a-password-container');
+
+const h2 = document.querySelector('.heading-2');
+
 const passwordCtrl = document.getElementById('form-control');
-const copyCtrl = document.querySelector('.copy-btn');
-const copiedPasswordMessage = document.querySelector('.copied-password-message');
+const passwordInputFieldContainer = document.querySelector('.password-input-field-container');
 const strengthMeter = document.querySelector('.strength-meter');
 const passwordStrengthText = document.querySelector('.password-strength-text');
+
+const createAndCopyBtnContainer = document.querySelector('.btn-container');
 const createBtn = document.querySelector('.create-btn');
+const copyCtrl = document.querySelector('.copy-btn');
+const copiedPasswordMessage = document.querySelector('.copied-password-message');
 
 const passwordLengthCtrl = document.getElementById('range-slider');
 const passwordLength = document.getElementById('passwordLength');
+
+const multiplePasswordsContainer = document.querySelector('.multiple-passwords-container');
+const numOfPasswordsCtrl = document.getElementById('range-slider-1');
+const numOfPasswords = document.getElementById('numOfPasswords');
 
 const uppercaseCtrl = document.getElementById('uppercase');
 const lowercaseCtrl = document.getElementById('lowercase');
@@ -423,8 +437,47 @@ hamburger.addEventListener('click', openMenu);
 // Close Nav Menu for click
 document.querySelectorAll('.nav-link-mobile').forEach((n) => n.addEventListener('click', closeMenu));
 
+singleTab.addEventListener('click', () => {
+  singleTab.classList.add('active');
+  bulkTab.classList.remove('active');
+
+  passwordStrengthText.after(createAndCopyBtnContainer);
+  createAndCopyBtnContainer.after(copiedPasswordMessage);
+
+  passwordInputFieldContainer.style.display = "flex";
+  strengthMeter.style.display = "flex";
+  passwordStrengthText.style.display = "flex";
+  passwordStrengthText.style.justifyContent = "center";
+
+  h2.textContent = "Create a custom & unique password";
+
+  multiplePasswordsContainer.classList.remove('active');
+  multiplePasswordsContainer.classList.add('hide');
+});
+
+bulkTab.addEventListener('click', () => {
+  singleTab.classList.remove('active');
+  bulkTab.classList.add('active');
+
+  makeCustomPasswordContainer.after(createAndCopyBtnContainer);
+  createAndCopyBtnContainer.after(copiedPasswordMessage);
+
+  passwordInputFieldContainer.style.display = "none";
+  strengthMeter.style.display = "none";
+  passwordStrengthText.style.display = "none";
+
+  h2.textContent = "Create multiple custom & unique passwords";
+
+  multiplePasswordsContainer.classList.add('active');
+  multiplePasswordsContainer.classList.remove('hide');
+});
+
 passwordLengthCtrl.addEventListener('input', (e) => {
   passwordLength.textContent = e.target.value;
+});
+
+numOfPasswordsCtrl.addEventListener('input', (e) => {
+  numOfPasswords.textContent = e.target.value;
 });
 
 uppercaseCtrl.addEventListener('change', (e) => {
