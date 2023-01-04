@@ -29,11 +29,11 @@
     <header class="header">
       <nav class="nav d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-around justify-content-md-around justify-content-lg-around align-items-sm-baseline align-items-md-baseline align-items-lg-baseline bg-white shadow-sm" id="nav">
         <div class="d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row align-items-sm-baseline align-items-md-baseline align-items-lg-baseline nav-item-1">
-          <p class="nav-heading bg-seagreen fw-bolder me-3 px-3 py-2 poppins-font" id="nav-heading">YA</p>
+          <p class="nav-heading bg-magenta fw-bolder me-3 px-3 py-2 poppins-font" id="nav-heading">YA</p>
         </div>
 
          <!--To show only when hamburger icon is clicked-->
-         <ul class="nav-menu-mobile list-unstyled bg-seagreen d-block d-sm-block d-md-block d-lg-none">
+         <ul class="nav-menu-mobile list-unstyled bg-magenta d-block d-sm-block d-md-block d-lg-none">
           <li class="nav-item-mobile"><a href="#home" class="nav-link-mobile text-decoration-none text-white fw-bolder me-5 poppins-font">Home</a></li>
         </ul>
 
@@ -52,10 +52,10 @@
 
     <main class="container-fluid main-container">
       <h1 class="hero-text fw-bold poppins-font">
-        <span id="brand" class="text-1 bg-seagreen px-5 py-4 fw-bolder"></span>
+        <span id="brand" class="text-1 bg-magenta px-5 py-4 fw-bolder"></span>
         <span class="text-2">
           <span>Password generator. </span>
-          <span class="text-seagreen">Simplified.</span>
+          <span class="text-magenta">Simplified.</span>
         </span>
       </h1>
 
@@ -79,7 +79,7 @@
 
         <!--Create & Copy Button Container-->
         <div class="btn-container" id="btn-container">
-          <button type="button" class="create-btn bg-seagreen my-5 px-5 py-4 fw-bolder">Create</button>
+          <button type="button" class="create-btn bg-magenta my-5 px-5 py-4 fw-bolder">Create</button>
           <button type="button" class="copy-btn my-5 px-5 py-4 fw-bolder" data-bs-toggle="modal" data-bs-target="#exampleModal">Copy</button>
         </div>
 
@@ -99,11 +99,11 @@
               <!--Range Container-->
               <div class="range-container-1">
                 <p class="minus-btn fw-bolder fs-3" id="minus-btn">-</p>
-                <input type="range" name="multiple-passwords" min="5" max="50" value="10" class="range-slider-1 me-3" id="range-slider-1" />
+                <input type="range" name="multiple-passwords" min="2" max="50" value="2" class="range-slider-1 me-3" id="range-slider-1" />
                 <p class="add-btn fw-bolder fs-3" id="add-btn">+</p>
               </div>
 
-              <p class="mt-5 fw-bolder fs-2" id="numOfPasswords">10</p>
+              <p class="mt-5 fw-bolder fs-2" id="numOfPasswords">2</p>
             </div>
             
             <!--Password Length Container-->
@@ -150,13 +150,18 @@
         </div>
       </form>
 
+      <!--Passwords Container for multiple passwords-->
+      <div class="passwords-container">
+        
+      </div>
+
       <!--More Tips Container-->
       <div class="more-info-container">
         <table class="table table-lg" id="table">
           <thead>
             <tr>
-              <th scope="col" class="text-seagreen fs-3">More Tips</th>
-              <th scope="col" class="text-seagreen fs-3">?</th>
+              <th scope="col" class="text-magenta fs-3">More Tips</th>
+              <th scope="col" class="text-magenta fs-3">?</th>
             </tr>
           </thead>
           <tbody>
@@ -189,7 +194,7 @@
       </div>    
     </main>
 
-    <footer class="footer bg-seagreen">
+    <footer class="footer bg-magenta">
       <p class="py-5 text-white text-1">&copy; <span class="text-white" id="date"><script>document.getElementById('date').innerHTML = new Date().getFullYear();</script></span> Aver. All rights reserved.</p>
       <a href="https://www.fiji.travel/" target="_blank" class="text-2">Made with 🧡 in Fiji.</a>
     </footer>

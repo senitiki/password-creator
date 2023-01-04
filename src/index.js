@@ -1,3 +1,4 @@
+import { divide } from 'lodash';
 import { hamburger, openMenu, closeMenu } from './modules/navbar-hamburger.js';
 import './style.css';
 
@@ -79,7 +80,6 @@ function testPasswordStrength(password){
     strength = "Weak";
   }
 
-  console.log(strength);
   return strength;
 }
 
@@ -399,6 +399,38 @@ function generate() {
   return password;
 }
 
+function generateMultiple() {
+  let maxNum = numOfPasswordsCtrl.value;
+  let wordLength = passwordLengthCtrl.value;
+  let newPassword = '';
+  let passwordStrength1 = '';
+  let multiplePasswords = [];
+
+  for (let i = 0; i < maxNum; i++){
+    newPassword = generate();
+      
+    passwordStrength1 = testPasswordStrength(newPassword);
+
+    while ((i === 0 && passwordStrength1 !== "Strong") || 
+      (i > 0 && multiplePasswords.includes(newPassword)) ||
+      (i > 0 && passwordStrength1 !== "Strong")){
+      
+      console.log(`word is here already: ${multiplePasswords.includes(newPassword)}`);
+
+      newPassword = generate();
+      
+      passwordStrength1 = testPasswordStrength(newPassword);
+    }
+
+    multiplePasswords.push({
+      password: newPassword,
+      strength: passwordStrength1
+    });
+  }
+
+  return multiplePasswords;
+}
+
 async function copyPassword() {
   try {
     copiedPasswordMessage.innerHTML = `
@@ -436,41 +468,6 @@ hamburger.addEventListener('click', openMenu);
 
 // Close Nav Menu for click
 document.querySelectorAll('.nav-link-mobile').forEach((n) => n.addEventListener('click', closeMenu));
-
-singleTab.addEventListener('click', () => {
-  singleTab.classList.add('active');
-  bulkTab.classList.remove('active');
-
-  passwordStrengthText.after(createAndCopyBtnContainer);
-  createAndCopyBtnContainer.after(copiedPasswordMessage);
-
-  passwordInputFieldContainer.style.display = "flex";
-  strengthMeter.style.display = "flex";
-  passwordStrengthText.style.display = "flex";
-  passwordStrengthText.style.justifyContent = "center";
-
-  h2.textContent = "Create a custom & unique password";
-
-  multiplePasswordsContainer.classList.remove('active');
-  multiplePasswordsContainer.classList.add('hide');
-});
-
-bulkTab.addEventListener('click', () => {
-  singleTab.classList.remove('active');
-  bulkTab.classList.add('active');
-
-  makeCustomPasswordContainer.after(createAndCopyBtnContainer);
-  createAndCopyBtnContainer.after(copiedPasswordMessage);
-
-  passwordInputFieldContainer.style.display = "none";
-  strengthMeter.style.display = "none";
-  passwordStrengthText.style.display = "none";
-
-  h2.textContent = "Create multiple custom & unique passwords";
-
-  multiplePasswordsContainer.classList.add('active');
-  multiplePasswordsContainer.classList.remove('hide');
-});
 
 passwordLengthCtrl.addEventListener('input', (e) => {
   passwordLength.textContent = e.target.value;
@@ -566,3 +563,83 @@ copyCtrl.addEventListener('click', copyPassword);
 passwordCtrl.value = generate();
 
 passwordStrength = testPasswordStrength(passwordCtrl.value);
+
+singleTab.addEventListener('click', () => {
+  singleTab.classList.add('active');
+  bulkTab.classList.remove('active');
+
+  passwordStrengthText.after(createAndCopyBtnContainer);
+  createAndCopyBtnContainer.after(copiedPasswordMessage);
+
+  passwordInputFieldContainer.style.display = "flex";
+  strengthMeter.style.display = "flex";
+  passwordStrengthText.style.display = "flex";
+  passwordStrengthText.style.justifyContent = "center";
+
+  h2.textContent = "Create a custom & unique password";
+
+  multiplePasswordsContainer.classList.remove('active');
+  multiplePasswordsContainer.classList.add('hide');
+
+  createBtn.addEventListener('click', () => {
+    passwordCtrl.value = generate();
+  
+    passwordStrength = testPasswordStrength(passwordCtrl.value);
+  
+    renderPasswordStrength(passwordStrength);
+  });
+});
+
+bulkTab.addEventListener('click', () => {
+  singleTab.classList.remove('active');
+  bulkTab.classList.add('active');
+
+  makeCustomPasswordContainer.after(createAndCopyBtnContainer);
+  createAndCopyBtnContainer.after(copiedPasswordMessage);
+
+  passwordInputFieldContainer.style.display = "none";
+  strengthMeter.style.display = "none";
+  passwordStrengthText.style.display = "none";
+
+  h2.textContent = "Create multiple custom & unique passwords";
+
+  multiplePasswordsContainer.classList.add('active');
+  multiplePasswordsContainer.classList.remove('hide');
+
+  createBtn.addEventListener('click', () => {
+    let passwords = generateMultiple();
+
+    const passwordsContainer = document.querySelector('.passwords-container');
+    passwordsContainer.style.width = "100%";
+    passwordsContainer.style.padding = "5%";
+    passwordsContainer.style.backgroundColor = "#e4e7ea";
+
+    for (let i = 0; i < passwords.length; i++){
+      const p = document.createElement('p');
+      const span1 = document.createElement('span');
+      const span2 = document.createElement('span');
+
+      p.textContent = passwords[i].password;
+      p.style.fontSize = "20px";
+
+      span1.textContent = "    ";
+  
+      span2.textContent = passwords[i].strength;
+      span2.style.fontSize = "20px";
+      span2.style.fontWeight = "bolder";
+  
+      if (passwords[i].strength === "Strong") {
+        span2.style.color = "green";
+      } else if (passwords[i].strength === "Medium"){
+        span2.style.color = "#ffb914";
+      } else {
+        span2.style.color = "Red";
+      }
+
+      span1.appendChild(span2);
+      p.appendChild(span1);
+
+      passwordsContainer.appendChild(p);
+    }
+  });
+});
