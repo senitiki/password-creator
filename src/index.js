@@ -36,6 +36,8 @@ const multiplePasswordsContainer = document.querySelector('.multiple-passwords-c
 const numOfPasswordsCtrl = document.getElementById('range-slider-1');
 const numOfPasswords = document.getElementById('numOfPasswords');
 
+const passwordsContainer = document.querySelector('.passwords-container');
+
 const uppercaseCtrl = document.getElementById('uppercase');
 const lowercaseCtrl = document.getElementById('lowercase');
 const numbersCtrl = document.getElementById('numbers');
@@ -48,6 +50,8 @@ let symbolsSelected = true;
 
 let checkBoxChecked = 4;
 const minimumChecked = 2;
+
+let count = 0;
 
 /* eslint-disable */
 function testPasswordStrength(password){
@@ -367,6 +371,44 @@ function numbersSymbols(password, passwordLength, categories) {
   return password;
 }
 
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+  }
+}
+
+function renderPasswords(){
+  let passwords = generateMultiple();
+
+  for (let i = 0; i < passwords.length; i++){
+    const p = document.createElement('p');
+    const span1 = document.createElement('span');
+    const span2 = document.createElement('span');
+
+    p.textContent = passwords[i].password;
+    p.style.fontSize = "20px";
+
+    span1.textContent = "    ";
+
+    span2.textContent = passwords[i].strength;
+    span2.style.fontSize = "20px";
+    span2.style.fontWeight = "bolder";
+
+    if (passwords[i].strength === "Strong") {
+      span2.style.color = "green";
+    } else if (passwords[i].strength === "Medium"){
+      span2.style.color = "#ffb914";
+    } else {
+      span2.style.color = "Red";
+    }
+
+    span1.appendChild(span2);
+    p.appendChild(span1);
+
+    passwordsContainer.appendChild(p);
+  }
+}
+
 function generate() {
   password = '';
 
@@ -401,7 +443,7 @@ function generate() {
 
 function generateMultiple() {
   let maxNum = numOfPasswordsCtrl.value;
-  let wordLength = passwordLengthCtrl.value;
+  // let wordLength = passwordLengthCtrl.value;
   let newPassword = '';
   let passwordStrength1 = '';
   let multiplePasswords = [];
@@ -414,9 +456,6 @@ function generateMultiple() {
     while ((i === 0 && passwordStrength1 !== "Strong") || 
       (i > 0 && multiplePasswords.includes(newPassword)) ||
       (i > 0 && passwordStrength1 !== "Strong")){
-      
-      console.log(`word is here already: ${multiplePasswords.includes(newPassword)}`);
-
       newPassword = generate();
       
       passwordStrength1 = testPasswordStrength(newPassword);
@@ -607,39 +646,18 @@ bulkTab.addEventListener('click', () => {
   multiplePasswordsContainer.classList.remove('hide');
 
   createBtn.addEventListener('click', () => {
-    let passwords = generateMultiple();
+    count += 1;
 
-    const passwordsContainer = document.querySelector('.passwords-container');
     passwordsContainer.style.width = "100%";
     passwordsContainer.style.padding = "5%";
     passwordsContainer.style.backgroundColor = "#e4e7ea";
 
-    for (let i = 0; i < passwords.length; i++){
-      const p = document.createElement('p');
-      const span1 = document.createElement('span');
-      const span2 = document.createElement('span');
+    if (count === 1){
+      renderPasswords();
+    } else {
+      removeAllChildNodes(passwordsContainer);
 
-      p.textContent = passwords[i].password;
-      p.style.fontSize = "20px";
-
-      span1.textContent = "    ";
-  
-      span2.textContent = passwords[i].strength;
-      span2.style.fontSize = "20px";
-      span2.style.fontWeight = "bolder";
-  
-      if (passwords[i].strength === "Strong") {
-        span2.style.color = "green";
-      } else if (passwords[i].strength === "Medium"){
-        span2.style.color = "#ffb914";
-      } else {
-        span2.style.color = "Red";
-      }
-
-      span1.appendChild(span2);
-      p.appendChild(span1);
-
-      passwordsContainer.appendChild(p);
+      renderPasswords();
     }
   });
 });
