@@ -32,6 +32,14 @@ body {
   background-color: black;
 }
 
+.bg-grey {
+  background-color: rgb(228, 231, 234);
+}
+
+.text-lightslategrey {
+  color: lightslategray;
+}
+
 .text-magenta {
   color: #d215b9;
 }
@@ -137,11 +145,22 @@ body {
   display: flex;
 }
 
+.email-btn.hide {
+  display: none;
+}
+
 .create-btn {
   color: white;
   font-size: 37px;
   border: none;
   border-radius: 50rem;
+}
+
+.email-btn {
+  color: white;
+  font-size: 37px;
+  border: none;
+  border-radius: 10px;
 }
 
 .copy-btn {
@@ -152,13 +171,15 @@ body {
   background-color: white;
 }
 
-.create-btn:hover {
+.create-btn:hover,
+.email-btn:hover {
   background-color: white;
   color: #d215b9;
   border: 3px solid #d215b9;
 }
 
 .create-btn:active,
+.email-btn:active,
 .copy-btn:active {
   border: 6px solid #d215b9;
 }
@@ -299,10 +320,41 @@ input[type=range]::-webkit-slider-thumb:active {
   font-size: 29px;
 }
 
+.email-checkbox-container.hide {
+  display: none;
+}
+
+.email-checkbox-container {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.passwords-container.hide {
+  display: none;
+}
+
+.copy-and-download-container {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+  padding: 6px 30px;
+  margin-bottom: 40px;
+  background-color: white;
+}
+
+.copy-and-download-container > i {
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 10px 120px;
+}
+
+.passwords-header.active {
+  position: sticky;
+  top: 57px;
+}
+
 .more-info-container {
-  border: 1px solid lightgrey;
-  border-radius: 10px;
-  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
   width: 95%;
   margin-top: 30px;
   margin-bottom: 30px;

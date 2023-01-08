@@ -27,6 +27,7 @@ const passwordStrengthText = document.querySelector('.password-strength-text');
 const createAndCopyBtnContainer = document.querySelector('.btn-container');
 const createBtn = document.querySelector('.create-btn');
 const copyCtrl = document.querySelector('.copy-btn');
+const emailCtrl = document.querySelector('.email-btn');
 const copiedPasswordMessage = document.querySelector('.copied-password-message');
 
 const passwordLengthCtrl = document.getElementById('range-slider');
@@ -36,7 +37,13 @@ const multiplePasswordsContainer = document.querySelector('.multiple-passwords-c
 const numOfPasswordsCtrl = document.getElementById('range-slider-1');
 const numOfPasswords = document.getElementById('numOfPasswords');
 
+const emailCheckboxContainer = document.querySelector('.email-checkbox-container');
+
 const passwordsContainer = document.querySelector('.passwords-container');
+const copyAndDownloadContainer = document.querySelector('.copy-and-download-container');
+const passwordsTable = document.querySelector('.passwords-table');
+const passwordsHeader = document.querySelector('.passwords-header');
+const passwordsBody = document.querySelector('.passwords-body');
 
 const uppercaseCtrl = document.getElementById('uppercase');
 const lowercaseCtrl = document.getElementById('lowercase');
@@ -377,35 +384,58 @@ function removeAllChildNodes(parent) {
   }
 }
 
-function renderPasswords(){
-  let passwords = generateMultiple();
+function renderPasswords(passwords){
+  if (passwords.length >= 10){
+    passwordsContainer.style.height ="584px";
+    passwordsContainer.style.overflowY = "scroll";
+
+    passwordsContainer.addEventListener('scroll', () => {
+      if (passwordsContainer.scrollTop > 20){
+        passwordsContainer.style.paddingTop = "0px";
+        copyAndDownloadContainer.classList.add('bg-white', 'shadow-sm', 'sticky-top');
+        copyAndDownloadContainer.style.borderBottom = '1px solid #e4e8ed';
+        passwordsHeader.classList.add('bg-white', 'shadow-sm', 'sticky-top', 'active');
+      } else {
+        passwordsContainer.style.paddingTop = "15px";
+        copyAndDownloadContainer.classList.remove('bg-white', 'shadow-sm', 'sticky-top');
+        copyAndDownloadContainer.style.borderBottom = '0';
+        passwordsHeader.classList.remove('bg-white','shadow-sm', 'active');
+      }
+    });
+  }
 
   for (let i = 0; i < passwords.length; i++){
-    const p = document.createElement('p');
-    const span1 = document.createElement('span');
-    const span2 = document.createElement('span');
+    const row = document.createElement('tr');
+    
+    const number = document.createElement('th');
+    number.setAttribute('scope', 'row');
 
-    p.textContent = passwords[i].password;
-    p.style.fontSize = "20px";
+    const th = document.createElement('th');
 
-    span1.textContent = "    ";
+    const td = document.createElement('td');
 
-    span2.textContent = passwords[i].strength;
-    span2.style.fontSize = "20px";
-    span2.style.fontWeight = "bolder";
+    number.textContent = `${i + 1}`;
+
+    th.textContent = passwords[i].password;
+    th.style.fontSize = "15px";
+
+    td.textContent = passwords[i].strength;
+    td.style.fontSize = "15px";
+    td.style.fontWeight = "bolder";
 
     if (passwords[i].strength === "Strong") {
-      span2.style.color = "green";
+      td.style.color = "green";
     } else if (passwords[i].strength === "Medium"){
-      span2.style.color = "#ffb914";
+      td.style.color = "#ffb914";
     } else {
-      span2.style.color = "Red";
+      td.style.color = "Red";
     }
 
-    span1.appendChild(span2);
-    p.appendChild(span1);
+    row.appendChild(number);
+    row.appendChild(th);
+    row.appendChild(td);
 
-    passwordsContainer.appendChild(p);
+    passwordsBody.appendChild(row);
   }
 }
 
@@ -443,29 +473,36 @@ function generate() {
 
 function generateMultiple() {
   let maxNum = numOfPasswordsCtrl.value;
-  // let wordLength = passwordLengthCtrl.value;
-  let newPassword = '';
-  let passwordStrength1 = '';
-  let multiplePasswords = [];
 
-  for (let i = 0; i < maxNum; i++){
+  console.log(passwordLengthCtrl.value);
+  
+  let newPassword = '';
+  let newPasswordStrength = '';
+  let multiplePasswords = [];
+  let i = 0;
+
+  do {
     newPassword = generate();
       
-    passwordStrength1 = testPasswordStrength(newPassword);
+    newPasswordStrength = testPasswordStrength(newPassword);
 
-    while ((i === 0 && passwordStrength1 !== "Strong") || 
-      (i > 0 && multiplePasswords.includes(newPassword)) ||
-      (i > 0 && passwordStrength1 !== "Strong")){
-      newPassword = generate();
-      
-      passwordStrength1 = testPasswordStrength(newPassword);
-    }
+    /* if (!multiplePasswords.includes(newPassword) && newPasswordStrength === "Strong"){
+      multiplePasswords.push({
+        password: newPassword,
+        strength: newPasswordStrength
+      });
+
+      i += 1;
+      console.log(`i: ${i}`);
+    } */
 
     multiplePasswords.push({
       password: newPassword,
-      strength: passwordStrength1
+      strength: newPasswordStrength
     });
-  }
+
+    i += 1;
+  } while (i < maxNum);
 
   return multiplePasswords;
 }
@@ -484,7 +521,7 @@ async function copyPassword() {
               <p class="text-center fs-3 my-3">Copied to clipboard!</p>
             </div>
             <div class="modal-footer border-0">
-              <button type="button" class="btn close-btn-2 bg-seagreen fs-4" data-bs-dismiss="modal">Ok</button>
+              <button type="button" class="btn close-btn-2 bg-magenta fs-4" data-bs-dismiss="modal">Ok</button>
             </div>
           </div>
         </div>
@@ -494,6 +531,38 @@ async function copyPassword() {
     // Select the text field
     passwordCtrl.select();
     passwordCtrl.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the text inside the text field
+    await navigator.clipboard.writeText(passwordCtrl.value);
+  } catch (err){
+    console.error('Failed to copy: ', err);
+  }
+}
+
+async function copyPasswords(passwords){
+  try {
+    copiedPasswordMessage.innerHTML = `
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p class="text-center fs-3 my-3">Copied to clipboard!</p>
+            </div>
+            <div class="modal-footer border-0">
+              <button type="button" class="btn close-btn-2 bg-magenta fs-4" data-bs-dismiss="modal">Ok</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Select the text field
+    passwords.password.select();
+    passwords.password.setSelectionRange(0, 99999); // For mobile devices
 
     // Copy the text inside the text field
     await navigator.clipboard.writeText(passwordCtrl.value);
@@ -607,6 +676,8 @@ singleTab.addEventListener('click', () => {
   singleTab.classList.add('active');
   bulkTab.classList.remove('active');
 
+  emailCtrl.classList.add('hide');
+
   passwordStrengthText.after(createAndCopyBtnContainer);
   createAndCopyBtnContainer.after(copiedPasswordMessage);
 
@@ -619,6 +690,8 @@ singleTab.addEventListener('click', () => {
 
   multiplePasswordsContainer.classList.remove('active');
   multiplePasswordsContainer.classList.add('hide');
+  emailCheckboxContainer.classList.add('hide');
+  passwordsContainer.classList.add('hide');
 
   createBtn.addEventListener('click', () => {
     passwordCtrl.value = generate();
@@ -633,7 +706,10 @@ bulkTab.addEventListener('click', () => {
   singleTab.classList.remove('active');
   bulkTab.classList.add('active');
 
-  makeCustomPasswordContainer.after(createAndCopyBtnContainer);
+  emailCheckboxContainer.classList.remove('hide');
+
+  makeCustomPasswordContainer.after(emailCheckboxContainer);
+  emailCheckboxContainer.after(createAndCopyBtnContainer);
   createAndCopyBtnContainer.after(copiedPasswordMessage);
 
   passwordInputFieldContainer.style.display = "none";
@@ -645,19 +721,47 @@ bulkTab.addEventListener('click', () => {
   multiplePasswordsContainer.classList.add('active');
   multiplePasswordsContainer.classList.remove('hide');
 
+  const emailCheckbox = document.getElementById('email-checkbox');
+
+  let clickCount = 0;
+
+  emailCheckbox.addEventListener('click', () => {
+    clickCount += 1;
+    
+    if (clickCount%2 === 0){
+      emailCtrl.classList.add('hide');
+    } else {
+      emailCtrl.classList.remove('hide');
+    }
+  });
+
   createBtn.addEventListener('click', () => {
     count += 1;
 
-    passwordsContainer.style.width = "100%";
-    passwordsContainer.style.padding = "5%";
-    passwordsContainer.style.backgroundColor = "#e4e7ea";
+    passwordsContainer.classList.remove('hide');
+    passwordsContainer.style.width = "102%";
+    passwordsContainer.style.padding = "15px 2% 5% 2%";
+    passwordsContainer.style.backgroundColor = "white";
+    passwordsContainer.style.border = "1px solid lightgrey";
+    passwordsContainer.style.borderRadius = "10px";
+    passwordsContainer.style.boxShadow = "0 0.125rem 0.25rem rgb(0 0 0 / 8%)";
+
+    let passwords;
 
     if (count === 1){
-      renderPasswords();
-    } else {
-      removeAllChildNodes(passwordsContainer);
+      passwords = generateMultiple();
 
-      renderPasswords();
+      renderPasswords(passwords);
+
+      copyCtrl.addEventListener('click', copyPasswords(passwords));
+    } else {
+      removeAllChildNodes(passwordsBody);
+
+      passwords = generateMultiple();
+
+      renderPasswords(passwords);
+
+      copyCtrl.addEventListener('click', copyPasswords(passwords));
     }
   });
 });
