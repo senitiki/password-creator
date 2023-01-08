@@ -1,4 +1,3 @@
-import { divide } from 'lodash';
 import { hamburger, openMenu, closeMenu } from './modules/navbar-hamburger.js';
 import './style.css';
 
@@ -41,7 +40,6 @@ const emailCheckboxContainer = document.querySelector('.email-checkbox-container
 
 const passwordsContainer = document.querySelector('.passwords-container');
 const copyAndDownloadContainer = document.querySelector('.copy-and-download-container');
-const passwordsTable = document.querySelector('.passwords-table');
 const passwordsHeader = document.querySelector('.passwords-header');
 const passwordsBody = document.querySelector('.passwords-body');
 
