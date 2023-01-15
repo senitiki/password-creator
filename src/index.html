@@ -53,26 +53,28 @@
     </header>
 
     <main class="container-fluid main-container">
-      <h1 class="hero-text fw-bold poppins-font">
+      <h1 class="hero-text fw-bold poppins-font text-center">
         <span id="brand" class="text-1 bg-magenta px-5 py-4 fw-bolder"></span>
         <span class="text-2">
           <span>Password generator. </span>
           <span class="text-magenta">Simplified. Free.</span>
         </span>
       </h1>
+      
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+          <!--Tabs for single password & bulk password-->
+        <div class="password-tabs-container">
+          <p class="tabs single-tab active p-3">Single</p>
+          <p class="tabs bulk-tab p-3">Multiple</p>
+        </div>
 
-      <!--Tabs for single password & bulk password-->
-      <div class="password-tabs-container">
-        <p class="tabs single-tab active p-3">Single</p>
-        <p class="tabs bulk-tab p-3">Multiple</p>
-      </div>
-
-      <div class="bg-grey">
+        <!--div class="bg-grey"-->
         <form class="form row">
           <!--Password Input Field Container-->
           <div class="password-input-field-container mt-5">
             <input type="text" class="password-input-field form-control fw-bolder shadow-sm" id="form-control" name="password" placeholder=""/>
-            <i class="material-icons bg-ligthslategrey">content_copy</i>
+            <span class="input-group-text copy-icon-btn"><i class="material-icons bg-ligthslategrey">content_copy</i></span>
           </div>
   
           <!--Password Strength Meter-->
@@ -181,6 +183,8 @@
             </table>
           </div>
         </form>  
+        <!--/div-->
+        </div>
       </div>
       
       <!--More Tips Container-->
