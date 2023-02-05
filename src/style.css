@@ -90,6 +90,26 @@ body {
   border-radius: 50rem;
 }
 
+@keyframes animate {
+  0% {
+    content: "YA";
+  }
+
+  50% {
+    content: "Yet";
+  }
+
+  75% {
+    content: "Yet Another";
+  }
+}
+
+#brand::before {
+  content: "YA";
+  animation: animate infinite 3s;
+  padding-left: 10px;
+}
+
 /* Tabs for single & bulk passwords */
 .password-tabs-container {
   display: flex;
@@ -1517,6 +1537,7 @@ input[type=range]::-webkit-slider-thumb:active {
   /* Main container */
   .hero-text {
     padding-top: 100px;
+    padding-left: 100px;
     font-size: 64px;
   }
 
@@ -1570,6 +1591,7 @@ input[type=range]::-webkit-slider-thumb:active {
   /* Main container */
   .hero-text {
     padding-top: 100px;
+    padding-left: 100px;
     font-size: 67px;
   }
 
@@ -1598,25 +1620,5 @@ input[type=range]::-webkit-slider-thumb:active {
 
   .table {
     width: 100%;
-  }
-}
-
-#brand::before {
-  content: "YA";
-  animation: animate infinite 3s;
-  padding-left: 10px;
-}
-
-@keyframes animate {
-  0% {
-    content: "YA";
-  }
-
-  50% {
-    content: "Yet";
-  }
-
-  75% {
-    content: "Yet Another";
   }
 }
