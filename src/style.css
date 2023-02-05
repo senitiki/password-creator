@@ -138,8 +138,7 @@ body {
 .form {
   display: flex;
   flex-direction: column;
-  align-items: column;
-  background-color: rgb(228, 231, 234);;
+  background-color: rgb(228, 231, 234);
 }
 
 .password-input-field-container {
