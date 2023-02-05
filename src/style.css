@@ -93,6 +93,7 @@ body {
 /* Tabs for single & bulk passwords */
 .password-tabs-container {
   display: flex;
+  justify-content: center;
   align-items: center;
   margin-top: 50px;
 }
@@ -100,13 +101,6 @@ body {
 .tabs {
   font-size: 40px;
   cursor: pointer;
-}
-
-.passwords-tabs-container {
-  display: flex;
-  flex-direction: column;
-  align-items: column;
-  background-color: rgb(228, 231, 234);;
 }
 
 .single-tab.active,
