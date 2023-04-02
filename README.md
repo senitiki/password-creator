@@ -13,7 +13,7 @@
 
 ## Preview
 
-![Website preview](./preview.png)
+![Website preview](./preview2.PNG)
 
 ## Live Demo
 
