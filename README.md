@@ -17,7 +17,7 @@
 
 ## Live Demo
 
-[Live Demo Link from ./dist/index.html](https://raw.githack.com/chelmerrox/password-creator/page_structure/dist/index.html)
+[Live Demo Link from ./dist/index.html](https://raw.githack.com/senitiki/password-creator/main/dist/index.html)
 
 ## Getting Started
 
