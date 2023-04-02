@@ -1,241 +1,223 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
-      <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
-      <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
-      <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon.ico">
-      <link rel="manifest" href="./favicon_io/site.webmanifest">
-      <!--Bootstrap-->
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-      <!--Google Icons-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <title>YA • Password generator tool</title>
-      <meta name="description" content="Generate strong and secure passwords easily with our simple password generator - even in bulk! Protect your accounts and personal information with unique passwords.">
-      <meta name="keywords" content="Password generator, Secure passwords, Random passwords, Unique passwords, Password security, Online security, Protect accounts, Personal information protection, Bulk password generation, Easy password generation"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Generate strong and secure passwords easily with our simple password generator - even in bulk! Protect your accounts and personal information with unique passwords.">
+    <meta name="keywords" content="Password generator, Secure passwords, Random passwords, Unique passwords, Password security, Online security, Protect accounts, Personal information protection, Bulk password generation, Easy password generation">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon.ico">
+    <title>Password creation tool • YA</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRV3155MSV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SRV3155MSV');
+    </script>
   </head>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRV3155MSV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-SRV3155MSV');
-  </script>
-
-  <body>
-    <header class="header">
-      <nav class="nav d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-around justify-content-md-around justify-content-lg-around align-items-sm-baseline align-items-md-baseline align-items-lg-baseline bg-white shadow-sm" id="nav">
-        <div class="d-sm-flex d-md-flex d-lg-flex flex-sm-row flex-md-row flex-lg-row align-items-sm-baseline align-items-md-baseline align-items-lg-baseline nav-item-1">
-          <p class="nav-heading bg-magenta fw-bolder me-3 px-3 py-2 poppins-font" id="nav-heading">YA</p>
+    
+  <body> 
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">About</h4>
+              <p class="text-white">Generate strong and secure passwords easily with our simple password creator tool - even in bulk! Protect your accounts and personal information with unique passwords.</p>
+            </div>
+            <!--div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contact</h4>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                <li><a href="#" class="text-white">Like on Facebook</a></li>
+                <li><a href="#" class="text-white">Email me</a></li>
+              </ul>
+            </div-->
+          </div>
         </div>
-
-         <!--To show only when hamburger icon is clicked-->
-         <ul class="nav-menu-mobile list-unstyled bg-magenta d-block d-sm-block d-md-block d-lg-none">
-          <li class="nav-item-mobile"><a href="#home" class="nav-link-mobile text-decoration-none text-white fw-bolder me-5 poppins-font">Home</a></li>
-        </ul>
-
-        <div class="hamburger d-block d-sm-block d-md-block d-lg-none" id="hamburger">
-          <span class="bar bg-darkblack hamburger-bar-1"></span>
-          <span class="bar bg-darkblack hamburger-bar-2"></span>
-          <span class="bar bg-darkblack hamburger-bar-3"></span>
+      </div>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <img src="./images/passwordcreator_logo_white.svg" height="55" width="55" alt="Password Creator Logo"/>
+            <strong>Password Creator</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
         </div>
-        
-        <!--To show only in desktop screens-->
-        <ul class="list-unstyled d-none d-sm-none d-md-none d-lg-flex flex-sm-row flex-md-row flex-lg-row justify-content-sm-between justify-content-md-between justify-content-lg-between nav-menu-desktop" id="nav-menu-desktop">
-          <li><a href="#home" class="text-decoration-none text-dark fw-bolder me-5 poppins-font">Home</a></li>
-        </ul>
-      </nav>
+      </div>
     </header>
 
-    <main class="container-fluid main-container">
-      <h1 class="hero-text fw-bold poppins-font text-center">
-        <span id="brand" class="text-1 bg-magenta px-5 py-4 fw-bolder"></span>
-        <span class="text-2">
-          <span>Password generator. </span>
-          <span class="text-magenta">Simplified. Free.</span>
-        </span>
-      </h1>
-      
-      <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-          <!--Tabs for single password & bulk password-->
-        <div class="password-tabs-container">
-          <p class="tabs single-tab active p-3">Single</p>
-          <p class="tabs bulk-tab p-3">Multiple</p>
-        </div>
+    <main>
+      <div class="album pb-5 bg-light">
+        <div class="container">
+          
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+              <form class="form row mt-5 p-5">
+                <!--Make a custom password container-->
+                <div class="make-a-password-container bg-white" id="make-a-password-container">
+                  <h2 class="heading-2 poppins-font fs-1 fw-bolder" id="heading-2">Customizations</h2>
+        
+                  <!--Password options container-->
+                  <div class="password-options-container d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row justify-content-lg-evenly justify-content-xl-evenly justify-content-xxl-evenly mt-4">
+                    <!--Number of multiple/bulk passwords container-->
+                    <div class="multiple-passwords-container me-4">
+                      <label for="range-slider-1" class="fw-bolder">Number of passwords</label>
+        
+                      <!--Range Container-->
+                      <div class="range-container-1">
+                        <p class="minus-btn fw-bolder fs-3" id="minus-btn-1">-</p>
+                        <input type="range" name="multiple-passwords" min="1" max="50" value="1" class="range-slider-1 me-3" id="range-slider-1" />
+                        <p class="add-btn fw-bolder fs-3" id="add-btn-1">+</p>
+                      </div>
+        
+                      <p class="mt-5 fw-bolder fs-2" id="numOfPasswords">1</p>
+                    </div>
+                    
+                    <!--Password Length Container-->
+                    <div class="password-length-container me-4">
+                      <label for="range-slider" class="fw-bolder">Password Length</label>
+        
+                      <!--Range Container-->
+                      <div class="range-container">
+                        <p class="minus-btn fw-bolder fs-3" id="minus-btn-2">-</p>
+                        <input type="range" name="password-length" min="5" max="50" value="12" class="range-slider me-3" id="range-slider" />
+                        <p class="add-btn fw-bolder fs-3" id="add-btn-2">+</p>
+                      </div>
+        
+                      <p class="mt-5 fw-bolder fs-2" id="passwordLength">12</p>
+                    </div>
+                      
+                    <!--Characters & Symbols Container-->
+                    <div class="characters-symbols-container" id="characters-symbols-container">
+                      <div class="uppercase-container form-check mb-3">
+                        <input type="checkbox" name="uppercase-choice" value="Uppercase" class="form-check-input p-3" id="uppercase" checked/>
+                        <label for="uppercase">Uppercase</label>
+                        <i class="material-icons mt-1 text-secondary" title="Passwords with alphabet letters from A-Z.">info</i>
+                      </div>
+        
+                      <div class="lowercase-container form-check mb-3">
+                        <input type="checkbox" name="lowercase-choice" class="form-check-input p-3" value="Lowercase" id="lowercase" checked/>
+                        <label for="lowercase">Lowercase</label>
+                        <i class="material-icons mt-1 text-secondary" title="Passwords with alphabet letters from a-z.">info</i>
+                      </div>
+        
+                      <div class="numbers-container form-check mb-3">
+                        <input type="checkbox" name="numbers-choice" value="Numbers" class="form-check-input p-3" id="numbers" checked/>
+                        <label for="numbers">Numbers</label>
+                        <i class="material-icons mt-1 text-secondary" title="Passwords with numbers from 0-9.">info</i>
+                      </div>
+        
+                      <div class="symbols-container form-check">
+                        <input type="checkbox" name="symbols-choice" value="symbols" class="form-check-input p-3" id="symbols" checked/>
+                        <label for="symbols">Symbols</label>
+                        <i class="material-icons mt-1 text-secondary" title="Passwords with symbols such as $*_!?">info</i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-        <!--div class="bg-grey"-->
-        <form class="form row">
-          <!--Password Input Field Container-->
-          <div class="password-input-field-container mt-5">
-            <input type="text" class="password-input-field form-control fw-bolder shadow-sm" id="form-control" name="password" placeholder=""/>
-            <span class="input-group-text copy-icon-btn"><i class="material-icons bg-ligthslategrey">content_copy</i></span>
-          </div>
-  
-          <!--Password Strength Meter-->
-          <div class="strength-meter"></div>
-  
-          <!--Password Strength Value-->
-          <p class="password-strength-text">Strong</p>
-  
-          <!--Create & Copy Button Container-->
-          <div class="btn-container" id="btn-container">
-            <button type="button" class="create-btn bg-magenta my-5 px-5 py-4 fw-bolder">Create</button>
-            <button type="button" class="copy-btn my-5 px-5 py-4 fw-bolder" data-bs-toggle="modal" data-bs-target="#exampleModal">Copy</button>
-            <button type="button" class="email-btn bg-magenta my-5 px-5 py-4 fw-bolder hide">Send by email <span class="material-icons ms-2 h-100">email</span></button>
-          </div>
-  
-          <!--Pop Up Modal/Message to be displayed after copying a password-->
-          <div class="copied-password-message"></div>
-  
-          <!--Make a custom password container-->
-          <div class="make-a-password-container bg-white" id="make-a-password-container">
-            <h2 class="heading-2 poppins-font" id="heading-2">Create a custom & unique password</h2>
-  
-            <!--Password options container-->
-            <div class="password-options-container d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row justify-content-lg-evenly justify-content-xl-evenly justify-content-xxl-evenly mt-4">
-              <!--Number of multiple/bulk passwords container-->
-              <div class="multiple-passwords-container hide">
-                <label for="range-slider-1" class="fw-bolder">Number of passwords</label>
-  
-                <!--Range Container-->
-                <div class="range-container-1">
-                  <p class="minus-btn fw-bolder fs-3" id="minus-btn">-</p>
-                  <input type="range" name="multiple-passwords" min="2" max="50" value="2" class="range-slider-1 me-3" id="range-slider-1" />
-                  <p class="add-btn fw-bolder fs-3" id="add-btn">+</p>
+                <!--Create & Copy Button Container-->
+                <div class="btn-container" id="btn-container">
+                  <button type="button" class="create-btn bg-magenta my-5 px-5 py-4 fw-bolder">Create</button>
                 </div>
-  
-                <p class="mt-5 fw-bolder fs-2" id="numOfPasswords">2</p>
-              </div>
-              
-              <!--Password Length Container-->
-              <div class="password-length-container me-5">
-                <label for="range-slider" class="fw-bolder">Password Length</label>
-  
-                <!--Range Container-->
-                <div class="range-container">
-                  <p class="minus-btn fw-bolder fs-3" id="minus-btn">-</p>
-                  <input type="range" name="password-length" min="5" max="50" value="12" class="range-slider me-3" id="range-slider" />
-                  <p class="add-btn fw-bolder fs-3" id="add-btn">+</p>
+
+                <hr>
+        
+                <!--Passwords Container for multiple passwords-->
+                <div class="passwords-container">
+                  <h2 class="text-center fs-1 fw-bolder text-capitalize pt-3 pb-5">password list</h2>
+                  
+                  <div class="passwords-body d-lg-flex flex-lg-column align-items-lg-center">
+                  </div>
                 </div>
-  
-                <p class="mt-5 fw-bolder fs-2" id="passwordLength">12</p>
-              </div>
-                
-              <!--Characters & Symbols Container-->
-              <div class="characters-symbols-container" id="characters-symbols-container">
-                <div class="uppercase-container form-check mb-3">
-                  <input type="checkbox" name="uppercase-choice" value="Uppercase" class="form-check-input p-3" id="uppercase" checked/>
-                  <label for="uppercase">Uppercase</label>
-                  <i class="material-icons mt-1 text-secondary" title="Passwords with alphabet letters from A-Z.">info</i>
-                </div>
-  
-                <div class="lowercase-container form-check mb-3">
-                  <input type="checkbox" name="lowercase-choice" class="form-check-input p-3"value="Lowercase" id="lowercase" checked/>
-                  <label for="lowercase">Lowercase</label>
-                  <i class="material-icons mt-1 text-secondary" title="Passwords with alphabet letters from a-z.">info</i>
-                </div>
-  
-                <div class="numbers-container form-check mb-3">
-                  <input type="checkbox" name="numbers-choice" value="Numbers" class="form-check-input p-3" id="numbers" checked/>
-                  <label for="numbers">Numbers</label>
-                  <i class="material-icons mt-1 text-secondary" title="Passwords with numbers from 0-9.">info</i>
-                </div>
-  
-                <div class="symbols-container form-check">
-                  <input type="checkbox" name="symbols-choice" value="symbols" class="form-check-input p-3" id="symbols" checked/>
-                  <label for="symbols">Symbols</label>
-                  <i class="material-icons mt-1 text-secondary" title="Passwords with symbols such as $*_!?">info</i>
-                </div>
-              </div>
+              </form>
             </div>
           </div>
-  
-          <div class="email-checkbox-container hide">
-            <input type="checkbox" name="email-passwords" value="Email passwords" class="form-check-input p-2" id="email-checkbox" />
-            <label for="email-checkbox">Email the passwords</label>
-          </div>
-  
-          <!--Passwords Container for multiple passwords-->
-          <div class="passwords-container hide">
-            <div class="copy-and-download-container">
-              <i class="material-icons text-lightslategrey" title="Download as CSV file">file_download</i>
-              <i class="material-icons text-lightslategrey" title="Copy">content_copy</i>
-              <i class="material-icons text-lightslategrey" title="Email the passwords">mail_outline</i>
-            </div>
-  
-            <h2 class="text-center fw-bolder">Password List</h2>
-            <table class="table passwords-table">
-              <thead class="passwords-header">
-                <tr>
-                  <th scope="col" class="fs-4">No.</th>
-                  <th scope="col" class="fs-4">Password</th>
-                  <th scope="col" class="fs-4">Strength</th>
-                </tr>
-              </thead>
-              <tbody class="passwords-body">
-              </tbody>
-            </table>
-          </div>
-        </form>  
-        <!--/div-->
         </div>
       </div>
-      
-      <!--More Tips Container-->
-      <div class="more-info-container">
-        <table class="table table-lg" id="table">
-          <thead>
-            <tr>
-              <th scope="col" class="text-magenta fs-3">More Tips</th>
-              <th scope="col" class="text-magenta fs-3">?</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td scope="row" class="text-secondary py-3">Choose a long password of at least 12 characters long.</td>
-            </tr>
-            <tr>
-              <td scope="row" class="text-secondary py-3">Must have at least 1 capital letter, 1 lowercase letter, 1 number and 1 symbol.</td>
-            </tr>
-            <tr>
-              <td scope="row" class="text-secondary py-3">Must have a combination of capital, lowercase, number & symbols.</td>
-            </tr>
-            <tr>
-              <td scope="row" class="text-secondary py-3">Must not have spaces in between.</td>
-            </tr>
-            <tr>
-              <td scope="row" class="text-secondary py-3">Cannot be based on your Name, NetID or words found in the dictionary.</td>
-            </tr>
-            <tr>
-              <td scope="row" class="text-secondary py-3">Cannot be based on simple repeating patterns.</td>
-            </tr>
-            <tr>
-              <td scope="row" class="text-secondary py-3">Use a unique password for every unique service.</td>
-            </tr>
-            <tr>
-              <td scope="row" class="text-secondary py-3">Do not share your password or share it through email.</td>
-            </tr>
-          </tbody>
-        </table>  
-      </div>
-      
-      <div class="more-info-container">
-        <p>Use our password generator app to create strong, random and secure passwords that are difficult for hackers to guess thus protecting your accounts from being compromised!</p>
-        <p>Bulk password generation doesn't have to be a headache. With our password generator app, you can create multiple strong and secure passwords quickly and easily. Keep your accounts and personal information safe in just a few clicks.</p>
-      </div>
+
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <p><span id="brand" class="text-1 fs-2 text-white bg-magenta px-5 py-4 fw-bolder rounded-pill"></span></p>
+            <h1 class="fw-light mt-5">Password creator.</h1>
+            <p class="lead text-magenta fw-bolder fs-2">Simplified. Free.</p>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer class="footer bg-magenta">
-      <p class="py-5 text-white text-1">&copy; <span class="text-white" id="date"><script>document.getElementById('date').innerHTML = new Date().getFullYear();</script></span> Aver. All rights reserved.</p>
-      <a href="https://www.fiji.travel/" target="_blank" class="text-2">Made with 🧡 in Fiji.</a>
+    <footer class="text-muted py-5">
+      <div class="container">
+        <p class="float-end mb-1" rel="noopener">
+          <a href="https://www.fiji.travel/" rel="noopener" target="_blank" class="text-2">Made with 🧡 in Fiji</a>
+        </p>
+        <p class="mb-1">&copy; <span id="date"><script>document.getElementById('date').innerHTML = new Date().getFullYear();</script></span> Aver. All rights reserved.</p>
+      </div>
     </footer>
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>
 </html>
