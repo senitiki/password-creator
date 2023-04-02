@@ -1,4 +1,3 @@
-import { hamburger, openMenu, closeMenu } from './modules/navbar-hamburger.js';
 import './style.css';
 
 // Define character set
@@ -9,34 +8,14 @@ const symbols = '£$&()*+[]@#^-_!?';
 
 let password = '';
 
-// ID matches with the Bootstrap class used for the input field
-//const makeCustomPasswordContainer = document.querySelector('.make-a-password-container');
-
-//const h2 = document.querySelector('.heading-2');
-
-//const passwordCtrl = document.getElementById('form-control');
-//const passwordInputFieldContainer = document.querySelector('.password-input-field-container');
-//const strengthMeter = document.querySelector('.strength-meter');
-//const passwordStrengthText = document.querySelector('.password-strength-text');
-
-//const createAndCopyBtnContainer = document.querySelector('.btn-container');
 const createBtn = document.querySelector('.create-btn');
-// const copyCtrl = document.querySelector('.copy-btn');
-//const emailCtrl = document.querySelector('.email-btn');
-// const copiedPasswordMessage = document.querySelector('.copied-password-message');
 
 const passwordLengthCtrl = document.getElementById('range-slider');
 const passwordLength = document.getElementById('passwordLength');
 
-//const multiplePasswordsContainer = document.querySelector('.multiple-passwords-container');
 const numOfPasswordsCtrl = document.getElementById('range-slider-1');
 const numOfPasswords = document.getElementById('numOfPasswords');
 
-// const emailCheckboxContainer = document.querySelector('.email-checkbox-container');
-
-//const passwordsContainer = document.querySelector('.passwords-container');
-// const copyAndDownloadContainer = document.querySelector('.copy-and-download-container');
-//const passwordsHeader = document.querySelector('.passwords-header');
 const passwordsBody = document.querySelector('.passwords-body');
 
 const uppercaseCtrl = document.getElementById('uppercase');
@@ -51,8 +30,6 @@ let symbolsSelected = true;
 
 let checkBoxChecked = 4;
 const minimumChecked = 2;
-
-let count = 0;
 
 /* eslint-disable */
 function testPasswordStrength(password){
@@ -353,28 +330,6 @@ function removeAllChildNodes(parent) {
 function renderPasswords(passwords){
   removeAllChildNodes(passwordsBody);
 
-  /*if (passwords.length >= 10){
-    passwordsContainer.style.height ="584px";
-    passwordsContainer.style.overflowY = "scroll";
-
-    passwordsContainer.addEventListener('scroll', () => {
-      if (passwordsContainer.scrollTop > 20){
-        passwordsContainer.style.paddingTop = "0px";
-        //copyAndDownloadContainer.classList.add('bg-white', 'shadow-sm', 'sticky-top');
-        //copyAndDownloadContainer.style.borderBottom = '1px solid #e4e8ed';
-        passwordsHeader.classList.add('bg-white', 'shadow-sm', 'sticky-top', 'active');
-      } else {
-        passwordsContainer.style.paddingTop = "15px";
-        //copyAndDownloadContainer.classList.remove('bg-white', 'shadow-sm', 'sticky-top');
-        //copyAndDownloadContainer.style.borderBottom = '0';
-        passwordsHeader.classList.remove('bg-white','shadow-sm', 'active');
-      }
-    });
-  }*/
-
-  /*console.log('REDNER!');
-  console.log(passwords);*/
-
   for (let i = 0; i < passwords.length; i++){
     const row = document.createElement('div');
     row.classList.add("px-2", "py-1");
@@ -385,51 +340,6 @@ function renderPasswords(passwords){
     
     row.appendChild(passwordCreated);
     passwordsBody.appendChild(row);
-
-    //const row = document.createElement('tr');
-
-    //const numberCol = document.createElement('td');
-    //numberCol.setAttribute('scope', 'row');
-    //numberCol.textContent = `${i + 1}`;
-    
-    //const firstCol = document.createElement('td');
-    //firstCol.setAttribute('scope', 'row');
-    //firstCol.textContent = " ";
-
-    //const passwordCol = document.createElement('td');
-    //passwordCol.setAttribute('scope', 'row');
-    //passwordCol.textContent = passwords[i].password;
-
-    //const thirdCol = document.createElement('td');
-    //thirdCol.setAttribute('scope', 'row');
-    //thirdCol.textContent = " ";
-
-    //th.style.fontSize = "15px";
-
-    /*td.textContent = passwords[i].strength;
-    td.style.fontSize = "15px";
-    td.style.fontWeight = "bolder";
-
-    if (passwords[i].strength === "Strong") {
-      td.style.color = "green";
-    } else if (passwords[i].strength === "Medium"){
-      td.style.color = "#ffb914";
-    } else {
-      td.style.color = "Red";
-    }*/
-
-    //row.appendChild(number);
-    //row.appendChild(th);
-    //row.appendChild(td);
-
-    //row.appendChild(numberCol);
-    //row.appendChild(passwordCol);
-
-    //row.appendChild(firstCol);
-    //row.appendChild(passwordCol);
-    //row.appendChild(thirdCol);
-
-    //passwordsBody.appendChild(row);
   }
 }
 
@@ -485,8 +395,6 @@ function generateMultiple() {
 
     i += 1;
   } while (i < maxNum);
-
-  // console.log(multiplePasswords);
 
   renderPasswords(multiplePasswords);
 }
@@ -549,7 +457,5 @@ symbolsCtrl.addEventListener('change', (e) => {
 
 // For all screens
 createBtn.addEventListener('click', () => {
-  // console.log('Clicked!');
-  
   generateMultiple();
 });

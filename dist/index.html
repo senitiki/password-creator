@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Generate strong and secure passwords easily with our simple password generator - even in bulk! Protect your accounts and personal information with unique passwords.">
-    <meta name="keywords" content="Password generator, Secure passwords, Random passwords, Unique passwords, Password security, Online security, Protect accounts, Personal information protection, Bulk password generation, Easy password generation"/>
+    <meta name="keywords" content="Password generator, Secure passwords, Random passwords, Unique passwords, Password security, Online security, Protect accounts, Personal information protection, Bulk password generation, Easy password generation">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon.ico">
@@ -65,8 +65,6 @@
         -webkit-overflow-scrolling: touch;
       }
     </style>
-
-  <script defer src="runtime.js"></script><script defer src="main.js"></script></head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRV3155MSV"></script>
     <script>
@@ -76,6 +74,8 @@
 
       gtag('config', 'G-SRV3155MSV');
     </script>
+  <script defer src="runtime.js"></script><script defer src="main.js"></script></head>
+    
   <body> 
     <header>
       <div class="collapse bg-dark" id="navbarHeader">
@@ -109,152 +109,115 @@
       </div>
     </header>
 
-<main>
-  <div class="album pb-5 bg-light">
-    <div class="container">
-      
-      <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-          <!--Tabs for single password & bulk password-->
-        <!--div class="password-tabs-container">
-          <p class="tabs single-tab active p-3">Single</p>
-          <p class="tabs bulk-tab p-3">Multiple</p>
-        </div-->
+    <main>
+      <div class="album pb-5 bg-light">
+        <div class="container">
+          
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+              <form class="form row mt-5 p-5">
+                <!--Make a custom password container-->
+                <div class="make-a-password-container bg-white" id="make-a-password-container">
+                  <h2 class="heading-2 poppins-font fs-1 fw-bolder" id="heading-2">Customizations</h2>
+        
+                  <!--Password options container-->
+                  <div class="password-options-container d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row justify-content-lg-evenly justify-content-xl-evenly justify-content-xxl-evenly mt-4">
+                    <!--Number of multiple/bulk passwords container-->
+                    <div class="multiple-passwords-container me-4">
+                      <label for="range-slider-1" class="fw-bolder">Number of passwords</label>
+        
+                      <!--Range Container-->
+                      <div class="range-container-1">
+                        <p class="minus-btn fw-bolder fs-3" id="minus-btn-1">-</p>
+                        <input type="range" name="multiple-passwords" min="1" max="50" value="1" class="range-slider-1 me-3" id="range-slider-1" />
+                        <p class="add-btn fw-bolder fs-3" id="add-btn-1">+</p>
+                      </div>
+        
+                      <p class="mt-5 fw-bolder fs-2" id="numOfPasswords">1</p>
+                    </div>
+                    
+                    <!--Password Length Container-->
+                    <div class="password-length-container me-4">
+                      <label for="range-slider" class="fw-bolder">Password Length</label>
+        
+                      <!--Range Container-->
+                      <div class="range-container">
+                        <p class="minus-btn fw-bolder fs-3" id="minus-btn-2">-</p>
+                        <input type="range" name="password-length" min="5" max="50" value="12" class="range-slider me-3" id="range-slider" />
+                        <p class="add-btn fw-bolder fs-3" id="add-btn-2">+</p>
+                      </div>
+        
+                      <p class="mt-5 fw-bolder fs-2" id="passwordLength">12</p>
+                    </div>
+                      
+                    <!--Characters & Symbols Container-->
+                    <div class="characters-symbols-container" id="characters-symbols-container">
+                      <div class="uppercase-container form-check mb-3">
+                        <input type="checkbox" name="uppercase-choice" value="Uppercase" class="form-check-input p-3" id="uppercase" checked/>
+                        <label for="uppercase">Uppercase</label>
+                        <i class="material-icons mt-1 text-secondary" title="Passwords with alphabet letters from A-Z.">info</i>
+                      </div>
+        
+                      <div class="lowercase-container form-check mb-3">
+                        <input type="checkbox" name="lowercase-choice" class="form-check-input p-3" value="Lowercase" id="lowercase" checked/>
+                        <label for="lowercase">Lowercase</label>
+                        <i class="material-icons mt-1 text-secondary" title="Passwords with alphabet letters from a-z.">info</i>
+                      </div>
+        
+                      <div class="numbers-container form-check mb-3">
+                        <input type="checkbox" name="numbers-choice" value="Numbers" class="form-check-input p-3" id="numbers" checked/>
+                        <label for="numbers">Numbers</label>
+                        <i class="material-icons mt-1 text-secondary" title="Passwords with numbers from 0-9.">info</i>
+                      </div>
+        
+                      <div class="symbols-container form-check">
+                        <input type="checkbox" name="symbols-choice" value="symbols" class="form-check-input p-3" id="symbols" checked/>
+                        <label for="symbols">Symbols</label>
+                        <i class="material-icons mt-1 text-secondary" title="Passwords with symbols such as $*_!?">info</i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-        <!--div class="bg-grey"-->
-        <form class="form row">
-          <!--Password Input Field Container-->
-          <!--div class="password-input-field-container mt-5">
-            <input type="text" class="password-input-field form-control fw-bolder shadow-sm" id="form-control" name="password" placeholder=""/>
-          </div-->
-  
-          <!--Password Strength Meter-->
-          <!--div class="strength-meter"></div-->
-  
-          <!--Password Strength Value-->
-          <!--p class="password-strength-text">Strong</p-->
-  
-          <!--Make a custom password container-->
-          <div class="make-a-password-container bg-white" id="make-a-password-container">
-            <h2 class="heading-2 poppins-font" id="heading-2">Customizations</h2>
-  
-            <!--Password options container-->
-            <div class="password-options-container d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row justify-content-lg-evenly justify-content-xl-evenly justify-content-xxl-evenly mt-4">
-              <!--Number of multiple/bulk passwords container-->
-              <div class="multiple-passwords-container hide">
-                <label for="range-slider-1" class="fw-bolder">Number of passwords</label>
-  
-                <!--Range Container-->
-                <div class="range-container-1">
-                  <p class="minus-btn fw-bolder fs-3" id="minus-btn">-</p>
-                  <input type="range" name="multiple-passwords" min="2" max="50" value="2" class="range-slider-1 me-3" id="range-slider-1" />
-                  <p class="add-btn fw-bolder fs-3" id="add-btn">+</p>
+                <!--Create & Copy Button Container-->
+                <div class="btn-container" id="btn-container">
+                  <button type="button" class="create-btn bg-magenta my-5 px-5 py-4 fw-bolder">Create</button>
                 </div>
-  
-                <p class="mt-5 fw-bolder fs-2" id="numOfPasswords">2</p>
-              </div>
-              
-              <!--Password Length Container-->
-              <div class="password-length-container me-5">
-                <label for="range-slider" class="fw-bolder">Password Length</label>
-  
-                <!--Range Container-->
-                <div class="range-container">
-                  <p class="minus-btn fw-bolder fs-3" id="minus-btn">-</p>
-                  <input type="range" name="password-length" min="5" max="50" value="12" class="range-slider me-3" id="range-slider" />
-                  <p class="add-btn fw-bolder fs-3" id="add-btn">+</p>
+
+                <hr>
+        
+                <!--Passwords Container for multiple passwords-->
+                <div class="passwords-container">
+                  <h2 class="text-center fs-1 fw-bolder text-capitalize pt-3 pb-5">password list</h2>
+                  
+                  <div class="passwords-body d-lg-flex flex-lg-column align-items-lg-center">
+                  </div>
                 </div>
-  
-                <p class="mt-5 fw-bolder fs-2" id="passwordLength">12</p>
-              </div>
-                
-              <!--Characters & Symbols Container-->
-              <div class="characters-symbols-container" id="characters-symbols-container">
-                <div class="uppercase-container form-check mb-3">
-                  <input type="checkbox" name="uppercase-choice" value="Uppercase" class="form-check-input p-3" id="uppercase" checked/>
-                  <label for="uppercase">Uppercase</label>
-                  <i class="material-icons mt-1 text-secondary" title="Passwords with alphabet letters from A-Z.">info</i>
-                </div>
-  
-                <div class="lowercase-container form-check mb-3">
-                  <input type="checkbox" name="lowercase-choice" class="form-check-input p-3"value="Lowercase" id="lowercase" checked/>
-                  <label for="lowercase">Lowercase</label>
-                  <i class="material-icons mt-1 text-secondary" title="Passwords with alphabet letters from a-z.">info</i>
-                </div>
-  
-                <div class="numbers-container form-check mb-3">
-                  <input type="checkbox" name="numbers-choice" value="Numbers" class="form-check-input p-3" id="numbers" checked/>
-                  <label for="numbers">Numbers</label>
-                  <i class="material-icons mt-1 text-secondary" title="Passwords with numbers from 0-9.">info</i>
-                </div>
-  
-                <div class="symbols-container form-check">
-                  <input type="checkbox" name="symbols-choice" value="symbols" class="form-check-input p-3" id="symbols" checked/>
-                  <label for="symbols">Symbols</label>
-                  <i class="material-icons mt-1 text-secondary" title="Passwords with symbols such as $*_!?">info</i>
-                </div>
-              </div>
+              </form>
             </div>
           </div>
-
-          <!--Create & Copy Button Container-->
-          <div class="btn-container" id="btn-container">
-            <button type="button" class="create-btn bg-magenta my-5 px-5 py-4 fw-bolder">Create</button>
-          </div>
-  
-          <!--div class="email-checkbox-container hide">
-            <input type="checkbox" name="email-passwords" value="Email passwords" class="form-check-input p-2" id="email-checkbox" />
-            <label for="email-checkbox">Email the passwords</label>
-          </div-->
-  
-          <!--Passwords Container for multiple passwords-->
-          <div class="passwords-container hide">
-            <!--div class="copy-and-download-container">
-              <i class="material-icons text-lightslategrey" title="Download as CSV file">file_download</i>
-              <i class="material-icons text-lightslategrey" title="Copy">content_copy</i>
-              <i class="material-icons text-lightslategrey" title="Email the passwords">mail_outline</i>
-            </div-->
-  
-            <h2 class="text-center fw-bolder">Password List</h2>
-            <table class="table passwords-table">
-              <thead class="passwords-header">
-                <tr>
-                  <th scope="col" class="fs-4">No.</th>
-                  <th scope="col" class="fs-8">Password</th>
-                  <!--th scope="col" class="fs-4">Strength</th-->
-                </tr>
-              </thead>
-              <tbody class="passwords-body">
-              </tbody>
-            </table>
-          </div>
-        </form>  
-        <!--/div-->
         </div>
       </div>
-    </div>
-  </div>
 
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h2><span id="brand" class="text-1 bg-magenta px-5 py-4 fw-bolder"></span></h2>
-        <h1 class="fw-light">Password creator.</h1>
-        <p class="lead text-magenta">Simplified. Free.</p>
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h2><span id="brand" class="text-1 text-white bg-magenta px-5 py-4 fw-bolder rounded-pill"></span></h2>
+            <h1 class="fw-light mt-5">Password creator.</h1>
+            <p class="lead text-magenta fw-bolder fs-2">Simplified. Free.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="text-muted py-5">
+      <div class="container">
+        <p class="float-end mb-1" rel="noopener">
+          <a href="https://www.fiji.travel/" rel="noopener" target="_blank" class="text-2">Made with 🧡 in Fiji</a>
+        </p>
+        <p class="mb-1">&copy; <span id="date"><script>document.getElementById('date').innerHTML = new Date().getFullYear();</script></span> Aver. All rights reserved.</p>
       </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="text-muted py-5">
-  <div class="container">
-    <p class="float-end mb-1">
-      <a href="https://www.fiji.travel/" target="_blank" class="text-2">Made with 🧡 in Fiji</a>
-    </p>
-    <p class="mb-1">&copy; <span id="date"><script>document.getElementById('date').innerHTML = new Date().getFullYear();</script></span> Aver. All rights reserved.</p>
-  </div>
-</footer>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>
 </html>

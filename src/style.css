@@ -143,7 +143,8 @@ body {
 .form {
   display: flex;
   flex-direction: column;
-  /*background-color: rgb(228, 231, 234);*/
+
+  /* background-color: rgb(228, 231, 234); */
   background-color: var(--white);
 }
 
@@ -224,7 +225,7 @@ body {
 .close-btn-2:hover {
   background-color: var(--white);
   color: var(--primaryColor);
-  border: 3px solidvar(--primaryColor);
+  border: 3px solid var(--primarycolor);
 }
 
 .close-btn-2:active {
@@ -1362,7 +1363,7 @@ input[type=range]::-webkit-slider-thumb:active {
 
 @media only screen and (min-width: 992px) {
   #minus-btn-1,
-  #add-btn-1 ,
+  #add-btn-1,
   #minus-btn-2,
   #add-btn-2 {
     position: relative;
@@ -1620,7 +1621,7 @@ input[type=range]::-webkit-slider-thumb:active {
     border: 1px solid lightgrey;
     border-radius: 10px;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-    width: 93%;
+    width: 96%;
     margin-top: 30px;
     margin-bottom: 30px;
     margin-left: 20px;
@@ -1641,13 +1642,15 @@ input[type=range]::-webkit-slider-thumb:active {
 /* Override Bootstrap example, row color */
 .bg-light {
   --bs-bg-opacity: 1;
-  /*background-color: rgba(var(--bs-light-rgb),var(--bs-bg-opacity))!important;*/
-  background-color: rgb(228, 231, 234)!important;
+
+  /* background-color: rgba(var(--bs-light-rgb),var(--bs-bg-opacity))!important; */
+  background-color: rgb(228, 231, 234) !important;
 }
 
 /* Override Bootstrap example, navbar color */
 .bg-dark {
-    --bs-bg-opacity: 1;
-    /*background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;*/
-    background-color: var(--primaryColor)!important;
+  --bs-bg-opacity: 1;
+
+  /* background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important; */
+  background-color: var(--primaryColor) !important;
 }
