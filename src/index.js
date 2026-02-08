@@ -21,7 +21,7 @@ const wordList = [
   'cane', 'canon', 'cape', 'card', 'cargo', 'carol', 'carry', 'carve', 'case', 'cash',
   'cause', 'cave', 'cease', 'cedar', 'chain', 'chair', 'champ', 'charm', 'chart', 'chase',
   'cheap', 'check', 'cheek', 'cheer', 'chess', 'chest', 'chew', 'chief', 'child', 'chili',
-  'chill', 'chip', 'choke', 'chord', 'chore', 'chunk', 'cinch', 'city', 'civic', 'civil'
+  'chill', 'chip', 'choke', 'chord', 'chore', 'chunk', 'cinch', 'city', 'civic', 'civil',
 ];
 
 // Define character set
@@ -33,8 +33,6 @@ const symbols = '£$&()*+[]@#^-_!?';
 function removeSimilarChars(str) {
   return str.replace(/[0O1lI]/g, '');
 }
-
-let password = '';
 
 const createBtn = document.querySelector('.create-btn');
 
