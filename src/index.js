@@ -1,7 +1,7 @@
 import './style.css';
 
 // Define character set
-const lowerCase = 'abcdefghijklmnopqrstuvxyz';
+const lowerCase = 'abcdefghijklmnopqrstuvwxyz';
 const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVXYZ';
 const numbers = '0123456789';
 const symbols = '£$&()*+[]@#^-_!?';
@@ -327,18 +327,59 @@ function removeAllChildNodes(parent) {
   }
 }
 
+async function copyToClipboard(text, button) {
+  try {
+    await navigator.clipboard.writeText(text);
+    button.textContent = 'check';
+    setTimeout(() => { button.textContent = 'content_copy'; }, 2000);
+  } catch (err) {
+    // Fallback for older browsers
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    button.textContent = 'check';
+    setTimeout(() => { button.textContent = 'content_copy'; }, 2000);
+  }
+}
+
 function renderPasswords(passwords){
   removeAllChildNodes(passwordsBody);
 
   for (let i = 0; i < passwords.length; i++){
     const row = document.createElement('div');
-    row.classList.add("px-2", "py-1");
+    row.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'gap-2', 'px-2', 'py-2');
 
     const passwordCreated = document.createElement('p');
     passwordCreated.textContent = passwords[i].password;
-    passwordCreated.classList.add("text-center", "fs-4");
-    
+    passwordCreated.classList.add('fs-4', 'mb-0', 'font-monospace');
+
+    // Strength badge
+    const strengthBadge = document.createElement('span');
+    strengthBadge.textContent = passwords[i].strength;
+    strengthBadge.classList.add('badge', 'rounded-pill');
+
+    // Color based on strength
+    if (passwords[i].strength === 'Strong') {
+      strengthBadge.classList.add('bg-success');
+    } else if (passwords[i].strength === 'Medium') {
+      strengthBadge.classList.add('bg-warning', 'text-dark');
+    } else {
+      strengthBadge.classList.add('bg-danger');
+    }
+
+    const copyBtn = document.createElement('i');
+    copyBtn.classList.add('material-icons');
+    copyBtn.textContent = 'content_copy';
+    copyBtn.style.cursor = 'pointer';
+    copyBtn.title = 'Copy to clipboard';
+    copyBtn.addEventListener('click', () => copyToClipboard(passwords[i].password, copyBtn));
+
     row.appendChild(passwordCreated);
+    row.appendChild(strengthBadge);
+    row.appendChild(copyBtn);
     passwordsBody.appendChild(row);
   }
 }
