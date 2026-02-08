@@ -14,6 +14,63 @@
   --white: white;
 }
 
+/* Dark mode colors */
+[data-theme="dark"] {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --text-primary: #eee;
+  --text-secondary: #aaa;
+  --border-color: #333;
+}
+
+[data-theme="light"] {
+  --bg-primary: #fff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --border-color: #dee2e6;
+}
+
+/* Dark mode body */
+[data-theme="dark"] body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .bg-light {
+  background-color: var(--bg-secondary) !important;
+}
+
+[data-theme="dark"] .form,
+[data-theme="dark"] .make-a-password-container {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .text-muted {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .form-check-label,
+[data-theme="dark"] label,
+[data-theme="dark"] h2,
+[data-theme="dark"] p {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .alert-light {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .form-control {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
 html {
   margin: 0;
   padding: 0;
