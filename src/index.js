@@ -1,5 +1,29 @@
 import './style.css';
 
+// Word list for passphrase generation (EFF short wordlist subset)
+const wordList = [
+  'acid', 'acorn', 'acre', 'acts', 'afar', 'affix', 'aged', 'agent', 'agile', 'aging',
+  'agony', 'ahead', 'aide', 'aids', 'aim', 'ajar', 'alarm', 'alias', 'alibi', 'alien',
+  'alike', 'alive', 'alley', 'allot', 'allow', 'alloy', 'ally', 'alone', 'along', 'aloof',
+  'alpha', 'alps', 'altar', 'alter', 'amaze', 'amber', 'amend', 'amid', 'amp', 'angel',
+  'anger', 'angle', 'angry', 'ankle', 'apart', 'apex', 'apple', 'apply', 'apron', 'arena',
+  'argue', 'arise', 'armor', 'army', 'aroma', 'array', 'arrow', 'arson', 'art', 'ashen',
+  'ashes', 'atlas', 'atom', 'attic', 'audio', 'avert', 'avoid', 'awake', 'award', 'awoke',
+  'axis', 'bacon', 'badge', 'badly', 'bagel', 'baggy', 'baked', 'baker', 'balmy', 'banjo',
+  'barge', 'baron', 'basic', 'basin', 'batch', 'bath', 'baton', 'blade', 'blank', 'blast',
+  'blaze', 'bleak', 'blend', 'bless', 'blimp', 'blind', 'bliss', 'block', 'blog', 'blot',
+  'blown', 'blue', 'blunt', 'blurt', 'blush', 'board', 'boat', 'body', 'bolt', 'bonus',
+  'book', 'booth', 'boots', 'boss', 'botch', 'both', 'boxer', 'brain', 'branch', 'brand',
+  'brass', 'brave', 'bread', 'break', 'breed', 'brick', 'bride', 'brief', 'bring', 'brink',
+  'brisk', 'broad', 'broil', 'broke', 'brook', 'broom', 'brush', 'buck', 'buddy', 'budget',
+  'build', 'built', 'bulge', 'bulk', 'bully', 'bunch', 'bunny', 'burden', 'burn', 'burst',
+  'buyer', 'cable', 'cache', 'cadet', 'cage', 'cake', 'calm', 'camper', 'canal', 'candy',
+  'cane', 'canon', 'cape', 'card', 'cargo', 'carol', 'carry', 'carve', 'case', 'cash',
+  'cause', 'cave', 'cease', 'cedar', 'chain', 'chair', 'champ', 'charm', 'chart', 'chase',
+  'cheap', 'check', 'cheek', 'cheer', 'chess', 'chest', 'chew', 'chief', 'child', 'chili',
+  'chill', 'chip', 'choke', 'chord', 'chore', 'chunk', 'cinch', 'city', 'civic', 'civil'
+];
+
 // Define character set
 const lowerCase = 'abcdefghijklmnopqrstuvwxyz';
 const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVXYZ';
@@ -153,6 +177,9 @@ function renderPasswords(passwords){
 }
 
 function generate() {
+  if (isPassphraseMode) {
+    return generatePassphrase();
+  }
   const length = passwordLengthCtrl.value;
   return generatePassword(length);
 }
@@ -240,6 +267,49 @@ symbolsCtrl.addEventListener('change', (e) => {
 similarCtrl.addEventListener('change', (e) => {
   avoidSimilar = e.target.checked;
 });
+
+// Passphrase controls
+const typePasswordCtrl = document.getElementById('typePassword');
+const typePassphraseCtrl = document.getElementById('typePassphrase');
+const passphraseOptions = document.getElementById('passphraseOptions');
+const wordCountSlider = document.getElementById('wordCountSlider');
+const wordCountDisplay = document.getElementById('wordCount');
+const separatorSelect = document.getElementById('separatorSelect');
+
+let isPassphraseMode = false;
+
+// Toggle between password and passphrase mode
+typePasswordCtrl.addEventListener('change', () => {
+  isPassphraseMode = false;
+  passphraseOptions.style.display = 'none';
+  document.querySelector('.password-length-container').style.display = '';
+  document.getElementById('characters-symbols-container').style.display = '';
+});
+
+typePassphraseCtrl.addEventListener('change', () => {
+  isPassphraseMode = true;
+  passphraseOptions.style.display = '';
+  document.querySelector('.password-length-container').style.display = 'none';
+  document.getElementById('characters-symbols-container').style.display = 'none';
+});
+
+wordCountSlider.addEventListener('input', (e) => {
+  wordCountDisplay.textContent = e.target.value;
+});
+
+// Generate passphrase function
+function generatePassphrase() {
+  const wordCount = parseInt(wordCountSlider.value);
+  const separator = separatorSelect.value;
+  const words = [];
+  
+  for (let i = 0; i < wordCount; i++) {
+    const randomIndex = Math.floor(Math.random() * wordList.length);
+    words.push(wordList[randomIndex]);
+  }
+  
+  return words.join(separator);
+}
 
 // For all screens
 createBtn.addEventListener('click', () => {
