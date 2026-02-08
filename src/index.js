@@ -6,6 +6,10 @@ const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVXYZ';
 const numbers = '0123456789';
 const symbols = '£$&()*+[]@#^-_!?';
 
+function removeSimilarChars(str) {
+  return str.replace(/[0O1lI]/g, '');
+}
+
 let password = '';
 
 const createBtn = document.querySelector('.create-btn');
@@ -22,11 +26,13 @@ const uppercaseCtrl = document.getElementById('uppercase');
 const lowercaseCtrl = document.getElementById('lowercase');
 const numbersCtrl = document.getElementById('numbers');
 const symbolsCtrl = document.getElementById('symbols');
+const similarCtrl = document.getElementById('similar');
 
 let uppercaseSelected = true;
 let lowercaseSelected = true;
 let numbersSelected = true;
 let symbolsSelected = true;
+let avoidSimilar = false;
 
 let checkBoxChecked = 4;
 const minimumChecked = 2;
@@ -69,10 +75,10 @@ function testPasswordStrength(password){
 function generatePassword(length) {
   // Build character set based on selected options
   let chars = '';
-  if (uppercaseSelected) chars += upperCase;
-  if (lowercaseSelected) chars += lowerCase;
-  if (numbersSelected) chars += numbers;
-  if (symbolsSelected) chars += symbols;
+  if (uppercaseSelected) chars += avoidSimilar ? removeSimilarChars(upperCase) : upperCase;
+  if (lowercaseSelected) chars += avoidSimilar ? removeSimilarChars(lowerCase) : lowerCase;
+  if (numbersSelected) chars += avoidSimilar ? removeSimilarChars(numbers) : numbers;
+  if (symbolsSelected) chars += symbols; // symbols don't have similar chars
   
   // Generate password
   let password = '';
@@ -229,6 +235,10 @@ symbolsCtrl.addEventListener('change', (e) => {
     checkBoxChecked -= 1;
     symbolsSelected = false;
   }
+});
+
+similarCtrl.addEventListener('change', (e) => {
+  avoidSimilar = e.target.checked;
 });
 
 // For all screens
