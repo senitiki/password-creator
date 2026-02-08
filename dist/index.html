@@ -119,6 +119,18 @@
                 <!--Make a custom password container-->
                 <div class="make-a-password-container bg-white" id="make-a-password-container">
                   <h2 class="heading-2 poppins-font fs-1 fw-bolder" id="heading-2">Customizations</h2>
+
+                  <!-- Password Type Toggle -->
+                  <div class="password-type-toggle d-flex justify-content-center gap-3 mb-4 mt-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="passwordType" id="typePassword" checked>
+                      <label class="form-check-label" for="typePassword">Password</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="passwordType" id="typePassphrase">
+                      <label class="form-check-label" for="typePassphrase">Passphrase</label>
+                    </div>
+                  </div>
         
                   <!--Password options container-->
                   <div class="password-options-container d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row justify-content-lg-evenly justify-content-xl-evenly justify-content-xxl-evenly mt-4">
@@ -134,6 +146,25 @@
                       </div>
         
                       <p class="mt-5 fw-bolder fs-2" id="numOfPasswords">1</p>
+                    </div>
+
+                    <!-- Passphrase options (hidden by default) -->
+                    <div class="passphrase-options-container me-4" id="passphraseOptions" style="display: none;">
+                      <label class="fw-bolder">Number of words</label>
+                      <div class="range-container">
+                        <p class="minus-btn fw-bolder fs-3" id="minus-btn-words">-</p>
+                        <input type="range" name="word-count" min="3" max="8" value="4" class="range-slider me-3" id="wordCountSlider" />
+                        <p class="add-btn fw-bolder fs-3" id="add-btn-words">+</p>
+                      </div>
+                      <p class="mt-5 fw-bolder fs-2" id="wordCount">4</p>
+                      
+                      <label class="fw-bolder mt-3">Separator</label>
+                      <select class="form-select" id="separatorSelect">
+                        <option value="-" selected>Hyphen (-)</option>
+                        <option value="_">Underscore (_)</option>
+                        <option value=".">Dot (.)</option>
+                        <option value=" ">Space</option>
+                      </select>
                     </div>
                     
                     <!--Password Length Container-->
@@ -174,6 +205,12 @@
                         <input type="checkbox" name="symbols-choice" value="symbols" class="form-check-input p-3" id="symbols" checked/>
                         <label for="symbols">Symbols</label>
                         <i class="material-icons mt-1 text-secondary" title="Passwords with symbols such as $*_!?">info</i>
+                      </div>
+
+                      <div class="similar-container form-check mt-3">
+                        <input type="checkbox" name="similar-choice" class="form-check-input p-3" id="similar"/>
+                        <label for="similar">Avoid similar characters</label>
+                        <i class="material-icons mt-1 text-secondary" title="Exclude characters that look alike: 0, O, 1, l, I">info</i>
                       </div>
                     </div>
                   </div>
