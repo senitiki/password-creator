@@ -122,21 +122,21 @@
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
               <form class="form row mt-5 p-5">
+                <!-- Password Type Toggle - Above the box -->
+                <div class="password-type-toggle d-flex justify-content-center gap-4 mb-4">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="passwordType" id="typePassword" checked style="width: 1.5em; height: 1.5em;">
+                    <label class="form-check-label fs-4 ms-2" for="typePassword">Password</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="passwordType" id="typePassphrase" style="width: 1.5em; height: 1.5em;">
+                    <label class="form-check-label fs-4 ms-2" for="typePassphrase">Passphrase</label>
+                  </div>
+                </div>
+
                 <!--Make a custom password container-->
                 <div class="make-a-password-container bg-white" id="make-a-password-container">
                   <h2 class="heading-2 poppins-font fs-1 fw-bolder" id="heading-2">Customizations</h2>
-
-                  <!-- Password Type Toggle -->
-                  <div class="password-type-toggle d-flex justify-content-center gap-3 mb-4 mt-3">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="passwordType" id="typePassword" checked>
-                      <label class="form-check-label" for="typePassword">Password</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="passwordType" id="typePassphrase">
-                      <label class="form-check-label" for="typePassphrase">Passphrase</label>
-                    </div>
-                  </div>
         
                   <!--Password options container-->
                   <div class="password-options-container d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row justify-content-lg-evenly justify-content-xl-evenly justify-content-xxl-evenly mt-4">
