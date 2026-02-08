@@ -1,7 +1,7 @@
 import './style.css';
 
 // Define character set
-const lowerCase = 'abcdefghijklmnopqrstuvxyz';
+const lowerCase = 'abcdefghijklmnopqrstuvwxyz';
 const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVXYZ';
 const numbers = '0123456789';
 const symbols = '£$&()*+[]@#^-_!?';
