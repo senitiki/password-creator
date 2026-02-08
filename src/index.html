@@ -155,7 +155,8 @@
                     </div>
 
                     <!-- Passphrase options (hidden by default) -->
-                    <div class="passphrase-options-container me-4" id="passphraseOptions" style="display: none;">
+                    <!-- Passphrase: Number of words (2nd column position) -->
+                    <div class="passphrase-words-container me-4" id="passphraseWords" style="display: none;">
                       <label class="fw-bolder">Number of words</label>
                       <div class="range-container">
                         <p class="minus-btn fw-bolder fs-3" id="minus-btn-words">-</p>
@@ -163,9 +164,12 @@
                         <p class="add-btn fw-bolder fs-3" id="add-btn-words">+</p>
                       </div>
                       <p class="mt-5 fw-bolder fs-2" id="wordCount">4</p>
-                      
-                      <label class="fw-bolder mt-3">Separator</label>
-                      <select class="form-select" id="separatorSelect">
+                    </div>
+                    
+                    <!-- Passphrase: Separator (3rd column position) -->
+                    <div class="passphrase-separator-container" id="passphraseSeparator" style="display: none;">
+                      <label class="fw-bolder">Separator</label>
+                      <select class="form-select mt-3" id="separatorSelect" style="min-width: 150px;">
                         <option value="-" selected>Hyphen (-)</option>
                         <option value="_">Underscore (_)</option>
                         <option value=".">Dot (.)</option>

@@ -269,7 +269,8 @@ similarCtrl.addEventListener('change', (e) => {
 // Passphrase controls
 const typePasswordCtrl = document.getElementById('typePassword');
 const typePassphraseCtrl = document.getElementById('typePassphrase');
-const passphraseOptions = document.getElementById('passphraseOptions');
+const passphraseWords = document.getElementById('passphraseWords');
+const passphraseSeparator = document.getElementById('passphraseSeparator');
 const wordCountSlider = document.getElementById('wordCountSlider');
 const wordCountDisplay = document.getElementById('wordCount');
 const separatorSelect = document.getElementById('separatorSelect');
@@ -279,14 +280,16 @@ let isPassphraseMode = false;
 // Toggle between password and passphrase mode
 typePasswordCtrl.addEventListener('change', () => {
   isPassphraseMode = false;
-  passphraseOptions.style.display = 'none';
+  passphraseWords.style.display = 'none';
+  passphraseSeparator.style.display = 'none';
   document.querySelector('.password-length-container').style.display = '';
   document.getElementById('characters-symbols-container').style.display = '';
 });
 
 typePassphraseCtrl.addEventListener('change', () => {
   isPassphraseMode = true;
-  passphraseOptions.style.display = '';
+  passphraseWords.style.display = '';
+  passphraseSeparator.style.display = '';
   document.querySelector('.password-length-container').style.display = 'none';
   document.getElementById('characters-symbols-container').style.display = 'none';
 });
