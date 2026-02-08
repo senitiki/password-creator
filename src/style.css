@@ -20,7 +20,8 @@
   --bg-secondary: #16213e;
   --text-primary: #eee;
   --text-secondary: #aaa;
-  --border-color: #333;
+  --border-color: #444;
+  --white: #1a1a2e;
 }
 
 [data-theme="light"] {
@@ -42,9 +43,19 @@
 }
 
 [data-theme="dark"] .form,
-[data-theme="dark"] .make-a-password-container {
-  background-color: var(--bg-secondary);
-  border-color: var(--border-color);
+[data-theme="dark"] .make-a-password-container,
+[data-theme="dark"] .bg-white {
+  background-color: var(--bg-secondary) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .passwords-body > div {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+[data-theme="dark"] .heading-2 {
+  border-bottom-color: var(--border-color);
 }
 
 [data-theme="dark"] .text-muted {
