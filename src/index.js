@@ -350,11 +350,25 @@ function renderPasswords(passwords){
 
   for (let i = 0; i < passwords.length; i++){
     const row = document.createElement('div');
-    row.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'gap-2', 'px-2', 'py-1');
+    row.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'gap-2', 'px-2', 'py-2');
 
     const passwordCreated = document.createElement('p');
     passwordCreated.textContent = passwords[i].password;
-    passwordCreated.classList.add('text-center', 'fs-4', 'mb-0');
+    passwordCreated.classList.add('fs-4', 'mb-0', 'font-monospace');
+
+    // Strength badge
+    const strengthBadge = document.createElement('span');
+    strengthBadge.textContent = passwords[i].strength;
+    strengthBadge.classList.add('badge', 'rounded-pill');
+
+    // Color based on strength
+    if (passwords[i].strength === 'Strong') {
+      strengthBadge.classList.add('bg-success');
+    } else if (passwords[i].strength === 'Medium') {
+      strengthBadge.classList.add('bg-warning', 'text-dark');
+    } else {
+      strengthBadge.classList.add('bg-danger');
+    }
 
     const copyBtn = document.createElement('i');
     copyBtn.classList.add('material-icons');
@@ -364,6 +378,7 @@ function renderPasswords(passwords){
     copyBtn.addEventListener('click', () => copyToClipboard(passwords[i].password, copyBtn));
 
     row.appendChild(passwordCreated);
+    row.appendChild(strengthBadge);
     row.appendChild(copyBtn);
     passwordsBody.appendChild(row);
   }
