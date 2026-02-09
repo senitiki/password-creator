@@ -279,6 +279,7 @@ let isPassphraseMode = false;
 
 // Toggle between password and passphrase mode
 const quantityLabel = document.getElementById('quantityLabel');
+const resultsLabel = document.getElementById('resultsLabel');
 
 typePasswordCtrl.addEventListener('change', () => {
   isPassphraseMode = false;
@@ -287,6 +288,7 @@ typePasswordCtrl.addEventListener('change', () => {
   document.querySelector('.password-length-container').style.display = '';
   document.getElementById('characters-symbols-container').style.display = '';
   quantityLabel.textContent = 'Number of passwords';
+  resultsLabel.textContent = 'password list';
 });
 
 typePassphraseCtrl.addEventListener('change', () => {
@@ -296,6 +298,7 @@ typePassphraseCtrl.addEventListener('change', () => {
   document.querySelector('.password-length-container').style.display = 'none';
   document.getElementById('characters-symbols-container').style.display = 'none';
   quantityLabel.textContent = 'Number of passphrases';
+  resultsLabel.textContent = 'passphrase list';
 });
 
 wordCountSlider.addEventListener('input', (e) => {
