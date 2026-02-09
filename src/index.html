@@ -122,21 +122,21 @@
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
               <form class="form row mt-5 p-5">
+                <!-- Password Type Toggle - Above the box -->
+                <div class="password-type-toggle d-flex justify-content-center gap-4 mb-4">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="passwordType" id="typePassword" checked style="width: 1.5em; height: 1.5em;">
+                    <label class="form-check-label fs-4 ms-2" for="typePassword">Password</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="passwordType" id="typePassphrase" style="width: 1.5em; height: 1.5em;">
+                    <label class="form-check-label fs-4 ms-2" for="typePassphrase">Passphrase</label>
+                  </div>
+                </div>
+
                 <!--Make a custom password container-->
                 <div class="make-a-password-container bg-white" id="make-a-password-container">
                   <h2 class="heading-2 poppins-font fs-1 fw-bolder" id="heading-2">Customizations</h2>
-
-                  <!-- Password Type Toggle -->
-                  <div class="password-type-toggle d-flex justify-content-center gap-3 mb-4 mt-3">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="passwordType" id="typePassword" checked>
-                      <label class="form-check-label" for="typePassword">Password</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="passwordType" id="typePassphrase">
-                      <label class="form-check-label" for="typePassphrase">Passphrase</label>
-                    </div>
-                  </div>
         
                   <!--Password options container-->
                   <div class="password-options-container d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row justify-content-lg-evenly justify-content-xl-evenly justify-content-xxl-evenly mt-4">
@@ -155,7 +155,8 @@
                     </div>
 
                     <!-- Passphrase options (hidden by default) -->
-                    <div class="passphrase-options-container me-4" id="passphraseOptions" style="display: none;">
+                    <!-- Passphrase: Number of words (2nd column position) -->
+                    <div class="passphrase-words-container me-4" id="passphraseWords" style="display: none;">
                       <label class="fw-bolder">Number of words</label>
                       <div class="range-container">
                         <p class="minus-btn fw-bolder fs-3" id="minus-btn-words">-</p>
@@ -163,9 +164,12 @@
                         <p class="add-btn fw-bolder fs-3" id="add-btn-words">+</p>
                       </div>
                       <p class="mt-5 fw-bolder fs-2" id="wordCount">4</p>
-                      
-                      <label class="fw-bolder mt-3">Separator</label>
-                      <select class="form-select" id="separatorSelect">
+                    </div>
+                    
+                    <!-- Passphrase: Separator (3rd column position) -->
+                    <div class="passphrase-separator-container" id="passphraseSeparator" style="display: none;">
+                      <label class="fw-bolder">Separator</label>
+                      <select class="form-select mt-3" id="separatorSelect" style="min-width: 150px;">
                         <option value="-" selected>Hyphen (-)</option>
                         <option value="_">Underscore (_)</option>
                         <option value=".">Dot (.)</option>
@@ -213,10 +217,10 @@
                         <i class="material-icons mt-1 text-secondary" title="Passwords with symbols such as $*_!?">info</i>
                       </div>
 
-                      <div class="similar-container form-check mt-3">
+                      <div class="similar-container form-check mb-3">
                         <input type="checkbox" name="similar-choice" class="form-check-input p-3" id="similar"/>
-                        <label for="similar">Avoid similar characters</label>
-                        <i class="material-icons mt-1 text-secondary" title="Exclude characters that look alike: 0, O, 1, l, I">info</i>
+                        <label for="similar">Avoid Similar</label>
+                        <i class="material-icons mt-1 text-secondary" title="Exclude look-alike characters: 0/O, 1/l/I">info</i>
                       </div>
                     </div>
                   </div>
