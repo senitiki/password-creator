@@ -186,7 +186,7 @@ function testPasswordStrength(password){
       hasUpper = true;
     } else if (/[0-9]/.test(password[i])){
       hasNumber = true;
-    } else if (/[£\$&\(\)\*\+\[\]@#\^-_!\?]/.test(password[i])){
+    } else if (/[£$&()*+[\]@#^_!?-]/.test(password[i])){
       hasSymbol = true;
     }
   }
@@ -202,6 +202,19 @@ function testPasswordStrength(password){
   }
 
   return strength;
+}
+
+// Passphrase strength based on word count and entropy
+// With 1,296-word list: ~10.3 bits per word
+// 3 words = ~31 bits (Weak), 4-5 words = ~41-52 bits (Medium), 6+ words = ~62+ bits (Strong)
+function testPassphraseStrength(wordCount) {
+  if (wordCount >= 6) {
+    return "Strong";
+  } else if (wordCount >= 4) {
+    return "Medium";
+  } else {
+    return "Weak";
+  }
 }
 
 // Password generation - consolidated into single function
@@ -303,8 +316,14 @@ function generateMultiple() {
 
   do {
     newPassword = generate();
-      
-    newPasswordStrength = testPasswordStrength(newPassword);
+    
+    // Use appropriate strength test based on mode
+    if (isPassphraseMode) {
+      const wordCount = parseInt(wordCountSlider.value);
+      newPasswordStrength = testPassphraseStrength(wordCount);
+    } else {
+      newPasswordStrength = testPasswordStrength(newPassword);
+    }
 
     multiplePasswords.push({
       password: newPassword,
