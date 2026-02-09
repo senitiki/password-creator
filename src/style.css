@@ -308,7 +308,9 @@ body {
 }
 
 .password-length-container,
-.multiple-passwords-container {
+.multiple-passwords-container,
+.passphrase-words-container,
+.passphrase-separator-container {
   display: flex;
   flex-direction: column;
   align-items: center;
