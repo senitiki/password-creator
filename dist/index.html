@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Generate strong and secure passwords easily with our simple password generator - even in bulk! Protect your accounts and personal information with unique passwords.">
-    <meta name="keywords" content="Password generator, Secure passwords, Random passwords, Unique passwords, Password security, Online security, Protect accounts, Personal information protection, Bulk password generation, Easy password generation">
+    <meta name="description" content="Generate strong, secure passwords and memorable passphrases with our free generator. Create single or bulk credentials instantly. Protect your accounts with unique, random passwords.">
+    <meta name="keywords" content="Password generator, Passphrase generator, Secure passwords, Random passwords, Diceware passphrase, Unique passwords, Password security, Online security, Protect accounts, Bulk password generation, Memorable passwords">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon.ico">
@@ -68,6 +68,9 @@
         -webkit-overflow-scrolling: touch;
       }
     </style>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3586514148548106" crossorigin="anonymous"></script>
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRV3155MSV"></script>
     <script>
@@ -86,7 +89,7 @@
           <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
               <h4 class="text-white">About</h4>
-              <p class="text-white">Generate strong and secure passwords easily with our simple password creator tool - even in bulk! Protect your accounts and personal information with unique passwords.</p>
+              <p class="text-white">Generate strong, secure passwords and memorable passphrases with our free tool - even in bulk! Protect your accounts and personal information with unique credentials.</p>
             </div>
             <!--div class="col-sm-4 offset-md-1 py-4">
               <h4 class="text-white">Contact</h4>
@@ -122,27 +125,27 @@
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
               <form class="form row mt-5 p-5">
+                <!-- Password Type Toggle - Above the box -->
+                <div class="password-type-toggle d-flex justify-content-center gap-4 mb-4">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="passwordType" id="typePassword" checked style="width: 1.5em; height: 1.5em;">
+                    <label class="form-check-label fs-4 ms-2" for="typePassword">Password</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="passwordType" id="typePassphrase" style="width: 1.5em; height: 1.5em;">
+                    <label class="form-check-label fs-4 ms-2" for="typePassphrase">Passphrase</label>
+                  </div>
+                </div>
+
                 <!--Make a custom password container-->
                 <div class="make-a-password-container bg-white" id="make-a-password-container">
                   <h2 class="heading-2 poppins-font fs-1 fw-bolder" id="heading-2">Customizations</h2>
-
-                  <!-- Password Type Toggle -->
-                  <div class="password-type-toggle d-flex justify-content-center gap-3 mb-4 mt-3">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="passwordType" id="typePassword" checked>
-                      <label class="form-check-label" for="typePassword">Password</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="passwordType" id="typePassphrase">
-                      <label class="form-check-label" for="typePassphrase">Passphrase</label>
-                    </div>
-                  </div>
         
                   <!--Password options container-->
                   <div class="password-options-container d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row flex-xxl-row justify-content-lg-evenly justify-content-xl-evenly justify-content-xxl-evenly mt-4">
                     <!--Number of multiple/bulk passwords container-->
                     <div class="multiple-passwords-container me-4">
-                      <label for="range-slider-1" class="fw-bolder">Number of passwords</label>
+                      <label for="range-slider-1" class="fw-bolder" id="quantityLabel">Number of passwords</label>
         
                       <!--Range Container-->
                       <div class="range-container-1">
@@ -155,17 +158,21 @@
                     </div>
 
                     <!-- Passphrase options (hidden by default) -->
-                    <div class="passphrase-options-container me-4" id="passphraseOptions" style="display: none;">
-                      <label class="fw-bolder">Number of words</label>
+                    <!-- Passphrase: Number of words (2nd column position) -->
+                    <div class="passphrase-words-container me-4" id="passphraseWords" style="display: none;">
+                      <label for="wordCountSlider" class="fw-bolder">Number of words</label>
                       <div class="range-container">
                         <p class="minus-btn fw-bolder fs-3" id="minus-btn-words">-</p>
                         <input type="range" name="word-count" min="3" max="8" value="4" class="range-slider me-3" id="wordCountSlider" />
                         <p class="add-btn fw-bolder fs-3" id="add-btn-words">+</p>
                       </div>
                       <p class="mt-5 fw-bolder fs-2" id="wordCount">4</p>
-                      
-                      <label class="fw-bolder mt-3">Separator</label>
-                      <select class="form-select" id="separatorSelect">
+                    </div>
+                    
+                    <!-- Passphrase: Separator (3rd column position) -->
+                    <div class="passphrase-separator-container me-4" id="passphraseSeparator" style="display: none;">
+                      <label class="fw-bolder">Separator</label>
+                      <select class="form-select mt-3" id="separatorSelect" style="min-width: 150px;">
                         <option value="-" selected>Hyphen (-)</option>
                         <option value="_">Underscore (_)</option>
                         <option value=".">Dot (.)</option>
@@ -207,16 +214,16 @@
                         <i class="material-icons mt-1 text-secondary" title="Passwords with numbers from 0-9.">info</i>
                       </div>
         
-                      <div class="symbols-container form-check">
+                      <div class="symbols-container form-check mb-3">
                         <input type="checkbox" name="symbols-choice" value="symbols" class="form-check-input p-3" id="symbols" checked/>
                         <label for="symbols">Symbols</label>
                         <i class="material-icons mt-1 text-secondary" title="Passwords with symbols such as $*_!?">info</i>
                       </div>
 
-                      <div class="similar-container form-check mt-3">
+                      <div class="similar-container form-check mb-3">
                         <input type="checkbox" name="similar-choice" class="form-check-input p-3" id="similar"/>
-                        <label for="similar">Avoid similar characters</label>
-                        <i class="material-icons mt-1 text-secondary" title="Exclude characters that look alike: 0, O, 1, l, I">info</i>
+                        <label for="similar">Avoid Similar</label>
+                        <i class="material-icons mt-1 text-secondary" title="Exclude look-alike characters: 0/O, 1/l/I">info</i>
                       </div>
                     </div>
                   </div>
@@ -231,7 +238,7 @@
         
                 <!--Passwords Container for multiple passwords-->
                 <div class="passwords-container">
-                  <h2 class="text-center fs-1 fw-bolder text-capitalize pt-3 pb-5">password list</h2>
+                  <h2 class="text-center fs-1 fw-bolder text-capitalize pt-3 pb-5" id="resultsLabel">password list</h2>
                   
                   <div class="passwords-body d-lg-flex flex-lg-column align-items-lg-center">
                   </div>
@@ -248,8 +255,109 @@
           <div class="col-lg-8 col-md-10">
             <div class="alert alert-light border text-center" role="alert">
               <i class="material-icons align-middle me-2" style="font-size: 20px;">lock</i>
-              <span class="align-middle"><strong>Your privacy is protected.</strong> Passwords are generated entirely in your browser. We never store, transmit, or have access to your passwords.</span>
+              <span class="align-middle"><strong>Your privacy is protected.</strong> Passwords and passphrases are generated entirely in your browser. We never store, transmit, or have access to your passwords or passphrases.</span>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEO Content Section -->
+      <div class="container my-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            
+            <!-- Strong Password Guide -->
+            <article class="mb-5">
+              <h2 class="fw-bold mb-4">What actually makes a password strong?</h2>
+              <p>You've probably heard "use a strong password" a million times. But what does that really mean? It's not about replacing letters with numbers (p4ssw0rd isn't fooling anyone) or adding an exclamation mark at the end.</p>
+              <p>A strong password comes down to one thing: <strong>unpredictability</strong>. The harder it is for software to guess, the better. Here's what matters:</p>
+              <ul>
+                <li><strong>Length beats complexity.</strong> A 16-character password using just lowercase letters is harder to crack than an 8-character password with symbols. Every extra character multiplies the possibilities exponentially.</li>
+                <li><strong>Randomness is key.</strong> "Sunshine123!" feels random to you, but it's one of the most common passwords out there. True randomness means no words, no patterns, no personal info.</li>
+                <li><strong>Uniqueness per account.</strong> Your strongest password becomes worthless if you use it everywhere. One breach exposes all your accounts.</li>
+              </ul>
+              <p>That's why tools like this exist — humans are terrible at being random. We think in patterns. Computers don't.</p>
+            </article>
+
+            <!-- Passwords vs Passphrases -->
+            <article class="mb-5">
+              <h2 class="fw-bold mb-4">Passwords vs. passphrases: which should you use?</h2>
+              <p>Short answer: it depends on where you're using it.</p>
+              
+              <h5 class="fw-bold mt-4">Use a random password when:</h5>
+              <ul>
+                <li>You're storing it in a password manager (you won't need to remember it)</li>
+                <li>The site has a short character limit</li>
+                <li>You want maximum security per character</li>
+              </ul>
+              
+              <h5 class="fw-bold mt-4">Use a passphrase when:</h5>
+              <ul>
+                <li>You need to type it frequently (like your computer login)</li>
+                <li>You can't use a password manager in that context</li>
+                <li>You want something memorable but still secure</li>
+              </ul>
+              
+              <p>A 4-word passphrase like <code>crane-hotel-pizza-swift</code> has roughly the same security as a random 8-character password — but you can actually remember it. Bump it to 5 or 6 words for sensitive accounts.</p>
+              <p>The catch? Passphrases only work if the words are truly random. Don't pick words yourself — you'll unconsciously choose common combinations. Let the generator do it.</p>
+            </article>
+
+            <!-- Storing Passwords -->
+            <article class="mb-5">
+              <h2 class="fw-bold mb-4">How to actually store your passwords</h2>
+              <p>Creating strong passwords is half the battle. Storing them safely is the other half.</p>
+              
+              <h5 class="fw-bold mt-4">Good options:</h5>
+              <ul>
+                <li><strong>Password manager apps</strong> — 1Password, Bitwarden, Dashlane, or your browser's built-in manager. They encrypt everything and sync across devices.</li>
+                <li><strong>Encrypted notes</strong> — If you're privacy-conscious, apps like Standard Notes or encrypted vaults work well.</li>
+                <li><strong>Paper (yes, really)</strong> — A notebook in a secure location beats a sticky note on your monitor. Physical security is underrated.</li>
+              </ul>
+              
+              <h5 class="fw-bold mt-4">Bad options:</h5>
+              <ul>
+                <li>Plain text files on your computer</li>
+                <li>Email drafts</li>
+                <li>That notes app syncing to who-knows-where</li>
+                <li>Reusing the same password because you can't remember more</li>
+              </ul>
+              
+              <p>Most people resist password managers because they seem complicated. They're not. Spend 20 minutes setting one up and you'll wonder why you waited so long.</p>
+            </article>
+
+            <!-- Common Mistakes -->
+            <article class="mb-5">
+              <h2 class="fw-bold mb-4">Password mistakes you're probably making</h2>
+              <p>No judgment — almost everyone does these:</p>
+              <ul>
+                <li><strong>Using personal info.</strong> Your dog's name, birthday, anniversary, street name — all easy to find on social media. Hackers check these first.</li>
+                <li><strong>Pattern typing.</strong> Sequences like "qwerty" or "123456" or keyboard patterns like "zxcvbn" are in every cracking dictionary.</li>
+                <li><strong>The +1 trick.</strong> When forced to change your password, adding a number at the end (Password1, Password2...) is predictable.</li>
+                <li><strong>Security questions with real answers.</strong> Your mother's maiden name is public record. Use fake answers and store them like passwords.</li>
+                <li><strong>Skipping two-factor authentication.</strong> Even a perfect password can be phished. 2FA is your backup plan.</li>
+              </ul>
+            </article>
+
+            <!-- FAQ Section -->
+            <article class="mb-5">
+              <h2 class="fw-bold mb-4">Quick answers</h2>
+              
+              <h5 class="fw-bold mt-4">How long should my password be?</h5>
+              <p>12 characters minimum for important accounts. 16+ if the site allows it. For passphrases, 4 words minimum, 5-6 for anything financial or sensitive.</p>
+              
+              <h5 class="fw-bold mt-4">Are these passwords truly random?</h5>
+              <p>Yes. This tool uses your browser's cryptographic random number generator — the same one used for secure web connections. Nothing is predictable, nothing is stored.</p>
+              
+              <h5 class="fw-bold mt-4">Should I include symbols?</h5>
+              <p>If you can, yes. But don't sacrifice length for complexity. A 20-character password without symbols beats a 10-character password with them.</p>
+              
+              <h5 class="fw-bold mt-4">How often should I change passwords?</h5>
+              <p>Only when there's a reason to — like a breach announcement or suspicious activity. Forced regular changes often lead to weaker passwords (see: the +1 trick above).</p>
+              
+              <h5 class="fw-bold mt-4">What's the "Avoid Similar" option?</h5>
+              <p>It removes characters that look alike: 0 and O, 1 and l and I. Useful when you might need to read the password aloud or type it from a printout.</p>
+            </article>
+
           </div>
         </div>
       </div>
