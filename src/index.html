@@ -157,7 +157,7 @@
                     <!-- Passphrase options (hidden by default) -->
                     <!-- Passphrase: Number of words (2nd column position) -->
                     <div class="passphrase-words-container me-4" id="passphraseWords" style="display: none;">
-                      <label class="fw-bolder">Number of words</label>
+                      <label for="wordCountSlider" class="fw-bolder">Number of words</label>
                       <div class="range-container">
                         <p class="minus-btn fw-bolder fs-3" id="minus-btn-words">-</p>
                         <input type="range" name="word-count" min="3" max="8" value="4" class="range-slider me-3" id="wordCountSlider" />
@@ -167,7 +167,7 @@
                     </div>
                     
                     <!-- Passphrase: Separator (3rd column position) -->
-                    <div class="passphrase-separator-container" id="passphraseSeparator" style="display: none;">
+                    <div class="passphrase-separator-container me-4" id="passphraseSeparator" style="display: none;">
                       <label class="fw-bolder">Separator</label>
                       <select class="form-select mt-3" id="separatorSelect" style="min-width: 150px;">
                         <option value="-" selected>Hyphen (-)</option>
@@ -252,7 +252,7 @@
           <div class="col-lg-8 col-md-10">
             <div class="alert alert-light border text-center" role="alert">
               <i class="material-icons align-middle me-2" style="font-size: 20px;">lock</i>
-              <span class="align-middle"><strong>Your privacy is protected.</strong> Passwords are generated entirely in your browser. We never store, transmit, or have access to your passwords.</span>
+              <span class="align-middle"><strong>Your privacy is protected.</strong> Passwords and passphrases are generated entirely in your browser. We never store, transmit, or have access to your passwords.</span>
             </div>
           </div>
         </div>
