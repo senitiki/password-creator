@@ -1818,3 +1818,35 @@ input[type=range]::-webkit-slider-thumb:hover {
 footer {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+/* SEO Content Section */
+article {
+  line-height: 1.8;
+}
+
+article h2 {
+  margin-top: 1rem;
+}
+
+article h5 {
+  color: var(--primaryColor);
+}
+
+article ul {
+  margin-bottom: 1rem;
+}
+
+article li {
+  margin-bottom: 0.5rem;
+}
+
+article code {
+  background: rgba(210, 21, 185, 0.1);
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+
+[data-theme="dark"] article code {
+  background: rgba(210, 21, 185, 0.25);
+}
