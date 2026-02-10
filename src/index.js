@@ -139,7 +139,7 @@ const wordList = [
 const lowerCase = 'abcdefghijklmnopqrstuvwxyz';
 const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVXYZ';
 const numbers = '0123456789';
-const symbols = '£$&()*+[]@#^-_!?';
+const symbols = '$&()*+[]@#^-_!?';
 
 function removeSimilarChars(str) {
   return str.replace(/[0O1lI]/g, '');
