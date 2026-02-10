@@ -16,7 +16,6 @@ module.exports = {
       patterns: [
         { from: './src/images', to: 'images' },
         { from: './favicon_io', to: 'favicon_io' },
-        { from: './src/ads.txt', to: 'ads.txt' },
       ],
     }),
   ],
